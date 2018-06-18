@@ -34,7 +34,7 @@ Bước đầu tiên của quá trình là lấy xác thực từ User. Việc n
 
 Để hiển thị màn hình xin quyền, Redirect User về địa chỉ URL này:
 ```
-https://{store}.bizwebvietnam.net/admin/oauth/authorize?client_id={api_key}&scope={scopes}&redirect_uri={redirect_uri}
+https://{store}.mysapo.vn/admin/oauth/authorize?client_id={api_key}&scope={scopes}&redirect_uri={redirect_uri}
 
 ```
 Với các giá trị tương ứng như sau:
@@ -51,7 +51,7 @@ Authorization code có thể được dùng để lấy một access token để
 ```
 ```
 POST
-https://{store}.bizwebvietnam.net/admin/oauth/access_token
+https://{store}.mysapo/admin/oauth/access_token
 ```
 Trong đó `{store}` là tên của Shop và request có gửi kèm theo các tham số sau:
 
@@ -94,12 +94,12 @@ Mỗi Request hoặc chuyển hướng từ Sapo về Client đều chứa các 
 
 Ví dụ về một query string:
 ```
-"store=some-store.bizwebvietnam.net&code=a94a110d86d2452eb3e2af4cfb8a3828&timestamp=1337178173&signature=6e39a2ea9e497af6cb806720da1f1bf3&hmac=2cb1a277650a659f1b11e92a4a64275b128e037f2c3390e3c8fd2d8721dac9e2"
+"store=some-store.mysapo.vn&code=a94a110d86d2452eb3e2af4cfb8a3828&timestamp=1337178173&signature=6e39a2ea9e497af6cb806720da1f1bf3&hmac=2cb1a277650a659f1b11e92a4a64275b128e037f2c3390e3c8fd2d8721dac9e2"
 ```
 được phân tách ra như sau:
 ```
 {
-    "store": "some-store.bizwebvietnam.net",
+    "store": "some-store.mysapo.vn",
     "code": "a94a110d86d2452eb3e2af4cfb8a3828",
     "timestamp": "1337178173",
     "signature": "6e39a2ea9e497af6cb806720da1f1bf3",
@@ -110,7 +110,7 @@ Ví dụ về một query string:
 Các giá trị `signature` và `hmac` được lấy ra, để lại các tham số khác.
 ```
 {
-    "store": "some-store.bizwebvietnam.net",
+    "store": "some-store.mysapo.vn",
     "code": "a94a110d86d2452eb3e2af4cfb8a3828",
     "timestamp": "1337178173"
 }
@@ -119,13 +119,13 @@ Các ký tự `&` và `%` được thay thế bởi `%26` và `%25` tương ứn
 
 Mỗi một key được ghép với value tương ứng của nó qua ký tự = để tạo ra một danh sách các xâu. Danh sách các cặp key-value được sắp xếp theo thứ tự như trong từ điển và được ghép với nhau bởi ký tự & để tạo ra một xâu duy nhất:
 ```
-"code=a94a110d86d2452eb3e2af4cfb8a3828&store=some-store.bizwebvietnam.net&timestamp=1337178173"
+"code=a94a110d86d2452eb3e2af4cfb8a3828&store=some-store.mysapo.vn&timestamp=1337178173"
 ```
 Cuối cùng, xâu này được thực hiện mã hóa HMAC-SHA256 sử dụng khóa là **Secret Key**. Dữ liệu được xác thực là hợp lệ nếu như chuỗi ký tự mã hóa được sinh ra bằng với giá trị của tham số `hmac`.
 ```
 digest = OpenSSL::Digest.new('sha256')
 secret = "hush"
-message = "store=some-shop.bizwebvietnam.net&timestamp=1337178173"
+message = "store=some-shop.mysapo.vn&timestamp=1337178173"
 digest = OpenSSL::HMAC.hexdigest(digest, secret, message)
 digest == "2cb1a277650a659f1b11e92a4a64275b128e037f2c3390e3c8fd2d8721dac9e2"
 ```
