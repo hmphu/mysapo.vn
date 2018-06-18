@@ -14,6 +14,8 @@ Bạn có thể dễ dàng bắt đầu với Sapo API. Sapo đem đến cho b�
 *Bạn muốn tìm hiểu về những ứng dụng tuyệt vời trong Kho ứng dụng của Sapo? [Hãy đến với Kho ứng dụng](https://apps.sapo.vn/)*
 
 # Danh mục APIs
+[Xác thực]
+[Webhooks]
 [NewOrder]
 [Product]
 [Customer_Group]
@@ -29,7 +31,6 @@ Bạn có thể dễ dàng bắt đầu với Sapo API. Sapo đem đến cho b�
 [ObjectVoucher]
 [Setting]
 [StockAdjustment]
-[Webhooks]
 [StockTransfer]
 [PriceAdjustment]
 [PurchaseOrder]
