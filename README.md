@@ -12,3 +12,27 @@ Bạn có thể dễ dàng bắt đầu với Sapo API. Sapo đem đến cho b�
 *Bạn đang tìm kiếm thông tin về cách sử dụng ứng dụng trong Kho ứng dụng của Sapo? [Tìm hiểu thêm tại Sapo hướng dẫn](https://web-docs.sapo.vn/gioi-thieu-189.html)*
 
 *Bạn muốn tìm hiểu về những ứng dụng tuyệt vời trong Kho ứng dụng của Sapo? [Hãy đến với Kho ứng dụng](https://apps.sapo.vn/)*
+
+# Danh mục APIs
+[NewOrder]
+[Product]
+[Customer_Group]
+[Supplier_Group]
+[Voucher]
+[OrderSource]
+[In]
+[DeliveryServiceProvider]
+[ShippingCost]
+[Loyalty]
+[OrderReturn]
+[Debt]
+[ObjectVoucher]
+[Setting]
+[StockAdjustment]
+[Webhooks]
+[StockTransfer]
+[PriceAdjustment]
+[PurchaseOrder]
+[Relationships]
+[Tags]
+[Ghichu]
