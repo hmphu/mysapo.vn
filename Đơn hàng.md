@@ -29,3 +29,207 @@
 | Order.expected_payment_method_id |	yes | Id định danh cho nguồn hàng từ nhà cung cấp |
 | Order.expected_delivery_type |	yes |  |
 | Order.expected_delivery_provider_id |	yes |  |
+```
+POST /admin/orders HTTP/1.1
+Token: 
+Content-Type: application/json
+{
+  "order": {
+    "code": "SO14061729",
+    "issued_on": "2017-06-14T16:43:21Z",
+    "ship_on": null,
+    "account_id": 5923,
+    "assignee_id": 5923,
+    "customer_id": 23003,
+    "contact_id": 1,
+    "billing_address": {
+      "label": "địa chỉ ghi vào hóa đơn",
+      "first_name": "Hồi",
+      "last_name": "Nguyễn",
+      "address1": "442 Đội Cung",
+      "address2": "442 Đội Đá",
+      "email": "hoinx01@gmail.com",
+      "phone_number": "01293291430",
+      "country": "Việt Nam",
+      "city": "Hà Nội",
+      "district": "Quận 2 Pà Tưng",
+      "zip_code": "10000"
+    },
+    "shipping_address": {
+      "label": "địa chỉ ghi vào hóa đơn",
+      "first_name": "Hồi",
+      "last_name": "Nguyễn",
+      "address1": "444 Đội Cung",
+      "address2": "442 Đội Đá",
+      "email": "hoinx012@gmail.com",
+      "phone_number": "01293291430",
+      "country": "Việt Nam",
+      "city": "Hà Nội",
+      "district": "Quận 3 Pà Tưng",
+      "zip_code": "10000"
+    },
+    "email": "hoinx02@gmail.com",
+    "phone_number": "01293291430",
+    "reference_number": "chả nhớ cái property này có ý nghĩa gì",
+    "price_list_id": 11672,
+    "tax_treatment": "inclusive",
+    "status": "finalized",
+    "source_id": 3449,
+    "note": "note thì null cũng được",
+    "tags": [
+      "1",
+      "hanoi",
+      "hichic"
+    ],
+    "delivery_fee": {
+      "shipping_cost_id": 1,
+      "shipping_cost_name": "hihi",
+      "fee": 20000
+    },
+    "discount_items": [
+      {
+        "position": 0,
+        "source": "manual",
+        "rate": 0,
+        "value": 20000,
+        "amount": 20000,
+        "reason": null
+      },
+      {
+        "position": 1,
+        "source": "customer_default",
+        "rate": 0,
+        "value": 20000,
+        "amount": 20000,
+        "reason": null
+      },
+      {
+        "position": 2,
+        "source": "customer_loyalty",
+        "rate": 0,
+        "value": 20000,
+        "amount": 20000,
+        "reason": null
+      },
+      {
+        "position": 3,
+        "source": "promotion_program",
+        "rate": 0,
+        "value": 20000,
+        "amount": 20000,
+        "reason": null
+      }
+    ],
+    "promotion_items": [
+      {
+        "discount_item_position": 3,
+        "promotion_id": 1,
+        "promotion_condition_item_id": 1,
+        "promotion_item_id": 1,
+        "item_type": "discount",
+        "satisfy_entities": "order.this"
+      }
+    ],
+    "order_line_items": [
+      {
+        "variant_id": 71743,
+        "product_id": 59901,
+        "product_name": "Tương ớt",
+        "variant_name": "Tương ớt - cay nhất - to",
+        "tax_type_id": 1,
+        "tax_rate_override": 10,
+        "note": null,
+        "price": 234000,
+        "quantity": 5,
+        "is_freeform": false,
+        "discount_items": [
+          {
+            "position": 0,
+            "source": "manual",
+            "rate": 0,
+            "value": 20000,
+            "amount": 20000,
+            "reason": null
+          },
+          {
+            "position": 1,
+            "source": "customer_default",
+            "rate": 0,
+            "value": 20000,
+            "amount": 20000,
+            "reason": null
+          },
+          {
+            "position": 2,
+            "source": "customer_loyalty",
+            "rate": 0,
+            "value": 20000,
+            "amount": 20000,
+            "reason": null
+          },
+          {
+            "position": 3,
+            "source": "promotion_program",
+            "rate": 0,
+            "value": 20000,
+            "amount": 20000,
+            "reason": null
+          }
+        ],
+        "promotion_items": [
+          {
+            "discount_item_position": 3,
+            "promotion_id": 1,
+            "promotion_condition_item_id": 1,
+            "promotion_item_id": 1,
+            "item_type": "discount",
+            "satisfy_entities": "order.this"
+          }
+        ]
+      },
+      {
+        "variant_id": 71743,
+        "product_id": 59901,
+        "product_name": "Tương ớt",
+        "variant_name": "Tương ớt - cay nhất - to",
+        "tax_type_id": 1,
+        "tax_rate_override": 10,
+        "note": null,
+        "price": 234000,
+        "quantity": 5,
+        "is_freeform": false,
+        "discount_items": [
+          {
+            "position": 0,
+            "source": "manual",
+            "rate": 0,
+            "value": 20000,
+            "amount": 20000,
+            "reason": null
+          },
+          {
+            "position": 1,
+            "source": "customer_default",
+            "rate": 0,
+            "value": 20000,
+            "amount": 20000,
+            "reason": null
+          },
+          {
+            "position": 2,
+            "source": "customer_loyalty",
+            "rate": 0,
+            "value": 20000,
+            "amount": 20000,
+            "reason": null
+          }
+        ],
+        "promotion_items": []
+      }
+    ],
+    "expected_payment_method_id": 1,
+    "expected_delivery_type": "pickup",
+    "expected_delivery_provider_id": 1
+  }
+}
+```
