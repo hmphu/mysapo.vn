@@ -2,6 +2,10 @@
 ## Đơn hàng mới
 Đối tác gửi danh sách đơn hàng sang hệ thống của Sapo.vn thông qua APIs. Sau khi các đơn hàng được lưu thành công vào hệ thống của Sapo.vn, hệ thống sẽ trả về danh sách đơn hàng tương ứng chứa các thông tin liên quan của mỗi đơn hàng.
 
+Bạn nên lưu ý rằng Order có thể được tạo qua API, nhưng thông tin thanh toán sẽ không được lưu trữ và không có một Transaction nào cả. Bạn có thể đánh dấu Order với bất kì trạng thái thanh toán nào.
+
+Bạn cũng nên chú ý rằng bạn chỉ có thể thay đổi một vài thuộc tính của Order khi sử dụng API. Bạn không thể thay đổi item hay số lượng của item trong Order.
+
 **Các tham số**
 
 | Tham số | Bắt buộc | Mô tả |
@@ -233,3 +237,46 @@ Content-Type: application/json
   }
 }
 ```
+**Kết quả trả về khi đăng đơn thành công**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## Duyệt đơn hàng
+## Hủy đơn hàng
+## Hoàn thành đơn hàng
+## Sửa đơn hàng
+## Lấy danh sách đơn hàng
+
+# Thanh Toán Trước
+## Tạo phiếu thanh toán trước
+Khách hàng yêu cầu thanh toán trước tới nhân viên, nhân viên gửi yêu cầu thông qua API cho Sapo.vn yêu cầu tạo phiếu thanh toán trước.
+**Các tham số**
+
+| Tham số | Bắt buộc | Mô tả |
+| ------------- |:-------------|:-------------|
+| Prepayment.payment_method_id | yes | Id định danh cho đơn hàng được thanh toán trước |
+| Prepayment.amount |	yes | Tổng khối lượng sản phẩm được thanh toán trước|
+| Prepayment.note | no | Ghi chú cho đơn hàng được thanh toán trước (nếu có) . Trường này có thể NULL |
+| Prepayment.paid_on | yes | Trạng thái khách hàng đã trả tiền |
+
+```
+POST /admin/orders/{id}/prepayments HTTP/1.1
+Token: 
+{
+  "prepayment": {
+    "payment_method_id": 3647,
+    "amount": 20000,
+    "note": "hihi",
+    "paid_on": null
+  }
+}
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## Hủy phiếu thanh toán trước
