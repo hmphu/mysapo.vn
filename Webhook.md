@@ -77,7 +77,7 @@ HTTP/1.1 200 OK
 
 ``` 
 
-[GET /admin/webhooks/{id}.json]
+***[GET /admin/webhooks/{id}.json]***
 
 Lấy một Webhook
 
@@ -98,7 +98,8 @@ HTTP/1.1 200 OK
 }
 
 ```
-[POST /admin/webhooks.json]
+***[POST /admin/webhooks.json]***
+
 Tạo mới một Webhook
 
 ```
@@ -125,7 +126,8 @@ HTTP/1.1 200 OK
             ""modified_on"": null
         }"
 ```
-[PUT /admin/webhooks/{id}.json]
+***[PUT /admin/webhooks/{id}.json]***
+
 Cập nhật một Webhook
 ```
 PUT /admin/webhooks/{id}.json
@@ -151,7 +153,8 @@ HTTP/1.1 200 OK
             ""modified_on"": null
         }"
 ```
-[GET /admin/webhooks/{id}.json]
+***[GET /admin/webhooks/{id}.json]***
+
 
 Lấy chi tiết danh sách Webhook
 
