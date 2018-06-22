@@ -64,7 +64,7 @@ Bạn có thể sửa đổi và cập nhật các thuộc tính trong nhóm kh�
 | Customer_group.is_default | yes |  |
 | Customer_group.default_payment_term_id | yes | id định danh cho kỳ hạn thanh toán |
 | Customer_group.default_payment_method_id | yes | Id định danh phương thức thanh toán |
-| Customer_group.default_tax_type_id"":  | yes | Id định danh mã số thuế |
+| Customer_group.default_tax_type_id | yes | Id định danh mã số thuế |
 | Customer_group.default_discount_rate | yes | Tỷ lệ phần trăm giảm giá được quy định nhóm khách hàng |
 | Customer_group.default_price_list_id |	yes | Id định danh danh sách hàng  |
 | Customer_group.code | yes | Mã tham chiếu đến nhóm khách hàng |
@@ -110,4 +110,7 @@ HTTP/1.1 200 OK
 ```
 ## Lấy 1 nhóm khách hàng theo id
 **[GET/admin/customer_groups/id.json]**
+
+## Lấy toàn bộ nhóm khách hàng
+**[GET/admin/customer_groups.json]**
 
