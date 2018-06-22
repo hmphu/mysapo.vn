@@ -25,7 +25,7 @@ Bắt đầu với việc tạo nhóm khách hàng, bạn sẽ đưa ra những 
 **[POST/admin/customer_groups.json]**
 
 `POST/admin/customer_groups.json HTTP/1.1
-Host: autotest.mysapo.vn`
+Host: autotest.mysapo.vn
 "{
     ""customer_group"": {
         ""name"": ""New Sun group1"",
@@ -39,6 +39,7 @@ Host: autotest.mysapo.vn`
         ""code"": ""CT200617541""
     }
 }"`
+
 **Kết quả trả về**
 ```
 ```
