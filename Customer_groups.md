@@ -24,7 +24,8 @@ Bắt đầu với việc tạo nhóm khách hàng, bạn sẽ đưa ra những 
 
 **[POST/admin/customer_groups.json]**
 
-`POST/admin/customer_groups.json HTTP/1.1
+```
+POST/admin/customer_groups.json HTTP/1.1
 Host: autotest.mysapo.vn
 
 "{
@@ -39,7 +40,8 @@ Host: autotest.mysapo.vn
         ""note"": null,
         ""code"": ""CT200617541""
     }
-}"`
+}"
+```
 
 **Kết quả trả về**
 ```
@@ -105,7 +107,7 @@ Khi nhóm khách hàng đã tồn tại trong hệ thống, bạn hoàn toàn c�
 DELETE/admin/customer_groups/id.json 
 HTTP/1.1 200 OK
 {}
-
+```
 ## Lấy 1 nhóm khách hàng theo id
 **[GET/admin/customer_groups/id.json]**
 
