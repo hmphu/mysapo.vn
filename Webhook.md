@@ -14,6 +14,7 @@ Một Webhook là một công cụ để truy vấn và lưu trữ dữ liệu c
 Sapo API cho phép bạn thực hiện các thao tác sau với tài nguyên Product. Các phiên bản chi tiết hơn của những thao tác này có thể có
 
 [GET /admin/webhooks.json]
+
 Lấy danh sách tất cả các Webhook
 
 **Kết quả trả về**
@@ -77,7 +78,9 @@ HTTP/1.1 200 OK
 ``` 
 
 [GET /admin/webhooks/{id}.json]
+
 Lấy một Webhook
+
 **Kết quả trả về**
 ```
 GET /admin/webhooks/{id}.json
@@ -109,7 +112,9 @@ HTTP/1.1 200 OK
   }
 }"
 ```
+
 **Kết quả trả về**
+
 ```
 "{
             ""id"": 290218,
@@ -133,7 +138,9 @@ HTTP/1.1 200 OK
   }
 }"
 ```
+
 **Kết quả trả về**
+
 ```
 "{
             ""id"": 4759306,
@@ -145,9 +152,9 @@ HTTP/1.1 200 OK
         }"
 ```
 [GET /admin/webhooks/{id}.json]
+
 Lấy chi tiết danh sách Webhook
-```
-```
+
 **Kết quả trả về**
 ```
 "{
