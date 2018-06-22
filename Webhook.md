@@ -13,7 +13,7 @@ Một Webhook là một công cụ để truy vấn và lưu trữ dữ liệu c
 ## Bạn có thể làm gì với Webhooks?
 Sapo API cho phép bạn thực hiện các thao tác sau với tài nguyên Product. Các phiên bản chi tiết hơn của những thao tác này có thể có
 
-[GET /admin/webhooks.json]
+***[GET /admin/webhooks.json]***
 
 Lấy danh sách tất cả các Webhook
 
