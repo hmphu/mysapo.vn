@@ -262,8 +262,9 @@ Khách hàng yêu cầu thanh toán trước tới nhân viên, nhân viên gử
 | Prepayment.paid_on | yes | Trạng thái khách hàng đã trả tiền |
 
 ```
-POST /admin/orders/{id}/prepayments HTTP/1.1
-Token: 
+POST /admin/orders/{id}/prepayments.json HTTP/1.1
+Host: dreamlink.mysapo.vn
+Content-Type: application/json 
 {
   "prepayment": {
     "payment_method_id": 3647,
@@ -275,8 +276,14 @@ Token:
 ```
 **Kết quả trả về**
 ```
+{
+    "error": "unauthorized",
+    "error_description": "Full authentication is required to access this resource"
+}
 ```
 **Trường hợp có lỗi**
 ```
+
 ```
 ## Hủy phiếu thanh toán trước
+Trong trường hợp nhân viên đã tạo phiếu thanh toán trước nhưng khách hàng lại không muốn mua hàng thì nhân viên sẽ tiến hành hủy phiếu thanh toán trước.
