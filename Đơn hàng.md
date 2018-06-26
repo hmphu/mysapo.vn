@@ -449,7 +449,7 @@ Content-Type: application/json
 ## Hủy đơn hàng
 **Request**
 ```
-POST /admin/orders HTTP/1.1
+POST /admin/orders/ HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
