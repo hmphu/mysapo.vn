@@ -1,4 +1,4 @@
-#OrderReturn
+# OrderReturn
 
 ## Thêm 1 đơn trả hàng
 
@@ -7,25 +7,25 @@
 | Tham số | Bắt buộc | Mô tả |
 | ------------- |:-------------|:-------------|
 | OrderReturn.id | no | Mã tham chiếu đơn trả hàng |
-| OrderReturn.tenant_id | no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.location_id | no | Mã tham chiếu của khách hàng có đơn hàng |
+| OrderReturn.tenant_id | no |  |
+| OrderReturn.location_id | no |  |
 | OrderReturn.code | no | Mã tham chiếu của khách hàng có đơn hàng |
 | OrderReturn.account_id | no | Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
-| OrderReturn.order_id | yes | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.order_code | no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.customer_id | no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.billing_address | no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.contact_id | no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.reference| no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.status| no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.refund_status| no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.total_amount | no | Mã tham chiếu của khách hàng có đơn hàng |
+| OrderReturn.order_id | yes |  |
+| OrderReturn.order_code | no |  |
+| OrderReturn.customer_id | no |  |
+| OrderReturn.billing_address | no |  |
+| OrderReturn.contact_id | no |  |
+| OrderReturn.reference| no |  |
+| OrderReturn.status| no |  |
+| OrderReturn.refund_status| no |  |
+| OrderReturn.total_amount | no |  |
 | OrderReturn.issued_on | no | Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý. |
-| OrderReturn.received_on | no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.created_on| no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.refund_status| no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.modified_on | no | Mã tham chiếu của khách hàng có đơn hàng |
-| OrderReturn.line_items | yes | Mã tham chiếu của khách hàng có đơn hàng |
+| OrderReturn.received_on | no |  |
+| OrderReturn.created_on| no |  |
+| OrderReturn.refund_status| no |  |
+| OrderReturn.modified_on | no |  |
+| OrderReturn.line_items | yes |  |
 
 
 
