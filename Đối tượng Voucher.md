@@ -55,6 +55,14 @@ Content-Type: application/json
     }
 }
 ```
+**Trường hợp xảy ra lỗi**
+```
+{
+    "error": {
+        "message": "Không tìm thấy đối tượng"
+    }
+}
+```
 ## Lấy toàn bộ danh sách đối tượng vouchers
 **Request**
 ```
@@ -64,8 +72,24 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "metadata": null,
+    "voucher_actors": [
+        {
+            "id": 9354,
+            "tenant_id": 56322,
+            "name": "Hà",
+            "created_on": "2018-06-29T03:45:32Z",
+            "modified_on": "2018-06-29T03:45:32Z",
+            "status": "active"
+        }
+    ]
+}
 ```
 **Trường hợp xảy ra lỗi**
 ```
-
+{
+    "metadata": null,
+    "voucher_actors": []
+}
 ```
