@@ -30,9 +30,9 @@ Bạn cũng nên chú ý rằng bạn chỉ có thể thay đổi một vài thu
 | Order.delivery_fee|	yes | Số điện thoại khác của khách hàng (nếu có) . Trường này có thể NULL |
 | Order.discount_items |	yes | Phí vận chuyển của đơn hàng |
 | Order.promotion_items |	yes | Danh sách hàng khuyến mại |
-| Order.expected_payment_method_id |	yes | Id định danh cho nguồn hàng từ nhà cung cấp |
-| Order.expected_delivery_type |	yes |  |
-| Order.expected_delivery_provider_id |	yes |  
+| Order.expected_payment_method_id | yes | Id định danh cho phương thức thanh toán |
+| Order.expected_delivery_type | no | string - Loại đối tác giao hàng dự kiến (employee &  |
+| Order.expected_delivery_provider_id |	no | 
 
 **Request**
 ```
