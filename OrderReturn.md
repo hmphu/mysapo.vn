@@ -225,3 +225,13 @@ Content-Type: application/json
 ```
 
 ```
+## Tạo yêu cầu Hủy 1 đơn trả hàng theo id
+```
+POST /admin/order_returns/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+
+```
