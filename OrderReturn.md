@@ -400,12 +400,13 @@ Content-Type: application/json
 ```
 ## Hủy 1 đơn hàng hoàn tiền theo id
 ```
-POST /admin/order_returns/{id}/refunds/{refundId} HTTP/1.1
+POST /admin/order_returns/{id}/refunds/{refundId}/cancel HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+
 ```
 **Trường hợp có lỗi**
 ```
