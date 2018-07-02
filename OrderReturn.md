@@ -231,7 +231,86 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "metadata": {
+        "total": 1,
+        "page": 1,
+        "limit": 250
+    },
+    "order_returns": [
+        {
+            "id": 198300,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "code": "SR2906181",
+            "account_id": 72098,
+            "order_id": 14549649,
+            "order_code": "SO1806182",
+            "customer_id": 3335156,
+            "billing_address": {
+                "id": 17662926,
+                "label": null,
+                "first_name": "Thoa",
+                "last_name": "Đào",
+                "address1": "Trương Định",
+                "address2": null,
+                "email": null,
+                "phone_number": "01647158965",
+                "country": "Việt Nam",
+                "city": "Hà Nội",
+                "district": "Quận Hoàng Mai",
+                "zip_code": null,
+                "full_address": null
+            },
+            "contact_id": null,
+            "reference": null,
+            "note": null,
+            "status": "returned",
+            "refund_status": "unpaid",
+            "total_amount": 1999980,
+            "total_quantity": null,
+            "issued_on": "2018-06-29T03:49:26Z",
+            "received_on": "2018-07-02T02:46:26Z",
+            "created_on": "2018-06-29T03:49:36Z",
+            "modified_on": "2018-07-02T02:46:26Z",
+            "line_items": [
+                {
+                    "id": 371591,
+                    "order_line_item_id": 22887065,
+                    "product_id": 3262676,
+                    "product_name": "Áo khoác có mũ Bellfield",
+                    "variant_id": 4653239,
+                    "variant_name": "Áo khoác có mũ Bellfield",
+                    "note": null,
+                    "quantity": 2,
+                    "price": 999990,
+                    "is_composite": false,
+                    "is_freeform": false,
+                    "line_amount": 1999980,
+                    "created_on": "2018-06-29T03:49:36Z",
+                    "modified_on": "2018-06-29T03:49:36Z",
+                    "sku": "SP3",
+                    "barcode": "SP3",
+                    "unit": null,
+                    "variant_options": "Mặc định"
+                }
+            ],
+            "refunds": [],
+            "reason_id": null
+        }
+    ]
+}
+```
+**Trường hợp có lỗi
+```
+{
+    "metadata": {
+        "total": 0,
+        "page": 1,
+        "limit": 250
+    },
+    "order_returns": []
+}
 ```
 ## Tạo yêu cầu Hủy 1 đơn trả hàng theo id
 ```
