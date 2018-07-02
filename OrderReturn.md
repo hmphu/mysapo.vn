@@ -1,5 +1,6 @@
 # OrderReturn
-
+OrderReturn được thực hiện khi một đơn hàng đã được tạo và hàng hóa đã được xuất kho trên hệ thống và khách hàng có yêu cầu đổi sản phẩm hoặc hủy sản phẩm.
+OrderReturn chỉ được thực hiện khi có đơn đặt hàng thành công.
 ## Thêm 1 đơn trả hàng
 
 **Các tham số**
@@ -11,15 +12,15 @@
 | OrderReturn.location_id | no |  |
 | OrderReturn.code | no | Mã tham chiếu của khách hàng có đơn hàng |
 | OrderReturn.account_id | no | Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
-| OrderReturn.order_id | yes |  |
-| OrderReturn.order_code | no |  |
-| OrderReturn.customer_id | no |  |
-| OrderReturn.billing_address | no |  |
-| OrderReturn.contact_id | no |  |
+| OrderReturn.order_id | yes | Id định danh đơn đặt hàng  |
+| OrderReturn.order_code | no | Mã tham chiếu đến đơn đặt hàng |
+| OrderReturn.customer_id | no | Id định danh khách hàng muốn trả hàng |
+| OrderReturn.billing_address | no | Địa chỉ hóa đơn đơn hàng |
+| OrderReturn.contact_id | no | Id định danh cho liên lạc với khách hàng |
 | OrderReturn.reference| no |  |
-| OrderReturn.status| no |  |
-| OrderReturn.refund_status| no |  |
-| OrderReturn.total_amount | no |  |
+| OrderReturn.status| no | Trạng thái đơn trả hàng |
+| OrderReturn.refund_status| no | Trạng thái thanh toán trả  |
+| OrderReturn.total_amount | no | Tổng lượng hàng trong đơn đặt hàng |
 | OrderReturn.issued_on | no | Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý. |
 | OrderReturn.received_on | no |  |
 | OrderReturn.created_on| no |  |
@@ -119,7 +120,14 @@ Content-Type: application/json
 ```
 **Trường hợp có lỗi**
 ```
-
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "line_items[0].order_line_item_id": "may not be null"
+        }
+    }
+}
 ```
 ## Tạo mới code cho đơn trả hàng
 ```
@@ -235,3 +243,63 @@ Content-Type: application/json
 ```
 
 ```
+**Trường hợp có lỗi**
+```
+```
+## Thêm đơn hàng thanh toán trả theo id
+
+Trong trường hợp đơn hàng đã được khách hàng thanh 
+```
+POST /admin/order_returns/{id}/refunds HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Request**
+```
+{
+  "refund": {
+    "id": 6,
+    "tenant_id": 77,
+    "location_id": 81,
+    "customer_id": 10080,
+    "order_return_id": 39,
+    "payment_method_id": 2008,
+    "account_id": 0,
+    "amount": 10000,
+    "reference": null,
+    "paid_on": "2016-06-30T11:06:29Z",
+    "currency_id": 7016,
+    "exchange_rate": 0,
+    "status": "active",
+    "created_on": "2016-06-30T11:06:29Z",
+    "modified_on": "2016-06-30T11:06:29Z"
+  }
+}
+```
+**Kết quả trả về**
+```
+{
+  "refund": {
+    "id": 6,
+    "tenant_id": 77,
+    "location_id": 81,
+    "customer_id": 10080,
+    "order_return_id": 39,
+    "payment_method_id": 2008,
+    "account_id": 0,
+    "amount": 10000,
+    "reference": null,
+    "paid_on": "2016-06-30T11:06:29Z",
+    "currency_id": 7016,
+    "exchange_rate": 0,
+    "status": "active",
+    "created_on": "2016-06-30T11:06:29Z",
+    "modified_on": "2016-06-30T11:06:29Z"
+  }
+}
+```
+**Trường hợp có lỗi**
+```
+
+```
+##
