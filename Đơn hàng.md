@@ -456,11 +456,150 @@ Content-Type: application/json
 ```
 **Kết quả trả về khi hủy đơn thành công**
 ```
-
+{
+    "order": {
+        "id": 14895214,
+        "tenant_id": 56322,
+        "location_id": 58369,
+        "code": "SO26061812",
+        "created_on": "2018-06-26T02:09:35Z",
+        "modified_on": "2018-07-06T08:42:08Z",
+        "issued_on": "2018-06-26T02:09:35Z",
+        "ship_on": null,
+        "ship_on_min": null,
+        "ship_on_max": null,
+        "account_id": 72098,
+        "assignee_id": 72098,
+        "customer_id": 3689589,
+        "contact_id": null,
+        "billing_address": {
+            "id": 17330610,
+            "label": "Giao hàng",
+            "first_name": null,
+            "last_name": null,
+            "address1": "Gia lam",
+            "address2": null,
+            "email": null,
+            "phone_number": null,
+            "country": "Việt Nam",
+            "city": "Hà Nội",
+            "district": "Huyện Gia Lâm",
+            "zip_code": null,
+            "full_address": null
+        },
+        "shipping_address": {
+            "id": 17330611,
+            "label": "Giao hàng",
+            "first_name": null,
+            "last_name": null,
+            "address1": "Gia lam",
+            "address2": null,
+            "email": null,
+            "phone_number": null,
+            "country": "Việt Nam",
+            "city": "Hà Nội",
+            "district": "Huyện Gia Lâm",
+            "zip_code": null,
+            "full_address": null
+        },
+        "email": null,
+        "phone_number": "01647019207",
+        "reference_number": null,
+        "price_list_id": 167326,
+        "tax_treatment": "exclusive",
+        "status": "cancelled",
+        "packed_status": "unpacked",
+        "fulfillment_status": "unshipped",
+        "received_status": "unreceived",
+        "payment_status": "unpaid",
+        "return_status": "unreturned",
+        "source_id": 387299,
+        "total": 800000,
+        "order_discount_rate": 0,
+        "order_discount_value": 0,
+        "discount_reason": null,
+        "total_discount": 0,
+        "total_tax": 0,
+        "note": null,
+        "tags": [],
+        "delivery_fee": null,
+        "discount_items": [
+            {
+                "source": "manual",
+                "rate": 0,
+                "value": 0,
+                "amount": 0,
+                "reason": null
+            }
+        ],
+        "order_line_items": [
+            {
+                "id": 23639227,
+                "created_on": "2018-06-26T02:09:35Z",
+                "modified_on": "2018-06-26T02:09:35Z",
+                "variant_id": 4697237,
+                "product_id": 3262676,
+                "product_name": "Áo khoác có mũ Bellfield",
+                "variant_name": "Áo khoác có mũ Bellfield",
+                "tax_type_id": null,
+                "tax_included": false,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "tax_amount": 0,
+                "discount_rate": 0,
+                "discount_value": 0,
+                "discount_reason": null,
+                "discount_amount": 0,
+                "note": null,
+                "price": 800000,
+                "quantity": 1,
+                "is_freeform": false,
+                "is_composite": false,
+                "line_amount": 800000,
+                "discount_items": [
+                    {
+                        "source": "manual",
+                        "rate": 0,
+                        "value": 0,
+                        "amount": 0,
+                        "reason": null
+                    }
+                ],
+                "sku": "SP10",
+                "barcode": "SP10",
+                "unit": null,
+                "variant_options": "(combo)"
+            }
+        ],
+        "prepayments": [],
+        "fulfillments": [],
+        "order_returns": [],
+        "business_version": 2,
+        "expected_payment_method_id": null,
+        "expected_delivery_type": null,
+        "expected_delivery_provider_id": null,
+        "process_status_id": null,
+        "reason_cancel_id": null,
+        "finalized_on": "2018-06-26T02:09:35Z",
+        "finished_on": null,
+        "completed_on": null,
+        "channel": null,
+        "promotion_redemption_id": null,
+        "promotion_name": null,
+        "promotion_code": null
+    }
+}
 ```
 **Trường hợp có lỗi**
 ```
-
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "": "Đơn hàng đã bị hủy"
+        }
+    }
+}
 ```
 ## Hoàn thành đơn hàng
 **Request**
