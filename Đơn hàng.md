@@ -159,7 +159,7 @@ Content-Type: application/json
 }
 
 ```
-**Kết quả trả về khi đăng đơn thành công**
+**Kết quả trả về khi đăng đơn hàng thành công**
 ```
 {
     "order": {
@@ -299,7 +299,7 @@ Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
-**Kết quả trả về khi duyệt đơn thành công**
+**Kết quả trả về khi duyệt đơn hàng thành công**
 ```
 {
     "order": {
@@ -454,7 +454,7 @@ Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
-**Kết quả trả về khi hủy đơn thành công**
+**Kết quả trả về khi hủy đơn hàng thành công**
 ```
 {
     "order": {
@@ -609,7 +609,7 @@ Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
-**Kết quả trả về khi hoàn thành đơn thành công**
+**Kết quả trả về khi hoàn thành đơn hàng thành công**
 ```
 {
     "order": {
@@ -772,7 +772,7 @@ Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
-**Kết quả trả về khi đăng đơn thành công**
+**Kết quả trả về khi sửa đơn hàng thành công**
 ```
 
 ```
@@ -788,7 +788,7 @@ Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
-**Kết quả trả về khi đăng đơn thành công**
+**Kết quả trả về khi lấy danh sách đơn hàng thành công**
 ```
 
 ```
@@ -851,3 +851,4 @@ Content-Type: application/json
 ```
 ## Hủy phiếu thanh toán trước
 Trong trường hợp nhân viên đã tạo phiếu thanh toán trước nhưng khách hàng lại không muốn mua hàng thì nhân viên sẽ tiến hành hủy phiếu thanh toán trước.
+
