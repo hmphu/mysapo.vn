@@ -1156,3 +1156,21 @@ Content-Type: application/json
 ## Hủy phiếu thanh toán trước
 Trong trường hợp nhân viên đã tạo phiếu thanh toán trước nhưng khách hàng lại không muốn mua hàng thì nhân viên sẽ tiến hành hủy phiếu thanh toán trước.
 
+```
+POST /admin/orders/{order_id}/prepayments/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+**Trường hợp có lỗi 
+```
+{
+    "error": {
+        "message": "Không tìm thấy phiếu thanh toán trước"
+    }
+}
+```
