@@ -1,5 +1,8 @@
 # Đơn hàng
-## Đơn hàng mới
+[I. 1. Đăng đơn hàng mới](#dangdonhangmoi)
+
+<a name="dangdonhangmoi"></a>
+## 1. Đăng đơn hàng mới
 Đối tác gửi danh sách đơn hàng sang hệ thống của Sapo.vn thông qua APIs. Sau khi các đơn hàng được lưu thành công vào hệ thống của Sapo.vn, hệ thống sẽ trả về danh sách đơn hàng tương ứng chứa các thông tin liên quan của mỗi đơn hàng.
 
 Bạn nên lưu ý rằng Order có thể được tạo qua API, nhưng thông tin thanh toán sẽ không được lưu trữ và không có một Transaction nào cả. Bạn có thể đánh dấu Order với bất kì trạng thái thanh toán nào.
