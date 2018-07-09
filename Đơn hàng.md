@@ -1541,6 +1541,7 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+
 ```
 **Trường hợp có lỗi**
 ```
@@ -1549,4 +1550,20 @@ Content-Type: application/json
         "message": "Gói hàng có phương thức giao hàng khác 'Dịch vụ giao hàng', không thể tạo phiếu đặt cọc"
     }
 }
+```
+## Chuyển gói hàng sang trạng thái đã nhận
+**Request**
+```
+POST /admin/orders/{order_id}/fulfillments/{id}/receive HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+**Trường hợp có lỗi**
+```
+
 ```
