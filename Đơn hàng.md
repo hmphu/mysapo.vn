@@ -1113,7 +1113,7 @@ Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 {
   "prepayment": {
-    "payment_method_id": 3647,
+    "payment_method_id": 220256,
     "amount": 20000,
     "note": "hihi",
     "paid_on": null
@@ -1122,7 +1122,25 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "prepayment": {
+        "id": 3471192,
+        "payment_method_id": 220256,
+        "paid_on": "2018-07-09T05:01:19Z",
+        "amount": 20000,
+        "account_id": 72098,
+        "note": "hihi",
+        "created_on": "2018-07-09T05:01:19Z",
+        "modified_on": "2018-07-09T05:01:19Z",
+        "reference": null,
+        "source": "customer_prepaid",
+        "paid_amount": 20000,
+        "returned_amount": 0,
+        "status": "active",
+        "integrated": false,
+        "status_before_cancelled": null
+    }
+}
 ```
 **Trường hợp có lỗi**
 ```
