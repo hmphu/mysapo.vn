@@ -1095,7 +1095,7 @@ Content-Type: application/json
 }
 ```
 
-# Thanh Toán Trước
+# Thanh Toán Trước (Prepayment)
 ## Tạo phiếu thanh toán trước
 Khách hàng yêu cầu thanh toán trước tới nhân viên, nhân viên gửi yêu cầu thông qua API cho Sapo.vn yêu cầu tạo phiếu thanh toán trước.
 **Các tham số**
@@ -1164,13 +1164,57 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "prepayment": {
+        "id": 3471955,
+        "payment_method_id": 220256,
+        "paid_on": "2018-07-09T06:58:26Z",
+        "amount": 500000,
+        "account_id": 72098,
+        "note": null,
+        "created_on": "2018-07-09T06:58:26Z",
+        "modified_on": "2018-07-09T07:00:37Z",
+        "reference": null,
+        "source": "customer_prepaid",
+        "paid_amount": 500000,
+        "returned_amount": 0,
+        "status": "cancelled",
+        "integrated": false,
+        "status_before_cancelled": "active"
+    }
+}
 ```
 **Trường hợp có lỗi 
 ```
 {
     "error": {
         "message": "Không tìm thấy phiếu thanh toán trước"
+    }
+}
+```
+# Đóng gói (Fulfillment)
+
+Một Fulfillment đại diện cho việc vận chuyển một hay nhiều item của một đơn hàng. Khi một đơn hàng đã được chuyển về trạng thái fulfilled tức là tất cả item trong đơn hàng đã được chuyển đến cho khách hàng.
+
+Rõ ràng, một người chủ Shop luôn muốn chỉ thực hiện một lần giao hàng đối với đơn hàng nhưng đôi khi kích cỡ item hay item có còn trong kho hay không sẽ khiến cho việc giao hàng phải thực hiện nhiều lần. Đó là lí do một đơn hàng có thể có nhiều Fulfillment.
+
+## Thêm một đơn hàng được đóng gói
+**Request**
+```
+POST /admin/orders/{id}/fulfillments HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+**Trường hợp có lỗi**
+```
+{
+    "error": {
+        "message": "Đối tác vận chuyển không tồn tại hoặc không khả dụng"
     }
 }
 ```
