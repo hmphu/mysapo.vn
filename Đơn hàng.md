@@ -800,7 +800,7 @@ Content-Type: application/json
 ## Lấy danh sách 1 đơn hàng theo id
 **Request**
 ```
-POST /admin/orders HTTP/1.1
+POST /admin/orders/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -1103,14 +1103,14 @@ Khách hàng yêu cầu thanh toán trước tới nhân viên, nhân viên gử
 | Tham số | Bắt buộc | Mô tả |
 | ------------- |:-------------|:-------------|
 | Prepayment.payment_method_id | yes | int - Id định danh cho đơn hàng được thanh toán trước |
-| Prepayment.amount |	yes |  Tổng khối lượng sản phẩm được thanh toán trước|
+| Prepayment.amount |	yes | bigdecimal - Tổng khối lượng sản phẩm được thanh toán trước|
 | Prepayment.note | no | string - Ghi chú cho đơn hàng được thanh toán trước (nếu có) . Trường này có thể NULL |
-| Prepayment.paid_on | yes | Trạng thái khách hàng đã trả tiền |
+| Prepayment.paid_on | yes | date - Thời gian khách hàng đã trả tiền |
 
 ```
 POST /admin/orders/{id}/prepayments.json HTTP/1.1
-Host: dreamlink.mysapo.vn
-Content-Type: application/json 
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
 {
   "prepayment": {
     "payment_method_id": 3647,
@@ -1122,14 +1122,18 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-{
-    "error": "unauthorized",
-    "error_description": "Full authentication is required to access this resource"
-}
+
 ```
 **Trường hợp có lỗi**
 ```
-
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "payment_method": "Phương thức thanh toán không tồn tại"
+        }
+    }
+}
 ```
 ## Hủy phiếu thanh toán trước
 Trong trường hợp nhân viên đã tạo phiếu thanh toán trước nhưng khách hàng lại không muốn mua hàng thì nhân viên sẽ tiến hành hủy phiếu thanh toán trước.
