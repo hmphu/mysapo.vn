@@ -75,7 +75,7 @@ Server sẽ trả về Truy xuất dữ liệu của các tài nguyên cho Clien
 Sau khi Client đã lấy được API access token, Client có thể tạo các Request đã được xác thực lên REST API. Những Request này có gắn kèm tham số trên header là `X-Sapo-Access-Token: {access_token}` trong đó `{access_token}` chính là token mà Client đã lấy được ở trên.
 
 <a name="Scopes"></a>
-##Scopes
+## Scopes
 
 Một phần trong quá trình xác thực yêu cầu xác định xem Client muốn truy xuất vào dữ liệu gì của Shop (Xem phần “Xin cấp quyền” trong hướng dẫn này). Một Client có thể xin cấp quyền trong các Scopes sau:
 `read_content`, `write_content`
