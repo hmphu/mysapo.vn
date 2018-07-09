@@ -1800,3 +1800,26 @@ Content-Type: application/json
     }
 }
 ```
+## Nhận gói hàng về kho sau khi hủy
+**Request**
+```
+POST /admin/orders/{order_id}/fulfillments/{id}/receive_after_cancellation HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+**Trường hợp có lỗi **
+```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "status": "Chỉ có thể nhận lại gói hàng ở trạng thái 'đã hủy - chờ nhận lại'"
+        }
+    }
+}
+```
