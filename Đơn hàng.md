@@ -14,23 +14,23 @@ Bạn cũng nên chú ý rằng bạn chỉ có thể thay đổi một vài thu
 | Order.issued_on |	yes | date - Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý.|
 |Order.ship_on | no | date - Thời gian hẹn giao hàng |
 | Order.account_id | yes | int - Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
-| Order.assignee_id | yes | Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
-| Order.customer_id | yes | Id định danh khách hàng có đơn hàng |
-| Order.contact_id |	yes | Id định danh cho liên hệ với khách hàng |
-| Order.billing_address |	yes | Địa chỉ khách ghi vào hóa đơn |
-| Order.shipping_address |	yes | Địa chỉ ship hàng đến ghi vào hóa đơn |
-| Order.email |	yes | Email khách hàng |
-| Order.phone_number |	yes | Số điện thoại khách hàng |
-| Order.reference_number|	no | Số điện thoại khác của khách hàng (nếu có) . Trường này có thể NULL |
-| Order.tax_treatment |	no | Số thuế (nếu có). Trường này có thể NULL |
-| Order.status |	yes | Trạng thái đơn hàng |
-| Order.source_id |	yes | Id định danh cho nguồn hàng từ nhà cung cấp |
-| Order.note |	no | Ghi chú cho đơn hàng. Trường này có thể NULL |
-| Order.tags |	no | Gắn thẻ tags cho sản phẩm. Trường này có thể NULL |
-| Order.delivery_fee|	yes | Số điện thoại khác của khách hàng (nếu có) . Trường này có thể NULL |
-| Order.discount_items |	yes | Phí vận chuyển của đơn hàng |
-| Order.promotion_items |	yes | Danh sách hàng khuyến mại |
-| Order.expected_payment_method_id | yes | Id định danh cho phương thức thanh toán |
+| Order.assignee_id | yes | int - Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
+| Order.customer_id | yes | int - Id định danh khách hàng có đơn hàng |
+| Order.contact_id |	yes | int - Id định danh cho liên hệ với khách hàng |
+| Order.billing_address |	yes | string - Địa chỉ khách ghi vào hóa đơn |
+| Order.shipping_address |	yes | string - Địa chỉ ship hàng đến ghi vào hóa đơn |
+| Order.email |	yes | string - Email khách hàng |
+| Order.phone_number |	yes | string - Số điện thoại khách hàng |
+| Order.reference_number|	no | string - Số điện thoại khác của khách hàng (nếu có) . Trường này có thể NULL |
+| Order.tax_treatment |	no | string - Số thuế (nếu có). Trường này có thể NULL |
+| Order.status |	yes | string - Trạng thái đơn hàng |
+| Order.source_id |	yes | int - Id định danh cho nguồn hàng từ nhà cung cấp |
+| Order.note | no | string - Ghi chú cho đơn hàng. Trường này có thể NULL |
+| Order.tags | no | string - Gắn thẻ tags cho sản phẩm. Trường này có thể NULL |
+| Order.delivery_fee|	yes | string - Số điện thoại khác của khách hàng (nếu có) . Trường này có thể NULL |
+| Order.discount_items | yes | objects - Phí vận chuyển của đơn hàng |
+| Order.promotion_items |	yes | objects -	Danh sách hàng khuyến mại |
+| Order.expected_payment_method_id | yes | int - Id định danh cho phương thức thanh toán |
 | Order.expected_delivery_type | no | string - Loại đối tác giao hàng dự kiến (employee &  |
 | Order.expected_delivery_provider_id |	no | string - Loại nhà cung cấp phân phối hàng dụ kiến |
 
