@@ -41,7 +41,7 @@ Với các giá trị tương ứng như sau:
 
 `{store}` - tên của Shop.
 `{api_key}` - API Key.
-`{scopes}` - danh sách [copes](https://web-docs.sapo.vn/api/oauth/#scopes), cách nhau bởi dấu phẩy. Ví dụ, muốn xin quyền write orders và read customers thì sử dụng `scope=write_orders,read_customers`.
+`{scopes}` - danh sách [copes](#Scopes), cách nhau bởi dấu phẩy. Ví dụ, muốn xin quyền write orders và read customers thì sử dụng `scope=write_orders,read_customers`.
 `{redirect_uri}` - **(Bắt buộc)** đường dẫn URL mà bạn muốn Redirect User đến sau khi họ xác thực Client. Địa chỉ URL này **phải** giống với địa chỉ _Redirect URL của App_
 ## Bước 3: Khẳng định việc cài đặt
 Khi User click nút ***Install*** trong màn hình xin quyền, họ sẽ được chuyển hướng tới địa chỉ đã được xác định ở trên. Một tham số được truyền trên đường dẫn là *Authorization Code* (Các tham số khác sẽ được đề cập đến ở phần sau của bài viết).
@@ -129,3 +129,16 @@ message = "store=some-shop.mysapo.vn&timestamp=1337178173"
 digest = OpenSSL::HMAC.hexdigest(digest, secret, message)
 digest == "2cb1a277650a659f1b11e92a4a64275b128e037f2c3390e3c8fd2d8721dac9e2"
 ```
+#Endpoints
+<a name="Scopes"></a>
+##Scopes
+Một phần trong quá trình xác thực yêu cầu xác định xem Client muốn truy xuất vào dữ liệu gì của Shop (Xem phần “Xin cấp quyền” trong hướng dẫn này). Một Client có thể xin cấp quyền trong các Scopes sau:
+
+`read_products`, `write_products`
+Truy xuất dữ liệu của các tài nguyên Product, Order Source.
+`read_customers`, `write_customers`
+Truy xuất dữ liệu của các tài nguyên Customer_group
+`read_orders`, `write_orders`
+Truy xuất dữ liệu của các tài nguyên Orders, Orders Source, Order Return và Purchase Order.
+read_script_tags, write_script_tags
+Truy xuất dữ liệu của các tài nguyên Tags.
