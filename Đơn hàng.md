@@ -15,21 +15,21 @@
 
 [ 8. Thanh Toán Trước (Prepayment)](#thanhtoantruoc)
 
-    [ 8.1 Tạo phiếu thanh toán trước](#taophieuthanhtoantruoc)
+   [ 8.1 Tạo phiếu thanh toán trước](#taophieuthanhtoantruoc)
     
-    [ 8.2 Hủy phiếu thanh toán trước](#huyphieuthanhtoantruoc)
+   [ 8.2 Hủy phiếu thanh toán trước](#huyphieuthanhtoantruoc)
     
 [ 9. Đóng gói](#donggoi)
 
-    [ 9.1 Thêm một đơn hàng được đóng gói](#themmotdonhangduocdonggoi)
+   [ 9.1 Thêm một đơn hàng được đóng gói](#themmotdonhangduocdonggoi)
     
-    [ 9.2 Thêm một đơn xuất kho gói hàng](#themmotdonxuatkhogoihang)
+   [ 9.2 Thêm một đơn xuất kho gói hàng](#themmotdonxuatkhogoihang)
     
-    [ 9.3 Chuyển gói hàng sang trạng thái đã nhận](#chuyengoihangsangtrangthaidanhan)
+   [ 9.3 Chuyển gói hàng sang trạng thái đã nhận](#chuyengoihangsangtrangthaidanhan)
     
-    [ 9.4 Hủy gói hàng](#huygoihang)
+   [ 9.4 Hủy gói hàng](#huygoihang)
     
-    [ 9.5 Nhận gói hàng về kho sau khi hủy](#nhangoihangsaukhihuy)
+   [ 9.5 Nhận gói hàng về kho sau khi hủy](#nhangoihangsaukhihuy)
     
     
     
