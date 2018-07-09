@@ -1561,9 +1561,242 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "fulfillment": {
+        "id": 34120348,
+        "tenant_id": 56322,
+        "stock_location_id": 58369,
+        "code": "FU0907185",
+        "order_id": 15414945,
+        "account_id": 72098,
+        "assignee_id": 72098,
+        "partner_id": 3280093,
+        "billing_address": null,
+        "delivery_type": "courier",
+        "tax_treatment": "exclusive",
+        "discount_rate": 0,
+        "discount_value": 0,
+        "discount_amount": 0,
+        "total": 80000,
+        "total_tax": 0,
+        "total_discount": 0,
+        "notes": null,
+        "packed_on": "2018-07-09T08:11:44Z",
+        "received_on": "2018-07-09T09:28:50Z",
+        "shipped_on": "2018-07-09T09:16:20Z",
+        "cancel_date": null,
+        "cancel_account_id": null,
+        "created_on": "2018-07-09T08:12:42Z",
+        "modified_on": "2018-07-09T09:28:50Z",
+        "status": "received",
+        "composite_fulfillment_status": null,
+        "payment_status": "paid",
+        "stock_out_account_id": 72098,
+        "receive_account_id": 72098,
+        "receive_cancellation_account_id": null,
+        "receive_cancellation_on": null,
+        "fulfillment_line_items": [
+            {
+                "id": 34120347,
+                "created_on": "2018-07-09T08:12:41Z",
+                "modified_on": "2018-07-09T08:12:41Z",
+                "order_line_item_id": 24792429,
+                "product_id": 3262676,
+                "product_name": "Áo khoác có mũ Bellfield",
+                "variant_id": 4697237,
+                "variant_name": "Áo khoác có mũ Bellfield",
+                "order_line_item_note": null,
+                "is_freeform": false,
+                "is_composite": false,
+                "is_packsize": false,
+                "base_price": 800000,
+                "quantity": 0.1,
+                "tax_type_id": null,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "line_amount": 80000,
+                "line_tax_amount": 0,
+                "line_discount_amount": 0,
+                "discount_value": 0,
+                "discount_rate": 0,
+                "variant": null,
+                "sku": "SP10",
+                "barcode": "SP10",
+                "unit": null,
+                "variant_options": "(combo)"
+            }
+        ],
+        "shipment": {
+            "delivery_service_provider_id": 10355,
+            "service_name": null,
+            "cod_amount": 800000,
+            "freight_amount": 0,
+            "freight_amount_detail": null,
+            "delivery_fee": 0,
+            "tracking_code": "FU0907185",
+            "tracking_url": null,
+            "created_on": "2018-07-09T08:12:41Z",
+            "modified_on": "2018-07-09T09:16:20Z",
+            "sender_address": null,
+            "shipping_address": {
+                "id": 18327069,
+                "label": null,
+                "first_name": "Khách lẻ",
+                "last_name": null,
+                "address1": "sd",
+                "address2": null,
+                "email": null,
+                "phone_number": "08767465353453",
+                "country": "Việt Nam",
+                "city": "Hà Nội",
+                "district": "Quận Ba Đình",
+                "zip_code": null,
+                "full_address": null
+            },
+            "shipper_deposits": [
+                {
+                    "id": 83445,
+                    "payment_method_id": 220256,
+                    "paid_on": "2018-07-09T09:16:20Z",
+                    "amount": 800000,
+                    "account_id": 72098,
+                    "created_on": "2018-07-09T09:16:20Z",
+                    "modified_on": "2018-07-09T09:16:20Z",
+                    "status": "active"
+                }
+            ],
+            "detail": "{\"source_location_id\":58369,\"destination_country_id\":201,\"destination_province_id\":1,\"destination_district_id\":2,\"destination_address\":\"sd\",\"delivery_fee\":0.0,\"cod_amount\":800000.0,\"note\":null,\"delivery_service_provider_id\":10355,\"receiver_name\":\"Khách lẻ\",\"receiver_phone\":\"08767465353453\",\"destination_country\":\"Việt Nam\",\"destination_province\":\"Hà Nội\",\"destination_district\":\"Quận Ba Đình\"}",
+            "note": null,
+            "pushing_status": null,
+            "reference_status": null,
+            "reference_status_explanation": null,
+            "pushing_note": null,
+            "collation_status": "unresolved",
+            "delivery_service_provider": null
+        },
+        "payments": [
+            {
+                "id": 16336353,
+                "account_id": 72098,
+                "created_on": "2018-07-09T09:28:50Z",
+                "modified_on": "2018-07-09T09:28:50Z",
+                "payment_method_id": 220258,
+                "amount": 80000,
+                "reference": null,
+                "paid_on": "2018-07-09T09:28:50Z",
+                "status": "active",
+                "paid_amount": 0,
+                "returned_amount": 0,
+                "prepayment_id": 3473857
+            }
+        ],
+        "total_quantity": 0.1,
+        "reason_cancel_id": null
+    }
+}
 ```
 **Trường hợp có lỗi**
 ```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "": "Trạng thái của gói hàng hiện tại không thể chuyển sang 'Đã nhận'"
+        }
+    }
+}
+```
+## Hủy gói hàng
+**Request**
+```
+POST /admin/orders/{order_id}/fulfillments/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
 
+```
+**Kết quả trả về**
+```
+{
+    "fulfillment": {
+        "id": 34133534,
+        "tenant_id": 56322,
+        "stock_location_id": 58369,
+        "code": "FU09071810",
+        "order_id": 15033904,
+        "account_id": 72098,
+        "assignee_id": 72098,
+        "partner_id": 3280093,
+        "billing_address": null,
+        "delivery_type": "pickup",
+        "tax_treatment": "exclusive",
+        "discount_rate": 0,
+        "discount_value": 0,
+        "discount_amount": 0,
+        "total": 500000,
+        "total_tax": 0,
+        "total_discount": 0,
+        "notes": null,
+        "packed_on": "2018-07-09T09:32:15Z",
+        "received_on": null,
+        "shipped_on": null,
+        "cancel_date": "2018-07-09T09:32:49Z",
+        "cancel_account_id": 72098,
+        "created_on": "2018-07-09T09:32:15Z",
+        "modified_on": "2018-07-09T09:32:49Z",
+        "status": "cancelled",
+        "composite_fulfillment_status": null,
+        "payment_status": "unpaid",
+        "status_before_cancellation": "packed",
+        "stock_out_account_id": null,
+        "receive_account_id": null,
+        "receive_cancellation_account_id": null,
+        "receive_cancellation_on": "2018-07-09T09:32:49Z",
+        "fulfillment_line_items": [
+            {
+                "id": 34133533,
+                "created_on": "2018-07-09T09:32:15Z",
+                "modified_on": "2018-07-09T09:32:15Z",
+                "order_line_item_id": 23945755,
+                "product_id": 3217942,
+                "product_name": "Váy len nữ",
+                "variant_id": 4594856,
+                "variant_name": "Váy len nữ",
+                "order_line_item_note": null,
+                "is_freeform": false,
+                "is_composite": false,
+                "is_packsize": false,
+                "base_price": 500000,
+                "quantity": 1,
+                "tax_type_id": null,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "line_amount": 500000,
+                "line_tax_amount": 0,
+                "line_discount_amount": 0,
+                "discount_value": 0,
+                "discount_rate": 0,
+                "variant": null,
+                "sku": "V0001",
+                "barcode": "V0001",
+                "unit": null,
+                "variant_options": "Trắng / Len co dãn / Zara"
+            }
+        ],
+        "shipment": null,
+        "payments": [],
+        "total_quantity": 1,
+        "reason_cancel_id": null
+    }
+}
+```
+**Trường hợp có lỗi**
+```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "fulfillment có id = 34120348": "Gói hàng đã giao thành công thì không thể hủy. Nếu muốn hoàn lại, hãy tạo phiếu trả hàng"
+        }
+    }
+}
 ```
