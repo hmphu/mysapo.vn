@@ -57,8 +57,10 @@ Trong đó `{store}` là tên của Shop và request có gửi kèm theo các th
 
 `client_id`
 *API Key* của App. (Xem lại phần credentials trong bài viết).
+
 `client_secret`
 *Secret Key* của App. (Xem lại phần credentials trong bài viết).
+
 `code`
 Authorization code được cấp ở trên.
 Server sẽ trả về Truy xuất dữ liệu của các tài nguyên cho Client.
