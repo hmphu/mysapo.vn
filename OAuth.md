@@ -51,7 +51,7 @@ Authorization code có thể được dùng để lấy một access token để
 ```
 ```
 POST
-https://{store}.mysapo/admin/oauth/access_token
+https://{store}.mysapo.vn/admin/oauth/access_token
 ```
 Trong đó `{store}` là tên của Shop và request có gửi kèm theo các tham số sau:
 
