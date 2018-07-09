@@ -1,20 +1,36 @@
 # Đơn hàng
 [ 1. Đăng đơn hàng mới](#dangdonhangmoi)
+
 [ 2. Duyệt đơn hàng](#duyetdonhang)
+
 [ 3. Hủy đơn hàng](#huydonhang)
+
 [ 4. Hoàn thành đơn hàng](#hoanthanhdonhang)
+
 [ 5. Sửa đơn hàng](#suadonhang)
+
 [ 6. Lấy danh sách đơn hàng](#laydanhsachdonhang)
+
 [ 7. Lấy danh sách đơn hàng theo id](#laydanhsachdonhangid)
+
 [ 8. Thanh Toán Trước (Prepayment)](#thanhtoantruoc)
+
     [ 8.1 Tạo phiếu thanh toán trước](#taophieuthanhtoantruoc)
+    
     [ 8.2 Hủy phiếu thanh toán trước](#huyphieuthanhtoantruoc)
+    
 [ 9. Đóng gói](#donggoi)
+
     [ 9.1 Thêm một đơn hàng được đóng gói](#themmotdonhangduocdonggoi)
+    
     [ 9.2 Thêm một đơn xuất kho gói hàng](#themmotdonxuatkhogoihang)
+    
     [ 9.3 Chuyển gói hàng sang trạng thái đã nhận](#chuyengoihangsangtrangthaidanhan)
+    
     [ 9.4 Hủy gói hàng](#huygoihang)
+    
     [ 9.5 Nhận gói hàng về kho sau khi hủy](#nhangoihangsaukhihuy)
+    
     
     
 <a name="dangdonhangmoi"></a>
