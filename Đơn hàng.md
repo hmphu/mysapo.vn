@@ -1,6 +1,22 @@
 # Đơn hàng
-[I. 1. Đăng đơn hàng mới](#dangdonhangmoi)
-
+[ 1. Đăng đơn hàng mới](#dangdonhangmoi)
+[ 2. Duyệt đơn hàng](#duyetdonhang)
+[ 3. Hủy đơn hàng](#huydonhang)
+[ 4. Hoàn thành đơn hàng](#hoanthanhdonhang)
+[ 5. Sửa đơn hàng](#suadonhang)
+[ 6. Lấy danh sách đơn hàng](#laydanhsachdonhang)
+[ 7. Lấy danh sách đơn hàng theo id](#laydanhsachdonhangid)
+[ 8. Thanh Toán Trước (Prepayment)](#thanhtoantruoc)
+    [ 8.1 Tạo phiếu thanh toán trước](#taophieuthanhtoantruoc)
+    [ 8.2 Hủy phiếu thanh toán trước](#huyphieuthanhtoantruoc)
+[ 9. Đóng gói](#donggoi)
+    [ 9.1 Thêm một đơn hàng được đóng gói](#themmotdonhangduocdonggoi)
+    [ 9.2 Thêm một đơn xuất kho gói hàng](#themmotdonxuatkhogoihang)
+    [ 9.3 Chuyển gói hàng sang trạng thái đã nhận](#chuyengoihangsangtrangthaidanhan)
+    [ 9.4 Hủy gói hàng](#huygoihang)
+    [ 9.5 Nhận gói hàng về kho sau khi hủy](#nhangoihangsaukhihuy)
+    
+    
 <a name="dangdonhangmoi"></a>
 ## 1. Đăng đơn hàng mới
 Đối tác gửi danh sách đơn hàng sang hệ thống của Sapo.vn thông qua APIs. Sau khi các đơn hàng được lưu thành công vào hệ thống của Sapo.vn, hệ thống sẽ trả về danh sách đơn hàng tương ứng chứa các thông tin liên quan của mỗi đơn hàng.
@@ -294,7 +310,8 @@ Content-Type: application/json
     }
 }
 ```
-## Duyệt đơn hàng 
+<a name="duyetdonhang"></a>
+## 2. Duyệt đơn hàng 
 **Request**
 ```
 POST /admin/orders/{id}/finalize HTTP/1.1
@@ -449,7 +466,8 @@ Content-Type: application/json
     }
 }
 ```
-## Hủy đơn hàng
+<a name="huydonhang"></a>
+## 3. Hủy đơn hàng
 **Request**
 ```
 POST /admin/orders/ HTTP/1.1
@@ -604,7 +622,8 @@ Content-Type: application/json
     }
 }
 ```
-## Hoàn thành đơn hàng
+<a name="hoanthanhdonhang"></a>
+## 4. Hoàn thành đơn hàng
 **Request**
 ```
 POST /admin/orders HTTP/1.1
@@ -767,7 +786,8 @@ Content-Type: application/json
     }
 }
 ```
-## Sửa đơn hàng
+<a name="suadonhang"></a>
+## 5. Sửa đơn hàng
 **Request**
 ```
 PUT /admin/orders HTTP/1.1
@@ -988,11 +1008,9 @@ Content-Type: application/json
     }
 }
 ```
-**Trường hợp có lỗi**
-```
 
-```
-## Lấy danh sách đơn hàng
+<a name="laydanhsachdonhang"></a>
+## 6. Lấy danh sách đơn hàng
 **Request**
 ```
 GET/admin/orders HTTP/1.1
@@ -1009,7 +1027,8 @@ Content-Type: application/json
         "limit": 20
     }
 ```
-## Lấy danh sách 1 đơn hàng theo id
+<a name="laydanhsachdonhangid"></a>
+## 7. Lấy danh sách 1 đơn hàng theo id
 **Request**
 ```
 POST /admin/orders/{id} HTTP/1.1
@@ -1306,9 +1325,10 @@ Content-Type: application/json
     }
 }
 ```
-
-# Thanh Toán Trước (Prepayment)
-## Tạo phiếu thanh toán trước
+<a name="thanhtoantruoc"></a>
+## 8. Thanh Toán Trước (Prepayment)
+<a name="taophieuthanhtoantruoc"></a>
+### 8.1 Tạo phiếu thanh toán trước
 Khách hàng yêu cầu thanh toán trước tới nhân viên, nhân viên gửi yêu cầu thông qua API cho Sapo.vn yêu cầu tạo phiếu thanh toán trước.
 **Các tham số**
 
@@ -1365,7 +1385,8 @@ Content-Type: application/json
     }
 }
 ```
-## Hủy phiếu thanh toán trước
+<a name="huyphieuthanhtoantruoc"></a>
+## 8.2 Hủy phiếu thanh toán trước
 Trong trường hợp nhân viên đã tạo phiếu thanh toán trước nhưng khách hàng lại không muốn mua hàng thì nhân viên sẽ tiến hành hủy phiếu thanh toán trước.
 
 ```
@@ -1404,13 +1425,15 @@ Content-Type: application/json
     }
 }
 ```
-# Đóng gói (Fulfillment)
+<a name="donggoi"></a>
+## 9. Đóng gói (Fulfillment)
 
 Một Fulfillment đại diện cho việc vận chuyển một hay nhiều item của một đơn hàng. Khi một đơn hàng đã được chuyển về trạng thái fulfilled tức là tất cả item trong đơn hàng đã được chuyển đến cho khách hàng.
 
 Rõ ràng, một người chủ Shop luôn muốn chỉ thực hiện một lần giao hàng đối với đơn hàng nhưng đôi khi kích cỡ item hay item có còn trong kho hay không sẽ khiến cho việc giao hàng phải thực hiện nhiều lần. Đó là lí do một đơn hàng có thể có nhiều Fulfillment.
 
-## Thêm một đơn hàng được đóng gói
+<a name="themmotdonhangduocdonggoi"></a>
+### 9.1 Thêm một đơn hàng được đóng gói
 **Request**
 ```
 POST /admin/orders/{id}/fulfillments HTTP/1.1
@@ -1534,7 +1557,8 @@ Content-Type: application/json
     }
 }
 ```
-## Thêm một đơn xuất kho gói hàng
+<a name="themmotdonxuatkhogoihang"></a>
+### 9.2 Thêm một đơn xuất kho gói hàng
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/ship HTTP/1.1
@@ -1554,7 +1578,8 @@ Content-Type: application/json
     }
 }
 ```
-## Chuyển gói hàng sang trạng thái đã nhận
+
+### 9.4 Chuyển gói hàng sang trạng thái đã nhận
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/receive HTTP/1.1
@@ -1709,7 +1734,8 @@ Content-Type: application/json
     }
 }
 ```
-## Hủy gói hàng
+<a name="huygoihang"></a>
+### 9.5 Hủy gói hàng
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/cancel HTTP/1.1
@@ -1803,7 +1829,8 @@ Content-Type: application/json
     }
 }
 ```
-## Nhận gói hàng về kho sau khi hủy
+<a name="nhangoihangsaukhihuy"></a>
+### 9.6 Nhận gói hàng về kho sau khi hủy
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/receive_after_cancellation HTTP/1.1
