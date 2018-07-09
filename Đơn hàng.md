@@ -771,10 +771,219 @@ PUT /admin/orders HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
+{
+  "order": {
+    "id": 15415310,
+    "tenant_id": 56322,
+    "location_id": 58369,
+    "code": "hungcode",
+    "created_on": "2018-07-09T08:17:45Z",
+    "modified_on": "2018-07-09T08:17:45Z",
+    "issued_on": "2018-07-09T08:17:47Z",
+    "ship_on": null,
+    "ship_on_min": null,
+    "ship_on_max": null,
+    "account_id": 72098,
+    "assignee_id": 83892,
+    "customer_id": 3280093,
+    "contact_id": null,
+    "billing_address": null,
+    "shipping_address": null,
+    "email": null,
+    "phone_number": null,
+    "reference_number": null,
+    "price_list_id": 167326,
+    "tax_treatment": "exclusive",
+    "status": "draft",
+    "packed_status": "unpacked",
+    "fulfillment_status": "unshipped",
+    "received_status": "unreceived",
+    "payment_status": "unpaid",
+    "return_status": "unreturned",
+    "source_id": 387299,
+    "total": 800000,
+    "order_discount_rate": 0,
+    "order_discount_value": 0,
+    "discount_reason": null,
+    "total_discount": 0,
+    "total_tax": 0,
+    "note": null,
+    "tags": [],
+    "delivery_fee": null,
+    "discount_items": [
+      {
+        "source": "manual",
+        "rate": 0,
+        "value": 0,
+        "amount": 0,
+        "reason": null
+      }
+    ],
+    "order_line_items": [
+      {
+        "id": 24793295,
+        "created_on": "2018-07-09T08:17:45Z",
+        "modified_on": "2018-07-09T08:17:45Z",
+        "variant_id": 4697237,
+        "product_id": 3262676,
+        "product_name": "Áo khoác có mũ Bellfield",
+        "variant_name": "Áo khoác có mũ Bellfield",
+        "tax_type_id": null,
+        "tax_included": false,
+        "tax_rate_override": 0,
+        "tax_rate": 0,
+        "tax_amount": 0,
+        "discount_rate": 0,
+        "discount_value": 0,
+        "discount_reason": null,
+        "discount_amount": 0,
+        "note": null,
+        "price": 800000,
+        "quantity": 1,
+        "is_freeform": false,
+        "is_composite": false,
+        "line_amount": 800000,
+        "discount_items": [
+          {
+            "source": "manual",
+            "rate": 0,
+            "value": 0,
+            "amount": 0,
+            "reason": null
+          }
+        ],
+        "sku": "SP10",
+        "barcode": "SP10",
+        "unit": null,
+        "variant_options": "(combo)"
+      }
+    ],
+    "prepayments": [],
+    "fulfillments": [],
+    "order_returns": [],
+    "business_version": 2,
+    "expected_payment_method_id": null,
+    "expected_delivery_type": null,
+    "expected_delivery_provider_id": null,
+    "process_status_id": null,
+    "reason_cancel_id": null,
+    "finalized_on": null,
+    "finished_on": null,
+    "completed_on": null,
+    "channel": null,
+    "promotion_redemption_id": null,
+    "promotion_name": null,
+    "promotion_code": null
+  }
+}
 ```
 **Kết quả trả về khi sửa đơn hàng thành công**
 ```
-
+{
+    "order": {
+        "id": 15415310,
+        "tenant_id": 56322,
+        "location_id": 58369,
+        "code": "hungcode",
+        "created_on": "2018-07-09T08:17:45Z",
+        "modified_on": "2018-07-09T08:21:44Z",
+        "issued_on": "2018-07-09T08:17:47Z",
+        "ship_on": null,
+        "ship_on_min": null,
+        "ship_on_max": null,
+        "account_id": 72098,
+        "assignee_id": 83892,
+        "customer_id": 3280093,
+        "contact_id": null,
+        "billing_address": null,
+        "shipping_address": null,
+        "email": null,
+        "phone_number": null,
+        "reference_number": null,
+        "price_list_id": 167326,
+        "tax_treatment": "exclusive",
+        "status": "draft",
+        "packed_status": "unpacked",
+        "fulfillment_status": "unshipped",
+        "received_status": "unreceived",
+        "payment_status": "unpaid",
+        "return_status": "unreturned",
+        "source_id": 387299,
+        "total": 800000,
+        "order_discount_rate": 0,
+        "order_discount_value": 0,
+        "discount_reason": null,
+        "total_discount": 0,
+        "total_tax": 0,
+        "note": null,
+        "tags": [],
+        "delivery_fee": null,
+        "discount_items": [
+            {
+                "source": "manual",
+                "rate": 0,
+                "value": 0,
+                "amount": 0,
+                "reason": null
+            }
+        ],
+        "order_line_items": [
+            {
+                "id": 24793295,
+                "created_on": "2018-07-09T08:17:45Z",
+                "modified_on": "2018-07-09T08:21:44Z",
+                "variant_id": 4697237,
+                "product_id": 3262676,
+                "product_name": "Áo khoác có mũ Bellfield",
+                "variant_name": "Áo khoác có mũ Bellfield",
+                "tax_type_id": null,
+                "tax_included": false,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "tax_amount": 0,
+                "discount_rate": 0,
+                "discount_value": 0,
+                "discount_reason": null,
+                "discount_amount": 0,
+                "note": null,
+                "price": 800000,
+                "quantity": 1,
+                "is_freeform": false,
+                "is_composite": false,
+                "line_amount": 800000,
+                "discount_items": [
+                    {
+                        "source": "manual",
+                        "rate": 0,
+                        "value": 0,
+                        "amount": 0,
+                        "reason": null
+                    }
+                ],
+                "sku": "SP10",
+                "barcode": "SP10",
+                "unit": null,
+                "variant_options": "(combo)"
+            }
+        ],
+        "prepayments": [],
+        "fulfillments": [],
+        "order_returns": [],
+        "business_version": 2,
+        "expected_payment_method_id": null,
+        "expected_delivery_type": null,
+        "expected_delivery_provider_id": null,
+        "process_status_id": null,
+        "reason_cancel_id": null,
+        "finalized_on": null,
+        "finished_on": null,
+        "completed_on": null,
+        "channel": null,
+        "promotion_redemption_id": null,
+        "promotion_name": null,
+        "promotion_code": null
+    }
+}
 ```
 **Trường hợp có lỗi**
 ```
