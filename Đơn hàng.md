@@ -1413,17 +1413,140 @@ Rõ ràng, một người chủ Shop luôn muốn chỉ thực hiện một lầ
 POST /admin/orders/{id}/fulfillments HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
-
+{
+  "fulfillment": {
+    "delivery_type": "pickup",
+    "fulfillment_line_items": [
+      {
+        "order_line_item_id": 24792429,
+        "quantity": 0.1
+      }
+    ],
+    "billing_address": {
+      "address1": "Xóm 3 xã Hải Toàn"
+    },
+    "shipment": {
+      "delivery_service_provider_id": 10355,
+      "delivery_fee": 0,
+      "cod_amount": 0,
+      "freight_amount": 0,
+      "detail": "{\"source_location_id\":58369,\"destination_country_id\":201,\"destination_province_id\":1,\"destination_district_id\":2,\"destination_address\":\"sd\",\"delivery_fee\":0.0,\"cod_amount\":800000.0,\"note\":null,\"delivery_service_provider_id\":10355,\"receiver_name\":\"Khách lẻ\",\"receiver_phone\":\"08767465353453\",\"destination_country\":\"Việt Nam\",\"destination_province\":\"Hà Nội\",\"destination_district\":\"Quận Ba Đình\"}"
+    }
+  }
+}
 ```
 **Kết quả trả về**
 ```
-
+{
+    "fulfillment": {
+        "id": 34122379,
+        "tenant_id": 56322,
+        "stock_location_id": 58369,
+        "code": "FU0907187",
+        "order_id": 15414945,
+        "account_id": 72098,
+        "assignee_id": 72098,
+        "partner_id": 3280093,
+        "billing_address": {
+            "id": 18328217,
+            "label": null,
+            "first_name": null,
+            "last_name": null,
+            "address1": "Xóm 3 xã Hải Toàn",
+            "address2": null,
+            "email": null,
+            "phone_number": null,
+            "country": null,
+            "city": null,
+            "district": null,
+            "zip_code": null,
+            "full_address": null
+        },
+        "delivery_type": "pickup",
+        "tax_treatment": "exclusive",
+        "discount_rate": 0,
+        "discount_value": 0,
+        "discount_amount": 0,
+        "total": 80000,
+        "total_tax": 0,
+        "total_discount": 0,
+        "notes": null,
+        "packed_on": "2018-07-09T08:27:48Z",
+        "received_on": null,
+        "shipped_on": null,
+        "cancel_date": null,
+        "cancel_account_id": null,
+        "created_on": "2018-07-09T08:27:48Z",
+        "modified_on": "2018-07-09T08:27:48Z",
+        "status": "packed",
+        "composite_fulfillment_status": null,
+        "payment_status": "unpaid",
+        "stock_out_account_id": null,
+        "receive_account_id": null,
+        "receive_cancellation_account_id": null,
+        "receive_cancellation_on": null,
+        "fulfillment_line_items": [
+            {
+                "id": 34122378,
+                "created_on": "2018-07-09T08:27:48Z",
+                "modified_on": "2018-07-09T08:27:48Z",
+                "order_line_item_id": 24792429,
+                "product_id": 3262676,
+                "product_name": "Áo khoác có mũ Bellfield",
+                "variant_id": 4697237,
+                "variant_name": "Áo khoác có mũ Bellfield",
+                "order_line_item_note": null,
+                "is_freeform": false,
+                "is_composite": false,
+                "is_packsize": false,
+                "base_price": 800000,
+                "quantity": 0.1,
+                "tax_type_id": null,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "line_amount": 80000,
+                "line_tax_amount": 0,
+                "line_discount_amount": 0,
+                "discount_value": 0,
+                "discount_rate": 0,
+                "variant": null,
+                "sku": "SP10",
+                "barcode": "SP10",
+                "unit": null,
+                "variant_options": "(combo)"
+            }
+        ],
+        "shipment": null,
+        "payments": [],
+        "total_quantity": 0.1,
+        "reason_cancel_id": null
+    }
+}
 ```
 **Trường hợp có lỗi**
 ```
 {
     "error": {
         "message": "Đối tác vận chuyển không tồn tại hoặc không khả dụng"
+    }
+}
+```
+## Thêm một đơn xuất kho gói hàng
+**Request**
+```
+POST /admin/orders/{order_id}/fulfillments/{id}/ship HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+{
+    "error": {
+        "message": "Gói hàng có phương thức giao hàng khác 'Dịch vụ giao hàng', không thể tạo phiếu đặt cọc"
     }
 }
 ```
