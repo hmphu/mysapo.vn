@@ -10,10 +10,10 @@ Bạn cũng nên chú ý rằng bạn chỉ có thể thay đổi một vài thu
 
 | Tham số | Bắt buộc | Mô tả |
 | ------------- |:-------------|:-------------|
-| Order.code | yes | Mã tham chiếu của khách hàng có đơn hàng |
-| Order.issued_on |	yes | Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý.|
-|Order.ship_on | no | Mã tham chiếu của khách hàng tạo đơn hàng |
-| Order.account_id | yes | Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
+| Order.code | yes | string - Mã tham chiếu của khách hàng có đơn hàng |
+| Order.issued_on |	yes | date - Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý.|
+|Order.ship_on | no | date - Thời gian hẹn giao hàng |
+| Order.account_id | yes | int - Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
 | Order.assignee_id | yes | Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
 | Order.customer_id | yes | Id định danh khách hàng có đơn hàng |
 | Order.contact_id |	yes | Id định danh cho liên hệ với khách hàng |
@@ -32,7 +32,7 @@ Bạn cũng nên chú ý rằng bạn chỉ có thể thay đổi một vài thu
 | Order.promotion_items |	yes | Danh sách hàng khuyến mại |
 | Order.expected_payment_method_id | yes | Id định danh cho phương thức thanh toán |
 | Order.expected_delivery_type | no | string - Loại đối tác giao hàng dự kiến (employee &  |
-| Order.expected_delivery_provider_id |	no | 
+| Order.expected_delivery_provider_id |	no | string - Loại nhà cung cấp phân phối hàng dụ kiến |
 
 **Request**
 ```
