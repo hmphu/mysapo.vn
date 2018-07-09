@@ -76,6 +76,7 @@ Sau khi Client đã lấy được API access token, Client có thể tạo các
 
 <a name="Scopes"></a>
 ##Scopes
+
 Một phần trong quá trình xác thực yêu cầu xác định xem Client muốn truy xuất vào dữ liệu gì của Shop (Xem phần “Xin cấp quyền” trong hướng dẫn này). Một Client có thể xin cấp quyền trong các Scopes sau:
 `read_content`, `write_content`
 Truy xuất dữ liệu của các tài nguyên [In], [Đối tượng Voucher], [Delivery Service Provider], [Loyalty], [Price Adjustment], [Ghi chú]
