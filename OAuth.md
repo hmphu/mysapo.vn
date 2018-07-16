@@ -79,20 +79,77 @@ Sau khi Client đã lấy được API access token, Client có thể tạo các
 
 Một phần trong quá trình xác thực yêu cầu xác định xem Client muốn truy xuất vào dữ liệu gì của Shop (Xem phần “Xin cấp quyền” trong hướng dẫn này). Một Client có thể xin cấp quyền trong các Scopes sau:
 
-
-
 `read_products`, `write_products`
-Truy xuất dữ liệu của các tài nguyên [Product], [Order Source].
+Truy xuất dữ liệu của các tài nguyên [Product]
 
-`read_customers`, `write_customers`
-Truy xuất dữ liệu của các tài nguyên [Customer_group].
+`read_PurchaseOrder`, `write_PurchaseOrder`
+Truy xuất dữ liệu của các tài nguyên [PurchaseOrder].
 
-`read_orders`, `write_orders`
-Truy xuất dữ liệu của các tài nguyên [Orders], [Orders Source], [Order Return] và [Purchase Order].
+`read_PurchaseOrderReturn`, `write_PurchaseOrderReturn`
+Truy xuất dữ liệu của các tài nguyên [PurchaseOrderReturn]
 
-read_script_tags, write_script_tags
-Truy xuất dữ liệu của các tài nguyên [Tags].
+`read_StockTranfer`, `write_StockTranfer`
+Truy xuất dữ liệu của các tài nguyên [StockTranfer].
 
+`read_StockAdjustment`, `write_StockAdjustment`
+Truy xuất dữ liệu của các tài nguyên [StockAdjustment].
+
+`read_PriceAdjustment`, `write_PriceAdjustment`
+Truy xuất dữ liệu của các tài nguyên [PriceAdjustment].
+
+`read_Sales`,`write_Sales`
+Truy xuất dữ liệu của các tài nguyên [Sales].
+
+`read_ReportEndDay`
+Truy xuất dữ liệu của các tài nguyên [ReportEndDay].
+
+`read_OrderReturn`,`write_OrderReturn`
+Truy xuất dữ liệu của các tài nguyên [OrderReturn].
+
+`read_Shippers`,`write_Shippers`
+Truy xuất dữ liệu của các tài nguyên [Shippers].
+
+`read_DeliveryCollations`,`write_DeliveryCollations`
+Truy xuất dữ liệu của các tài nguyên [DeliveryCollations].
+
+`read_Customers`,`write_Customers`
+Truy xuất dữ liệu của các tài nguyên [Customers].
+
+`read_Suppliers`,`write_Suppliers`
+Truy xuất dữ liệu của các tài nguyên [Suppliers].
+
+`read_Setting`,`write_Setting`
+Truy xuất dữ liệu của các tài nguyên [Setting].
+
+`read_nâng cao`,`write_nâng cao`
+Truy xuất dữ liệu của các tài nguyên [Suppliers].
+
+`read_ứng dụng`,`write_ứng dụng`
+Truy xuất dữ liệu của các tài nguyên [Setting].
+
+`read_ReportSales`
+Truy xuất dữ liệu của các tài nguyên [ReportSales].
+
+`read_ReportInventory`
+Truy xuất dữ liệu của các tài nguyên [ReportInventory]
+
+`read_ReportSales`
+Truy xuất dữ liệu của các tài nguyên [ReportSales].
+
+`read_Relationships`
+Truy xuất dữ liệu của các tài nguyên [Relationships]
+
+`read_Account`,`write_Account`
+Truy xuất dữ liệu của các tài nguyên [Account].
+
+`read_Branch`,`write_Branch`
+Truy xuất dữ liệu của các tài nguyên [Branch].
+
+`read_ứng dụng`,`write_ứng dụng`
+Truy xuất dữ liệu của các tài nguyên [Setting].
+
+`read_Voucher`, `write_Voucher`
+Truy xuất dữ liệu của các tài nguyên [Voucher],[Đối tượng Voucher]
 
 ## Verification
 Mỗi Request hoặc chuyển hướng từ Sapo về Client đều chứa các tham số *signature* và **hmac**, được dùng để xác minh dữ liệu đúng là từ Sapo. **Thuộc tính signature sẽ bị loại bỏ do những lỗ hổng bảo mật trong việc tạo signature.**
