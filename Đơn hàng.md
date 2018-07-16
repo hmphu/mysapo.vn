@@ -2266,4 +2266,64 @@ Content-Type: application/json
     }
 }
 ```
+<a name="get-fulfillments"></a>
+### 3.6 Lấy danh sách đơn hàng được đóng gói
+**Request**
+```
+GET /admin/fulfillments HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
 
+```
+**Kết quả trả về**
+```
+ "metadata": {
+        "total": 19,
+        "page": 1,
+        "limit": 250
+```
+<a name="put-fulfillments"></a>
+### 3.7 Cập nhật đơn hàng được đóng gói
+**Request**
+```
+PUT /admin/orders/{order_id}/fulfillments/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+ "metadata": {
+        "total": 19,
+        "page": 1,
+        "limit": 250
+```
+<a name="payment"></a>
+## 4.Thanh toán
+
+<a name="add-payment"></a>
+### 4.1 Thêm một đơn hàng được thanh toán
+**Request**
+```
+POST /admin/orders/{order_id}/fulfillments/{fulfillment_id}/payments HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name="fulfillments-cancel"></a>
+### 4.2 Thêm một đơn xuất kho gói hàng
+**Request**
+```
+PUT /admin/orders/{order_id}/fulfillments/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
