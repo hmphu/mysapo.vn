@@ -9,7 +9,7 @@
 
    [ 1.4 Hoàn thành đơn hàng](#finish)
 
-   [ 1.5 Sửa đơn hàng](#edit-order)
+   [ 1.5 Sửa đơn hàng](#put-order)
 
    [ 1.6 Lấy danh sách đơn hàng](#get-order)
 
@@ -17,15 +17,15 @@
    
 [2. Thanh Toán Trước](#prepayment)
 
-   [ 2.1 Tạo phiếu thanh toán trước](#add-prepayments)
+   [ 2.1 Tạo phiếu thanh toán trước](#prepayments)
     
    [ 2.2 Hủy phiếu thanh toán trước](#prepayments-cancel)
     
 [3. Đóng gói](#fulfillment)
 
-   [ 3.1 Thêm một đơn hàng được đóng gói](#add-fulfillments)
+   [ 3.1 Thêm một đơn hàng được đóng gói](#fulfillments)
     
-   [ 3.2 Thêm một đơn xuất kho gói hàng](#add-fulfillments-ship)
+   [ 3.2 Thêm một đơn xuất kho gói hàng](#fulfillments-ship)
     
    [ 3.3 Chuyển gói hàng sang trạng thái đã nhận](#fulfillments-receive)
     
@@ -56,10 +56,11 @@
    [ 6.1 Chi tiết Shipper](#delivery-service-providers)
    
    [ 6.2 Công nợ Shipper](#debt-change)
-
-    
-<a name="dangdonhangmoi"></a>
-## 1. Đăng đơn hàng mới
+   
+<a name="order"></a>
+## 1. Order     
+<a name="order"></a>
+### 1.1 Đăng đơn hàng mới
 Đối tác gửi danh sách đơn hàng sang hệ thống của Sapo.vn thông qua APIs. Sau khi các đơn hàng được lưu thành công vào hệ thống của Sapo.vn, hệ thống sẽ trả về danh sách đơn hàng tương ứng chứa các thông tin liên quan của mỗi đơn hàng.
 
 Bạn nên lưu ý rằng Order có thể được tạo qua API, nhưng thông tin thanh toán sẽ không được lưu trữ và không có một Transaction nào cả. Bạn có thể đánh dấu Order với bất kì trạng thái thanh toán nào.
@@ -93,6 +94,10 @@ Bạn cũng nên chú ý rằng bạn chỉ có thể thay đổi một vài thu
 | Order.expected_payment_method_id | yes | int - Id định danh cho phương thức thanh toán |
 | Order.expected_delivery_type | no | string - Loại đối tác giao hàng dự kiến (employee &  |
 | Order.expected_delivery_provider_id |	no | string - Loại nhà cung cấp phân phối hàng dụ kiến |
+| Prepayment.payment_method_id | yes | int - Id định danh cho đơn hàng được thanh toán trước |
+| Prepayment.amount |	yes | bigdecimal - Tổng khối lượng sản phẩm được thanh toán trước|
+| Prepayment.note | no | string - Ghi chú cho đơn hàng được thanh toán trước (nếu có) . Trường này có thể NULL |
+| Prepayment.paid_on | yes | date - Thời gian khách hàng đã trả tiền |
 
 **Request**
 ```
@@ -351,8 +356,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="duyetdonhang"></a>
-## 2. Duyệt đơn hàng 
+<a name="finalize"></a>
+### 1.2 Duyệt đơn hàng 
 **Request**
 ```
 POST /admin/orders/{id}/finalize HTTP/1.1
@@ -507,8 +512,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="huydonhang"></a>
-## 3. Hủy đơn hàng
+<a name="cancel"></a>
+### 1.3 Hủy đơn hàng
 **Request**
 ```
 POST /admin/orders/ HTTP/1.1
@@ -663,8 +668,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="hoanthanhdonhang"></a>
-## 4. Hoàn thành đơn hàng
+<a name="finish"></a>
+### 1.4 Hoàn thành đơn hàng
 **Request**
 ```
 POST /admin/orders HTTP/1.1
@@ -827,8 +832,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="suadonhang"></a>
-## 5. Sửa đơn hàng
+<a name="edit-order"></a>
+### 1.5 Sửa đơn hàng
 **Request**
 ```
 PUT /admin/orders HTTP/1.1
@@ -1050,8 +1055,8 @@ Content-Type: application/json
 }
 ```
 
-<a name="laydanhsachdonhang"></a>
-## 6. Lấy danh sách đơn hàng
+<a name="get-order"></a>
+### 1.6 Lấy danh sách đơn hàng
 **Request**
 ```
 GET/admin/orders HTTP/1.1
@@ -1068,8 +1073,8 @@ Content-Type: application/json
         "limit": 20
     }
 ```
-<a name="laydanhsachdonhangid"></a>
-## 7. Lấy danh sách 1 đơn hàng theo id
+<a name="get-by-orderid"></a>
+### 1.7 Lấy danh sách 1 đơn hàng theo id
 **Request**
 ```
 POST /admin/orders/{id} HTTP/1.1
@@ -1366,19 +1371,12 @@ Content-Type: application/json
     }
 }
 ```
-<a name="thanhtoantruoc"></a>
-## 8. Thanh Toán Trước (Prepayment)
-<a name="taophieuthanhtoantruoc"></a>
-### 8.1 Tạo phiếu thanh toán trước
-Khách hàng yêu cầu thanh toán trước tới nhân viên, nhân viên gửi yêu cầu thông qua API cho Sapo.vn yêu cầu tạo phiếu thanh toán trước.
-**Các tham số**
+<a name="prepayment"></a>
+## Thanh toán trước
 
-| Tham số | Bắt buộc | Mô tả |
-| ------------- |:-------------|:-------------|
-| Prepayment.payment_method_id | yes | int - Id định danh cho đơn hàng được thanh toán trước |
-| Prepayment.amount |	yes | bigdecimal - Tổng khối lượng sản phẩm được thanh toán trước|
-| Prepayment.note | no | string - Ghi chú cho đơn hàng được thanh toán trước (nếu có) . Trường này có thể NULL |
-| Prepayment.paid_on | yes | date - Thời gian khách hàng đã trả tiền |
+<a name="add-prepayments"></a>
+### 2.1 Tạo phiếu thanh toán trước
+Khách hàng yêu cầu thanh toán trước tới nhân viên, nhân viên gửi yêu cầu thông qua API cho Sapo.vn yêu cầu tạo phiếu thanh toán trước.
 
 ```
 POST /admin/orders/{id}/prepayments.json HTTP/1.1
@@ -1426,8 +1424,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="huyphieuthanhtoantruoc"></a>
-## 8.2 Hủy phiếu thanh toán trước
+<a name="prepayments-cancel"></a>
+### 2.2 Hủy phiếu thanh toán trước
 Trong trường hợp nhân viên đã tạo phiếu thanh toán trước nhưng khách hàng lại không muốn mua hàng thì nhân viên sẽ tiến hành hủy phiếu thanh toán trước.
 
 ```
@@ -1466,15 +1464,15 @@ Content-Type: application/json
     }
 }
 ```
-<a name="donggoi"></a>
-## 9. Đóng gói (Fulfillment)
+<a name="fulfillment"></a>
+## 3. Đóng gói (Fulfillment)
 
 Một Fulfillment đại diện cho việc vận chuyển một hay nhiều item của một đơn hàng. Khi một đơn hàng đã được chuyển về trạng thái fulfilled tức là tất cả item trong đơn hàng đã được chuyển đến cho khách hàng.
 
 Rõ ràng, một người chủ Shop luôn muốn chỉ thực hiện một lần giao hàng đối với đơn hàng nhưng đôi khi kích cỡ item hay item có còn trong kho hay không sẽ khiến cho việc giao hàng phải thực hiện nhiều lần. Đó là lí do một đơn hàng có thể có nhiều Fulfillment.
 
-<a name="themmotdonhangduocdonggoi"></a>
-### 9.1 Thêm một đơn hàng được đóng gói
+<a name="add-fulfillments"></a>
+### 3.1 Thêm một đơn hàng được đóng gói
 **Request**
 ```
 POST /admin/orders/{id}/fulfillments HTTP/1.1
@@ -1598,8 +1596,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="themmotdonxuatkhogoihang"></a>
-### 9.2 Thêm một đơn xuất kho gói hàng
+<a name="add-fulfillments-ship"></a>
+### 3.2 Thêm một đơn xuất kho gói hàng
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/ship HTTP/1.1
@@ -1619,8 +1617,8 @@ Content-Type: application/json
     }
 }
 ```
-
-### 9.4 Chuyển gói hàng sang trạng thái đã nhận
+<a name="fulfillments-receive"></a>
+### 3.3 Chuyển gói hàng sang trạng thái đã nhận
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/receive HTTP/1.1
@@ -1775,8 +1773,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="huygoihang"></a>
-### 9.5 Hủy gói hàng
+<a name="fulfillments-cancel"></a>
+### 3.4 Hủy gói hàng
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/cancel HTTP/1.1
@@ -1870,8 +1868,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="nhangoihangsaukhihuy"></a>
-### 9.6 Nhận gói hàng về kho sau khi hủy
+<a name="fulfillments-receive_after_cancellation"></a>
+### 3.5 Nhận gói hàng về kho sau khi hủy
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{id}/receive_after_cancellation HTTP/1.1
@@ -1894,3 +1892,4 @@ Content-Type: application/json
     }
 }
 ```
+
