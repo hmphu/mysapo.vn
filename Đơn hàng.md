@@ -23,9 +23,9 @@
     
 [3. Đóng gói](#fulfillment)
 
-   [ 3.1 Thêm một đơn hàng được đóng gói](#fulfillments)
+   [ 3.1 Thêm một đơn hàng được đóng gói](#add-fulfillments)
     
-   [ 3.2 Thêm một đơn xuất kho gói hàng](#fulfillments-ship)
+   [ 3.2 Thêm một đơn xuất kho gói hàng](#add-fulfillments-ship)
     
    [ 3.3 Chuyển gói hàng sang trạng thái đã nhận](#fulfillments-receive)
     
@@ -41,7 +41,7 @@
 
    [ 4.1 Thêm một đơn hàng được thanh toán](#add-payment)
     
-   [ 4.2 Thêm một đơn xuất kho gói hàng](#fulfillments-cancel)
+   [ 4.2 Thêm một đơn xuất kho gói hàng](#add-fulfillments-cancel)
    
 [5. In](#print)
 
