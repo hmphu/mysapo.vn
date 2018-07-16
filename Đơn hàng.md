@@ -36,26 +36,20 @@
    [ 3.6 Lấy danh sách đơn hàng được đóng gói](#get-fulfillments)
     
    [ 3.7 Cập nhật đơn hàng được đóng gói](#put-fulfillments)
-   
-[4. Thanh toán](#payment)
-
-   [ 4.1 Thêm một đơn hàng được thanh toán](#add-payment)
     
-   [ 4.2 Thêm một đơn xuất kho gói hàng](#add-fulfillments-cancel)
-   
-[5. In](#print)
+[4. In](#print)
 
-   [ 5.1 lấy mẫu in đóng gói](#get-fulfillment-print-forms)
+   [ 4.1 lấy mẫu in đóng gói](#get-fulfillment-print-forms)
    
-   [ 5.2 lấy mẫu in giao hàng](#get-shipment-print-forms)
+   [ 4.2 lấy mẫu in giao hàng](#get-shipment-print-forms)
    
-   [ 5.1 lấy mẫu in đóng gói](#get-order-print-forms)
+   [ 4.3 lấy mẫu in đóng gói](#get-order-print-forms)
    
-[6.Shipper](#Shipper)
+[5.Shipper](#Shipper)
 
-   [ 6.1 Chi tiết Shipper](#delivery-service-providers)
+   [ 5.1 Chi tiết Shipper](#delivery-service-providers)
    
-   [ 6.2 Công nợ Shipper](#debt-change)
+   [ 5.2 Công nợ Shipper](#debt-change)
    
 <a name="order"></a>
 ## 1. Order
@@ -2298,11 +2292,54 @@ Content-Type: application/json
         "page": 1,
         "limit": 250
 ```
-<a name="payment"></a>
-## 4.Thanh toán
+<a name="print"></a>
+## 4.In
 
-<a name="add-payment"></a>
-### 4.1 Thêm một đơn hàng được thanh toán
+<a name="get-fulfillment-print-forms"></a>
+### 4.1 Lấy mẫu in đóng gói
+**Request**
+```
+POST /admin/orders/{order_id}/fulfillments/{fulfillment_id}/payments HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+
+<a name="get-shipment-print-forms"></a>
+### 4.2 Lấy mẫu in giao hàng
+**Request**
+```
+PUT /admin/orders/{order_id}/fulfillments/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name="get-order-print-forms"></a>
+### 4.3 Lấy mẫu in đóng gói
+**Request**
+```
+PUT /admin/orders/{order_id}/fulfillments/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name="Shipper"></a>
+## 5. Shipper
+
+<a name="delivery-service-providers"></a>
+### 5.1 Chi tiết Shipper
 **Request**
 ```
 POST /admin/orders/{order_id}/fulfillments/{fulfillment_id}/payments HTTP/1.1
@@ -2316,17 +2353,12 @@ Content-Type: application/json
 ```
 **Trường hợp có lỗi**
 ```
-{
-    "error": {
-        "message": "Không tìm thấy đối tượng"
-    }
-}
 ```
-<a name="add-fulfillments-cancel"></a>
-### 4.2 Thêm một đơn xuất kho gói hàng
+<a name="debt-change"></a>
+### 5.2 Công nợ Shipper
 **Request**
 ```
-PUT /admin/orders/{order_id}/fulfillments/{id} HTTP/1.1
+POST /admin/orders/{order_id}/fulfillments/{fulfillment_id}/payments HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -2334,4 +2366,7 @@ Content-Type: application/json
 **Kết quả trả về**
 ```
 
+```
+**Trường hợp có lỗi**
+```
 ```
