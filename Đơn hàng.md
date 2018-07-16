@@ -9,7 +9,7 @@
 
    [ 1.4 Hoàn thành đơn hàng](#finish)
 
-   [ 1.5 Sửa đơn hàng](#put-order)
+   [ 1.5 Cập nhật đơn hàng](#put-order)
 
    [ 1.6 Lấy danh sách đơn hàng](#get-order)
 
@@ -17,7 +17,7 @@
    
 [2. Thanh Toán Trước](#prepayment)
 
-   [ 2.1 Tạo phiếu thanh toán trước](#prepayments)
+   [ 2.1 Tạo phiếu thanh toán trước](#add-prepayments)
     
    [ 2.2 Hủy phiếu thanh toán trước](#prepayments-cancel)
     
@@ -833,8 +833,8 @@ Content-Type: application/json
     }
 }
 ```
-<a name="edit-order"></a>
-### 1.5 Sửa đơn hàng
+<a name="put-order"></a>
+### 1.5 Cập nhật đơn hàng
 **Request**
 ```
 PUT /admin/orders HTTP/1.1
@@ -2322,7 +2322,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="fulfillments-cancel"></a>
+<a name="add-fulfillments-cancel"></a>
 ### 4.2 Thêm một đơn xuất kho gói hàng
 **Request**
 ```
