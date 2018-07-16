@@ -1,37 +1,52 @@
 # Đơn hàng
-[ 1. Đăng đơn hàng mới](#dangdonhangmoi)
+[1. Order]
+   [ 1.1 Đăng đơn hàng mới](#order)
 
-[ 2. Duyệt đơn hàng](#duyetdonhang)
+   [ 1.2 Duyệt đơn hàng](#finalize)
 
-[ 3. Hủy đơn hàng](#huydonhang)
+   [ 1.3 Hủy đơn hàng](#cancel)
 
-[ 4. Hoàn thành đơn hàng](#hoanthanhdonhang)
+   [ 1.4 Hoàn thành đơn hàng](#finish)
 
-[ 5. Sửa đơn hàng](#suadonhang)
+   [ 1.5 Sửa đơn hàng](#put-order)
 
-[ 6. Lấy danh sách đơn hàng](#laydanhsachdonhang)
+   [ 1.6 Lấy danh sách đơn hàng](#get-order)
 
-[ 7. Lấy danh sách đơn hàng theo id](#laydanhsachdonhangid)
+   [ 1.7 Lấy danh sách đơn hàng theo id](#get-by-orderid)
+[2. Thanh Toán Trước](#prepayment)
 
-[ 8. Thanh Toán Trước (Prepayment)](#thanhtoantruoc)
-
-   [ 8.1 Tạo phiếu thanh toán trước](#taophieuthanhtoantruoc)
+   [ 2.1 Tạo phiếu thanh toán trước](#prepayments)
     
-   [ 8.2 Hủy phiếu thanh toán trước](#huyphieuthanhtoantruoc)
+   [ 2.2 Hủy phiếu thanh toán trước](#prepayments-cancel)
     
-[ 9. Đóng gói](#donggoi)
+[3. Đóng gói](#fulfillment)
 
-   [ 9.1 Thêm một đơn hàng được đóng gói](#themmotdonhangduocdonggoi)
+   [ 3.1 Thêm một đơn hàng được đóng gói](#fulfillments)
     
-   [ 9.2 Thêm một đơn xuất kho gói hàng](#themmotdonxuatkhogoihang)
+   [ 3.2 Thêm một đơn xuất kho gói hàng](#fulfillments-ship)
     
-   [ 9.3 Chuyển gói hàng sang trạng thái đã nhận](#chuyengoihangsangtrangthaidanhan)
+   [ 3.3 Chuyển gói hàng sang trạng thái đã nhận](#fulfillments-receive)
     
-   [ 9.4 Hủy gói hàng](#huygoihang)
+   [ 3.4 Hủy gói hàng](#fulfillments-cancel)
     
-   [ 9.5 Nhận gói hàng về kho sau khi hủy](#nhangoihangsaukhihuy)
+   [ 3.5 Nhận gói hàng về kho sau khi hủy](#fulfillments-receive_after_cancellation)
+   
+   [ 3.6 Lấy danh sách đơn hàng được đóng gói](#get-fulfillments)
     
+   [ 3.7 Cập nhật đơn hàng được đóng gói](#put-fulfillments)
+   
+[4. Thanh toán](#payment)
+   [ 4.1 Thêm một đơn hàng được thanh toán](#add-payment)
     
+   [ 4.2 Thêm một đơn xuất kho gói hàng](#fulfillments-cancel)
+[5. In](#print)
+   [ 5.1 lấy mẫu in đóng gói](#get-fulfillment-print-forms)
+   [ 5.2 lấy mẫu in giao hàng](#get-shipment-print-forms)
+   [ 5.1 lấy mẫu in đóng gói](#get-order-print-forms)
+[6.Shipper](#Shipper)
+   [ 6.1 Chi tiết Shipper](#delivery-service-providers)
+   [ 6.2 Công nợ Shipper](#debt-change)
+
     
 <a name="dangdonhangmoi"></a>
 ## 1. Đăng đơn hàng mới
