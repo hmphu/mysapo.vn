@@ -2314,6 +2314,14 @@ Content-Type: application/json
 ```
 
 ```
+**Trường hợp có lỗi**
+```
+{
+    "error": {
+        "message": "Không tìm thấy đối tượng"
+    }
+}
+```
 <a name="fulfillments-cancel"></a>
 ### 4.2 Thêm một đơn xuất kho gói hàng
 **Request**
