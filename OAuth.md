@@ -121,11 +121,11 @@ Truy xuất dữ liệu của các tài nguyên [Suppliers].
 `read_Setting`,`write_Setting`
 Truy xuất dữ liệu của các tài nguyên [Setting].
 
-`read_nâng cao`,`write_nâng cao`
-Truy xuất dữ liệu của các tài nguyên [Suppliers].
+`read_Advanced`,`write_Advanced`
+Truy xuất dữ liệu của các tài nguyên [Advanced].
 
-`read_ứng dụng`,`write_ứng dụng`
-Truy xuất dữ liệu của các tài nguyên [Setting].
+`read_Application`,`write_Application`
+Truy xuất dữ liệu của các tài nguyên [Application].
 
 `read_ReportSales`
 Truy xuất dữ liệu của các tài nguyên [ReportSales].
