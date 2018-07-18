@@ -22,7 +22,7 @@ Bắt đầu với việc tạo nhóm khách hàng, bạn sẽ đưa ra những 
 | Customer_group.code | yes | Mã tham chiếu đến nhóm khách hàng trong hệ thống |
 | Customer_group.note|	no | Ghi chú cho nhóm khách hàng (nếu có) . Trường này có thể NULL |
 
-**[POST/admin/customer_groups.json]**
+**Request**
 
 ```
 POST/admin/customer_groups.json HTTP/1.1
