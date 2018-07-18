@@ -5,14 +5,24 @@ Dễ dàng đối chiếu khách hàng, nhà cung cấp còn đang nợ chủ sh
 
 | Tham số | Bắt buộc | Mô tả |
 | ------------- |:-------------|:-------------|
-| Order.code | yes | string - Mã tham chiếu của khách hàng có đơn hàng |
-| Order.issued_on |	yes | date - Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý.|
-|Order.ship_on | no | date - Thời gian hẹn giao hàng |
-| Order.account_id | yes | int - Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
-| Order.assignee_id | yes | int - Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
-| Order.customer_id | yes | int - Id định danh khách hàng có đơn hàng |
-| Order.contact_id |	yes | int - Id định danh cho liên hệ với khách hàng |
-| Order.billing_address |	yes | string - Địa chỉ khách ghi vào hóa đơn |
+| id | no | string - Mã tham chiếu của khách hàng có đơn hàng |
+| code |	yes | date - Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý.|
+|account_name | no | date - Thời gian hẹn giao hàng |
+| document_issued_on | yes | int - Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
+| modified_on | yes | int - Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
+| change_debt | yes | int - Id định danh khách hàng có đơn hàng |
+| debt_amount |	yes | int - Id định danh cho liên hệ với khách hàng |
+| location_id |	yes | string - Địa chỉ khách ghi vào hóa đơn |
+| account_id | yes | int - Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
+| created_on | yes | int - Id định danh khách hàng có đơn hàng |
+| document_type |	yes | int - Id định danh cho liên hệ với khách hàng |
+| document_id |	yes | string - Địa chỉ khách ghi vào hóa đơn |
+| object_type |	yes | int - Id định danh cho liên hệ với khách hàng |
+| object_id | yes | string - Địa chỉ khách ghi vào hóa đơn |
+| action | yes | int - Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
+| log_id | yes | int - Id định danh khách hàng có đơn hàng |
+| log_type |	yes | int - Id định danh cho liên hệ với khách hàng |
+| root_id|	yes | string - Địa chỉ khách ghi vào hóa đơn |
 
 [ 1.1 Lấy ra tổng nợ của một khách hàng ](#customers_id_debts)
 
@@ -55,7 +65,7 @@ Content-Type: application/json
 }
 ```
 <a name="suppliers_id_debt_change_logs"></a>
-## Lấy ra tất cả tổng đang nợ của một nhà cung cấp
+## Lấy ra nhật ký tổng nợ của một nhà cung cấp
 **Request**
 ```
 GET admin/suppliers/{id}/debt_change_logs HTTP/1.1
