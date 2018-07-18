@@ -81,101 +81,123 @@ Một phần trong quá trình xác thực yêu cầu xác định xem Client mu
 
 `read_products`, `write_products`
 Truy xuất dữ liệu của các tài nguyên [Product].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu Sản phẩm của Shop.
 
 `read_purchaseorder`, `write_purchaseorder`
 Truy xuất dữ liệu của các tài nguyên [PurchaseOrder].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu Nhập hàng của Shop.
 
 `read_purchase_orders/returns`, `write_purchase_orders/returns`
 Truy xuất dữ liệu của các tài nguyên [PurchaseOrdersReturns]
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu Trả hàng nhà cung cấp của Shop.
 
 `read_stocktranfer`, `write_stocktranfer`
 Truy xuất dữ liệu của các tài nguyên [StockTranfer].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu Chuyển hàng của Shop.
 
 `read_stockadjustment`, `write_stockadjustment`
 Truy xuất dữ liệu của các tài nguyên [StockAdjustment].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu Kiểm hàng của Shop.
 
 `read_priceadjustment`, `write_priceadjustment`
 Truy xuất dữ liệu của các tài nguyên [PriceAdjustment].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu Điều chỉnh giá vốn của Shop.
 
 `read_sales`,`write_sales`
 Truy xuất dữ liệu của các tài nguyên [Sales].
+
 Bạn có thể thông qua Cilent để xem dữ liệu phần Bán hàng của Shop.
 
 `read_reports/sales/by_end_day`
 Truy xuất dữ liệu của các tài nguyên [ReportSaleByEndDay].
+
 Bạn có thể thông qua Cilent để xem dữ liệu phần Báo cáo cuối ngày của Shop.
 
 `read_orderreturn`,`write_orderreturn`
 Truy xuất dữ liệu của các tài nguyên [OrderReturn].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Trả hàng cho khách hàng của Shop.
 
 `read_shippers`,`write_shippers`
 Truy xuất dữ liệu của các tài nguyên [Shippers].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Quản lý vận chuyển của Shop.
 
 `read_deliverycollations`,`write_deliverycollations`
 Truy xuất dữ liệu của các tài nguyên [DeliveryCollations].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Phiếu đối soát của Shop.
 
 `read_customers`,`write_customers`
 Truy xuất dữ liệu của các tài nguyên [Customers].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Khách hàng của Shop.
 
 `read_suppliers`,`write_suppliers`
 Truy xuất dữ liệu của các tài nguyên [Suppliers].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Nhà cung cấp của Shop.
 
 `read_setting`,`write_setting`
 Truy xuất dữ liệu của các tài nguyên [Setting].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Thiết lập của Shop.
 
 `read_advanced`,`write_advanced`
 Truy xuất dữ liệu của các tài nguyên [Advanced].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Nâng cao của Shop.
 
 `read_application`,`write_application`
 Truy xuất dữ liệu của các tài nguyên [Application].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Ứng dụng của Shop.
 
 `read_reports/sales`
 Truy xuất dữ liệu của các tài nguyên [ReportsSales].
+
 Bạn có thể thông qua Cilent để xem phần Báo cáo bán hàng của Shop.
 
 `read_reports/inventories`
 Truy xuất dữ liệu của các tài nguyên [ReportsInventories]
+
 Bạn có thể thông qua Cilent để xem phần Báo cáo kho của Shop.
 
 `read_reports/finance`
 Truy xuất dữ liệu của các tài nguyên [ReportsFiance].
+
 Bạn có thể thông qua Cilent để xem dữ liệu phần Báo cáo tài chính của Shop.
 
 `read_reports/vouchers/dash_board`
 Truy xuất dữ liệu của các tài nguyên [ReportsVouchersDashBoard]
+
 Bạn có thể thông qua Cilent để xem dữ liệu phần Tổng quan của Shop.
 
 `read_accounts`,`write_accounts`
 Truy xuất dữ liệu của các tài nguyên [Accounts].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Nhân viên của Shop.
 
 `read_Branch`,`write_Branch`
 Truy xuất dữ liệu của các tài nguyên [Branch].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Thương hiệu của Shop.
 
 `read_receipt_vouchers`, `write_receipt_vouchers`
 Truy xuất dữ liệu của các tài nguyên [ReceiptVouchers],[Vouchers]
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Phiếu thu của Shop.
 
 `read_payment_vouchers`, `write_payment_vouchers`
 Truy xuất dữ liệu của các tài nguyên [PaymentVouchers],[Vouchers].
+
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Phiếu chi của Shop.
-
-
 
 ## Verification
 Mỗi Request hoặc chuyển hướng từ Sapo về Client đều chứa các tham số *signature* và **hmac**, được dùng để xác minh dữ liệu đúng là từ Sapo. **Thuộc tính signature sẽ bị loại bỏ do những lỗ hổng bảo mật trong việc tạo signature.**
