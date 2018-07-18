@@ -144,8 +144,8 @@ Truy xuất dữ liệu của các tài nguyên [Suppliers].
 
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Nhà cung cấp của Shop.
 
-`read_setting`,`write_setting`
-Truy xuất dữ liệu của các tài nguyên [Setting].
+`read_settings`,`write_settings`
+Truy xuất dữ liệu của các tài nguyên [Settings].
 
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Thiết lập của Shop.
 
@@ -153,11 +153,6 @@ Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần
 Truy xuất dữ liệu của các tài nguyên [Advanced].
 
 Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Nâng cao của Shop.
-
-`read_application`,`write_application`
-Truy xuất dữ liệu của các tài nguyên [Application].
-
-Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Ứng dụng của Shop.
 
 `read_reports/sales`
 Truy xuất dữ liệu của các tài nguyên [ReportsSales].
