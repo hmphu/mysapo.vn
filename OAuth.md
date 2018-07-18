@@ -82,7 +82,7 @@ Một phần trong quá trình xác thực yêu cầu xác định xem Client mu
 `read_products`, `write_products`
 Truy xuất dữ liệu của các tài nguyên [Product].
 
-Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu Sản phẩm của Shop.
+Bạn có thể thông qua Cilent để xem và chỉnh sửa dữ liệu phần Sản phẩm của Shop.
 
 `read_purchaseorder`, `write_purchaseorder`
 Truy xuất dữ liệu của các tài nguyên [PurchaseOrder].
