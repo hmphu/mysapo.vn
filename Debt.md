@@ -5,24 +5,24 @@ Dễ dàng đối chiếu khách hàng, nhà cung cấp còn đang nợ chủ sh
 
 | Tham số | Bắt buộc | Mô tả |
 | ------------- |:-------------|:-------------|
-| id | no | string - Mã tham chiếu của khách hàng có đơn hàng |
-| code | no| string - . Thuộc tính này được tạo tự động và không thể chỉnh sửa. Nếu bạn import Order từ một hệ thống khác vào Sapo thì hãy sử dụng thuộc tính có thể ghi processed_on để xác định thời gian Order được xử lý.|
-| account_name | no | string - Thời gian hẹn giao hàng |
-| document_issued_on | no | datetime - Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601 |
-| modified_on | no| datetime - Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601 |
-| change_debt | no |  - Id định danh khách hàng có đơn hàng |
-| debt_amount |	no |  - Id định danh cho liên hệ với khách hàng |
-| location_id |	no | int - Địa chỉ khách ghi vào hóa đơn |
-| account_id | no | int - Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
+| id | no | string -  |
+| code | no| string - |
+| account_name | no | string -  |
+| document_issued_on | no | datetime -  |
+| modified_on | no| datetime -  |
+| change_debt | no |  -  |
+| debt_amount |	no |  - |
+| location_id |	no | int -  |
+| account_id | no | int -  |
 | created_on | no | datetime - Thời gian Order được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601 |
-| document_type | no | int - Id định danh cho liên hệ với khách hàng |
-| document_id |	no | string - Địa chỉ khách ghi vào hóa đơn |
-| object_type |	no | int - Id định danh cho liên hệ với khách hàng |
-| object_id | no | string - Địa chỉ khách ghi vào hóa đơn |
-| action | no | string - Id định danh tài khoản nhân viên phụ trách đơn hàng vừa được tạo |
-| log_id | no | int - Id định danh khách hàng có đơn hàng |
-| log_type | no | int - Id định danh cho liên hệ với khách hàng |
-| root_id| no | int - id khách ghi vào hóa đơn |
+| document_type | no | int -  |
+| document_id |	no | string - |
+| object_type |	no | int -  |
+| object_id | no | string -  |
+| action | no | string - |
+| log_id | no | int - |
+| log_type | no | int - |
+| root_id| no | int -  |
 
 [ 1.1 Lấy ra tổng nợ của một khách hàng ](#customers_id_debts)
 
