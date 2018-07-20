@@ -1,10 +1,11 @@
 # OrderReturn
-OrderReturn được thực hiện khi một đơn hàng đã được tạo và hàng hóa đã được xuất kho trên hệ thống và khách hàng có yêu cầu đổi sản phẩm hoặc hủy sản phẩm.
+Trả hàng cho khách hàng được thực hiện khi một đơn hàng đã được tạo và hàng hóa đã được xuất kho trên hệ thống và khách hàng có yêu cầu đổi sản phẩm hoặc hủy sản phẩm.
 OrderReturn chỉ được thực hiện khi có đơn đặt hàng thành công.
-## Thêm 1 đơn trả hàng
+
+<a name="add-order_returns"></a>
+## 1. Thêm 1 đơn trả hàng
 
 **Các tham số**
-
 | Tham số | Bắt buộc | Mô tả |
 | ------------- |:-------------|:-------------|
 | OrderReturn.id | no | Mã tham chiếu đơn trả hàng |
@@ -129,7 +130,8 @@ Content-Type: application/json
     }
 }
 ```
-## Tạo mới code cho đơn trả hàng
+<a name="add-order_returns_code"></a>
+## 2. Tạo mới code cho đơn trả hàng
 ```
 POST /admin/order_returns/codes HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
@@ -144,7 +146,8 @@ Content-Type: application/json
     }
 }
 ```
-## Lấy một đơn trả hàng theo id
+<a name="get-order_returns_id"></a>
+## 3. Lấy một đơn trả hàng theo id
 ```
 GET /admin/order_returns/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
@@ -223,7 +226,8 @@ Content-Type: application/json
     }
 }
 ```
-## Lấy đơn trả hàng theo bộ lọc
+<a name="get-order_returns?"></a>
+## 4. Lấy đơn trả hàng theo bộ lọc
 ```
 GET /admin/order_returns HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
@@ -312,20 +316,8 @@ Content-Type: application/json
     "order_returns": []
 }
 ```
-## Tạo yêu cầu Hủy 1 đơn trả hàng theo id
-```
-POST /admin/order_returns/{id}/cancel HTTP/1.1
-Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
-Content-Type: application/json
-```
-**Kết quả trả về**
-```
-
-```
-**Trường hợp có lỗi**
-```
-```
-## Thêm đơn hàng hoàn tiền theo id
+<a name="add-order_returns/id/refunds"></a>
+## 5. Thêm đơn hàng hoàn tiền theo id
 
 Trong trường hợp đơn hàng đã được khách hàng thanh 
 ```
@@ -342,7 +334,6 @@ Content-Type: application/json
     "location_id": 81,
     "customer_id": 10080,
     "order_return_id": 39,
-    "payment_method_id": 2008,
     "account_id": 0,
     "amount": 10000,
     "reference": null,
@@ -358,30 +349,28 @@ Content-Type: application/json
 **Kết quả trả về**
 ```
 {
-  "refund": {
-    "id": 6,
-    "tenant_id": 77,
-    "location_id": 81,
-    "customer_id": 10080,
-    "order_return_id": 39,
-    "payment_method_id": 2008,
-    "account_id": 0,
-    "amount": 10000,
-    "reference": null,
-    "paid_on": "2016-06-30T11:06:29Z",
-    "currency_id": 7016,
-    "exchange_rate": 0,
-    "status": "active",
-    "created_on": "2016-06-30T11:06:29Z",
-    "modified_on": "2016-06-30T11:06:29Z"
-  }
+    "refund": {
+        "id": 159694,
+        "tenant_id": 56322,
+        "location_id": 58369,
+        "customer_id": 4128452,
+        "order_return_id": 212580,
+        "order_id": 212580,
+        "payment_method_id": 220256,
+        "account_id": 72098,
+        "amount": 10000,
+        "reference": null,
+        "paid_on": "2016-06-30T11:06:29Z",
+        "currency_id": null,
+        "exchange_rate": null,
+        "status": "active",
+        "created_on": "2018-07-20T08:59:15Z",
+        "modified_on": "2018-07-20T08:59:15Z"
+    }
 }
 ```
-**Trường hợp có lỗi**
-```
-
-```
-## Lấy 1 đơn hàng hoàn tiền theo id
+<a name="get-order_returns/id/refunds/{refundId}"></a>
+## 6. Lấy 1 đơn hàng hoàn tiền theo id
 ```
 GET /admin/order_returns/{id}/refunds/{refundId} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
@@ -389,6 +378,26 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "refund": {
+        "id": 159694,
+        "tenant_id": 56322,
+        "location_id": 58369,
+        "customer_id": 0,
+        "order_return_id": 212580,
+        "order_id": 15606631,
+        "payment_method_id": 220256,
+        "account_id": 72098,
+        "amount": 10000,
+        "reference": null,
+        "paid_on": "2016-06-30T11:06:29Z",
+        "currency_id": null,
+        "exchange_rate": null,
+        "status": "active",
+        "created_on": "2018-07-20T08:59:15Z",
+        "modified_on": "2018-07-20T08:59:15Z"
+    }
+}
 ```
 **Trường hợp có lỗi**
 ```
@@ -397,17 +406,4 @@ Content-Type: application/json
         "message": "Không tìm thấy đối tượng"
     }
 }
-```
-## Hủy 1 đơn hàng hoàn tiền theo id
-```
-POST /admin/order_returns/{id}/refunds/{refundId}/cancel HTTP/1.1
-Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
-Content-Type: application/json
-```
-**Kết quả trả về**
-```
-
-```
-**Trường hợp có lỗi**
-```
 ```
