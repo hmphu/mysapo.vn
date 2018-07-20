@@ -6,17 +6,17 @@ Vì lí do bảo mật, tài nguyên Customer trên Sapo.vn không lưu thông t
 Người dùng có thể quản lý khách hàng theo nhóm để tiện áp dụng cho các chương trình ưu đãi cũng như khuyến mại của cửa hàng. 
 Chú ý: Mỗi khách hàng chỉ có thể nằm trong một nhóm khách hàng.
 
-[1. Tạo nhóm khách hàng](#order)
+[1. Tạo nhóm khách hàng](#add-customer_groups)
 
-[2. Duyệt đơn hàng](#finalize)
+[2. Cập nhật nhóm khách hàng](#put-customer_groups)
 
-[3. Hủy đơn hàng](#cancel)
+[3. Xóa nhóm khách hàng](#delete-customer_groups)
 
-[4. Đăng đơn hàng mới](#order)
+[4. Lấy 1 nhóm khách hàng theo id](#get-customer_groups_id)
 
-[5. Duyệt đơn hàng](#finalize)
+[5. Lấy toàn bộ nhóm khách hàng](#get-customer_groups)
 
-[6. Hủy đơn hàng](#cancel)
+[6. Lấy nhóm khách hàng theo bộ lọc](#get-customer_groups?)
 
 <a name= "add-customer_groups"></a>
 ## 1. Tạo nhóm khách hàng
