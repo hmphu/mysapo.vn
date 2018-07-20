@@ -3,10 +3,15 @@ Trả hàng cho khách hàng được thực hiện khi một đơn hàng đã �
 OrderReturn chỉ được thực hiện khi có đơn đặt hàng thành công.
 
 [1. Thêm 1 đơn trả hàng](#add-order_returns)
+
 [2. Tạo mới code cho đơn trả hàng](#add-order_returns_code)
+
 [3. Lấy một đơn trả hàng theo id](#get-order_returns_id)
+
 [4. Lấy đơn trả hàng theo bộ lọc](#get-order_returns?)
+
 [5. Thêm đơn hàng hoàn tiền theo id](#add-order_returns/id/refunds)
+
 [6. TLấy 1 đơn hàng hoàn tiền theo id](#aget-order_returns/id/refunds/{refundId})
 
 <a name="add-order_returns"></a>
