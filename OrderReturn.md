@@ -2,6 +2,13 @@
 Trả hàng cho khách hàng được thực hiện khi một đơn hàng đã được tạo và hàng hóa đã được xuất kho trên hệ thống và khách hàng có yêu cầu đổi sản phẩm hoặc hủy sản phẩm.
 OrderReturn chỉ được thực hiện khi có đơn đặt hàng thành công.
 
+[1. Thêm 1 đơn trả hàng](#add-order_returns)
+[2. Tạo mới code cho đơn trả hàng](#add-order_returns_code)
+[3. Lấy một đơn trả hàng theo id](#get-order_returns_id)
+[4. Lấy đơn trả hàng theo bộ lọc](#get-order_returns?)
+[5. Thêm đơn hàng hoàn tiền theo id](#add-order_returns/id/refunds)
+[6. TLấy 1 đơn hàng hoàn tiền theo id](#aget-order_returns/id/refunds/{refundId})
+
 <a name="add-order_returns"></a>
 ## 1. Thêm 1 đơn trả hàng
 
@@ -9,16 +16,27 @@ OrderReturn chỉ được thực hiện khi có đơn đặt hàng thành công
 | Tham số | Bắt buộc | Mô tả |
 | ------------- |:-------------|:-------------|
 | OrderReturn.id | no | Mã tham chiếu đơn trả hàng |
+
 | OrderReturn.tenant_id | no |  |
+
 | OrderReturn.location_id | no |  |
+
 | OrderReturn.code | no | Mã tham chiếu của khách hàng có đơn hàng |
+
 | OrderReturn.account_id | no | Id định danh tài khoản nhân viên dùng để tạo đơn hàng |
+
 | OrderReturn.order_id | yes | Id định danh đơn đặt hàng  |
+
 | OrderReturn.order_code | no | Mã tham chiếu đến đơn đặt hàng |
+
 | OrderReturn.customer_id | no | Id định danh khách hàng muốn trả hàng |
+
 | OrderReturn.billing_address | no | Địa chỉ hóa đơn đơn hàng |
+
 | OrderReturn.contact_id | no | Id định danh cho liên lạc với khách hàng |
+
 | OrderReturn.reference| no |  |
+
 | OrderReturn.status| no | Trạng thái đơn trả hàng |
 | OrderReturn.refund_status| no | Trạng thái thanh toán trả  |
 | OrderReturn.total_amount | no | Tổng lượng hàng trong đơn đặt hàng |
