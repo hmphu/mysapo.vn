@@ -18,9 +18,7 @@ Chú ý: Mỗi khách hàng chỉ có thể nằm trong một nhóm khách hàng
 
 [6. Hủy đơn hàng](#cancel)
 
-   
-
-
+<a name= "add-customer_groups"></a>
 ## 1. Tạo nhóm khách hàng
 Bắt đầu với việc tạo nhóm khách hàng, bạn sẽ đưa ra những tùy chọn nhóm để thêm khách hàng vào danh sách.
 
@@ -99,6 +97,7 @@ Content-Type: application/json
     }
 }
 ```
+<a name= "put-customer_groups"></a>
 ## 2. Cập nhật nhóm khách hàng
 
 Bạn có thể sửa đổi và cập nhật các thuộc tính trong nhóm khách hàng đã được tạo trước đó.
@@ -164,7 +163,8 @@ Content-Type: application/json
     }
 }
 ```
-## 1.3 Xóa nhóm khách hàng
+<a name= "delete-customer_groups"></a>
+## 3. Xóa nhóm khách hàng
 Khi nhóm khách hàng đã tồn tại trong hệ thống, bạn hoàn toàn có thể thực hiện xóa nhóm khách hàng.
 **Request**
 ```
@@ -177,7 +177,8 @@ Content-Type: application/json
 ```
 200 OK
 ```
-## 1.4 Lấy 1 nhóm khách hàng theo id
+<a name= "get-customer_groups_id"></a>
+## 4. Lấy 1 nhóm khách hàng theo id
 **Request**
 ```
 GET/admin/customer_groups/id HTTP/1.1
@@ -207,7 +208,8 @@ Content-Type: application/json
     }
 }
 ```
-## 1.5 Lấy toàn bộ nhóm khách hàng
+<a name= "get-customer_groups"></a>
+## 5. Lấy toàn bộ nhóm khách hàng
 **Request**
 ```
 GET/admin/customer_groups HTTP/1.1
@@ -280,6 +282,7 @@ Content-Type: application/json
     ]
 }
 ```
+<a name= "get-customer_groups?"></a>
 ## 1.6 Lấy nhóm khách hàng theo bộ lọc
 **Request**
 ```
