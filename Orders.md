@@ -2755,31 +2755,168 @@ Content-Type: application/json
 ### 5.1 Chi tiết Shipper
 **Request**
 ```
-POST /admin/orders/{order_id}/fulfillments/{fulfillment_id}/payments HTTP/1.1
+GET /admin/delivery_service_providers HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
-
+param: 
+"shipped_on_max": 10000
 ```
 **Kết quả trả về**
 ```
+{
+    "metadata": {
+        "total": 2,
+        "page": 1,
+        "limit": 250
+    },
+    "delivery_service_providers": [
+        {
+            "id": 10355,
+            "tenant_id": 56322,
+            "code": "DSP0907181",
+            "name": "Ship ca nhân",
+            "type": "external_shipper",
+            "reference_account_id": null,
+            "phone_number": "09876534234",
+            "address": "dfsd",
+            "email": null,
+            "group_name": null,
+            "status": "active",
+            "created_on": "2018-07-09T08:10:28Z",
+            "modified_on": "2018-07-09T08:10:28Z",
+            "init": false,
+            "note": null,
+            "shipment_count": 6,
+            "total_freight_amount": 0,
+            "debt": 400000
+        },
+        {
+            "id": 8342,
+            "tenant_id": 56322,
+            "code": "DSP1205181",
+            "name": "Shipper 1",
+            "type": "employee",
+            "reference_account_id": null,
+            "phone_number": "0988524667",
+            "address": null,
+            "email": null,
+            "group_name": null,
+            "status": "active",
+            "created_on": "2018-05-12T01:54:50Z",
+            "modified_on": "2018-05-12T01:54:50Z",
+            "init": false,
+            "note": null,
+            "shipment_count": 5,
+            "total_freight_amount": 10000,
+            "debt": 0
+        }
+    ]
+}
+```
 
-```
-**Trường hợp có lỗi**
-```
-```
 <a name="debt-change"></a>
 ### 5.2 Công nợ Shipper
 **Request**
 ```
-POST /admin/orders/{order_id}/fulfillments/{fulfillment_id}/payments HTTP/1.1
+GET /admin/delivery_service_providers/{id}/debt_change_logs HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
 **Kết quả trả về**
 ```
+{
+    "metadata": {
+        "total": 4,
+        "page": 1,
+        "limit": 250
+    },
+    "debt_change_logs": [
+        {
+            "id": 17151872,
+            "code": "SO2007181",
+            "invoice_code": "",
+            "account_name": "Ha Duong",
+            "document_issued_on": "2018-07-20T07:08:54Z",
+            "modified_on": "2018-07-20 07:08:54.977",
+            "change_debt": 500000,
+            "debt_amount": 400000,
+            "location_id": 58369,
+            "account_id": 72098,
+            "created_on": "2018-07-20T07:08:54Z",
+            "document_type": 303,
+            "document_id": 3562949,
+            "object_type": 3,
+            "object_id": 10355,
+            "action": "prepayment_added",
+            "log_id": 19950561,
+            "log_type": 3,
+            "root_id": 15751143
+        },
+        {
+            "id": 17151650,
+            "code": "RV20071813",
+            "invoice_code": "",
+            "account_name": "Ha Duong",
+            "document_issued_on": "2018-07-20T07:04:22Z",
+            "modified_on": "2018-07-20 07:04:23.777",
+            "change_debt": -100000,
+            "debt_amount": -100000,
+            "location_id": 58369,
+            "account_id": 72098,
+            "created_on": "2018-07-20T07:04:23Z",
+            "document_type": 450,
+            "document_id": 7410799,
+            "object_type": 3,
+            "object_id": 10355,
+            "action": "created",
+            "log_id": 7441365,
+            "log_type": 7,
+            "root_id": 7410799
+        },
+        {
+            "id": 16442989,
+            "code": "SO0907184",
+            "invoice_code": "",
+            "account_name": "Ha Duong",
+            "document_issued_on": "2018-07-09T09:28:50Z",
+            "modified_on": "2018-07-09 09:28:51.26",
+            "change_debt": 800000,
+            "debt_amount": 0,
+            "location_id": 58369,
+            "account_id": 72098,
+            "created_on": "2018-07-09T09:28:51Z",
+            "document_type": 303,
+            "document_id": 3473857,
+            "object_type": 3,
+            "object_id": 10355,
+            "action": "prepayment_added",
+            "log_id": 19162785,
+            "log_type": 3,
+            "root_id": 15414945
+        },
+        {
+            "id": 16441927,
+            "code": "RV0907189",
+            "invoice_code": "",
+            "account_name": "Ha Duong",
+            "document_issued_on": "2018-07-09T09:16:20Z",
+            "modified_on": "2018-07-09 09:16:21.677",
+            "change_debt": -800000,
+            "debt_amount": -800000,
+            "location_id": 58369,
+            "account_id": 72098,
+            "created_on": "2018-07-09T09:16:21Z",
+            "document_type": 450,
+            "document_id": 7173190,
+            "object_type": 3,
+            "object_id": 10355,
+            "action": "created",
+            "log_id": 7202748,
+            "log_type": 7,
+            "root_id": 7173190
+        }
+    ]
+}
+```
 
-```
-**Trường hợp có lỗi**
-```
-```
