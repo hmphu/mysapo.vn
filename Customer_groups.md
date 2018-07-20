@@ -5,7 +5,23 @@ Vì lí do bảo mật, tài nguyên Customer trên Sapo.vn không lưu thông t
 
 Người dùng có thể quản lý khách hàng theo nhóm để tiện áp dụng cho các chương trình ưu đãi cũng như khuyến mại của cửa hàng. 
 Chú ý: Mỗi khách hàng chỉ có thể nằm trong một nhóm khách hàng.
-## Tạo nhóm khách hàng
+
+[1. Tạo nhóm khách hàng](#order)
+
+[2. Duyệt đơn hàng](#finalize)
+
+[3. Hủy đơn hàng](#cancel)
+
+[4. Đăng đơn hàng mới](#order)
+
+[5. Duyệt đơn hàng](#finalize)
+
+[6. Hủy đơn hàng](#cancel)
+
+   
+
+
+## 1. Tạo nhóm khách hàng
 Bắt đầu với việc tạo nhóm khách hàng, bạn sẽ đưa ra những tùy chọn nhóm để thêm khách hàng vào danh sách.
 
 **Các tham số**
@@ -21,39 +37,6 @@ Bắt đầu với việc tạo nhóm khách hàng, bạn sẽ đưa ra những 
 | Customer_group.default_price_list_id |	yes | Id định danh danh sách hàng  |
 | Customer_group.code | yes | Mã tham chiếu đến nhóm khách hàng trong hệ thống |
 | Customer_group.note|	no | Ghi chú cho nhóm khách hàng (nếu có) . Trường này có thể NULL |
-
-**Request**
-
-```
-POST/admin/customer_groups.json HTTP/1.1
-Host: autotest.mysapo.vn
-
-"{
-    ""customer_group"": {
-        ""name"": ""New Sun group1"",
-        ""is_default"": false,
-        ""default_payment_term_id"": 0,
-        ""default_payment_method_id"": 0,
-        ""default_tax_type_id"": 0,
-        ""default_discount_rate"": 0,
-        ""default_price_list_id"": 0,
-        ""note"": null,
-        ""code"": ""CT200617541""
-    }
-}"
-```
-
-**Kết quả trả về**
-```
-```
-## Cập nhật nhóm khách hàng
-
-Bạn có thể sửa đổi và cập nhật các thuộc tính trong nhóm khách hàng đã được tạo trước đó.
-
-**Các tham số**
-
-| Tham số | Bắt buộc | Mô tả |
-| ------------- |:-------------:|:-------------|
 | Customer_group.id |	yes | Id định danh cho nhóm khách hàng trong hệ thống. Trường không bắt buộc người dùng điền, tự sinh dưới hệ thống khi để trống. |
 | Customer_group.tenant_id |	yes | id định danh cho nhân viên thực hiện tạo nhóm khách hàng  |
 | Customer_group.created_on |	yes | Thời gian nhóm khách hàng được tạo. API trả về kết quả theo định dạng chuẩn ISO 8601. |
@@ -71,13 +54,63 @@ Bạn có thể sửa đổi và cập nhật các thuộc tính trong nhóm kh�
 | Customer_group.note|	no | Ghi chú cho nhóm khách hàng (nếu có) . Trường này có thể NULL |
 | Customer_group.count_customer | yes | Mã tham chiếu đến nhóm khách hàng trong hệ thống |
 
-**[POST/admin/customer_groups/id.json]**
+**Request**
+
 ```
-PUT/admin/customer_groups/id.json HTTP/1.1
-Host: autotest.mysapo.vn
+POST admin/customer_groups HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+{
+    "customer_group": {
+        "name": "New Sun group1",
+        "is_default": false,
+        "default_payment_term_id": 0,
+        "default_payment_method_id": 0,
+        "default_tax_type_id": 0,
+        "default_discount_rate": 0,
+        "default_price_list_id": 0,
+        "note": null,
+        "code": "CT200617541"
+    }
+}
+```
+
+**Kết quả trả về**
+```
+{
+    "customer_group": {
+        "id": 268479,
+        "tenant_id": 56322,
+        "created_on": "2018-07-20T07:55:43Z",
+        "modified_on": "2018-07-20T07:55:43Z",
+        "name": "New Sun group1",
+        "name_translate": "New Sun group1",
+        "status": "active",
+        "is_default": false,
+        "default_payment_term_id": 0,
+        "default_payment_method_id": 0,
+        "default_tax_type_id": 0,
+        "default_discount_rate": 0,
+        "default_price_list_id": 0,
+        "note": null,
+        "code": "CT200617541",
+        "count_customer": null
+    }
+}
+```
+## 2. Cập nhật nhóm khách hàng
+
+Bạn có thể sửa đổi và cập nhật các thuộc tính trong nhóm khách hàng đã được tạo trước đó.
+
+**Request**
+```
+PUT/admin/customer_groups/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
 "{
     ""customer_group"": {
-        ""id"": 14379,
+        ""id"": 268479,
         ""tenant_id"": 9287,
         ""created_on"": ""2017-06-20T02:54:06Z"",
         ""modified_on"": ""2017-06-20T02:55:06Z"",
@@ -99,18 +132,225 @@ Host: autotest.mysapo.vn
 ```
 **Kết quả trả về**
 ```
+{
+    "customer_group": {
+        "id": 268479,
+        "tenant_id": 56322,
+        "created_on": "2018-07-20T07:55:43Z",
+        "modified_on": "2018-07-20T08:01:50Z",
+        "name": "New Sun group1",
+        "name_translate": "New Sun group1",
+        "status": "active",
+        "is_default": false,
+        "default_payment_term_id": 0,
+        "default_payment_method_id": 0,
+        "default_tax_type_id": 0,
+        "default_discount_rate": 0,
+        "default_price_list_id": 0,
+        "note": null,
+        "code": "CT200617541",
+        "count_customer": null
+    }
+}
 ```
-## Xóa nhóm khách hàng
+**Trường hợp có lỗi**
+```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "code": "Mã nhóm khách hàng đã tồn tại"
+        }
+    }
+}
+```
+## 1.3 Xóa nhóm khách hàng
 Khi nhóm khách hàng đã tồn tại trong hệ thống, bạn hoàn toàn có thể thực hiện xóa nhóm khách hàng.
-**[DELETE/admin/customer_groups/id.json]**
+**Request**
 ```
-DELETE/admin/customer_groups/id.json 
-HTTP/1.1 200 OK
-{}
+DELETE/admin/customer_groups/id HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
 ```
-## Lấy 1 nhóm khách hàng theo id
-**[GET/admin/customer_groups/id.json]**
-
-## Lấy toàn bộ nhóm khách hàng
-**[GET/admin/customer_groups.json]**
-
+**kết quả trả về**
+```
+200 OK
+```
+## 1.4 Lấy 1 nhóm khách hàng theo id
+**Request**
+```
+GET/admin/customer_groups/id HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+{
+    "customer_group": {
+        "id": 268512,
+        "tenant_id": 56322,
+        "created_on": "2018-07-20T08:13:31Z",
+        "modified_on": "2018-07-20T08:13:31Z",
+        "name": "New Sun group",
+        "name_translate": "New Sun group",
+        "status": "deleted",
+        "is_default": false,
+        "default_payment_term_id": 0,
+        "default_payment_method_id": 0,
+        "default_tax_type_id": 0,
+        "default_discount_rate": 0,
+        "default_price_list_id": 0,
+        "note": null,
+        "code": "CT200617542",
+        "count_customer": null
+    }
+}
+```
+## 1.5 Lấy toàn bộ nhóm khách hàng
+**Request**
+```
+GET/admin/customer_groups HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+{
+    "metadata": {
+        "total": 3,
+        "page": 1,
+        "limit": 250
+    },
+    "customer_groups": [
+        {
+            "id": 226529,
+            "tenant_id": 56322,
+            "created_on": "2018-05-08T02:07:59Z",
+            "modified_on": "2018-06-22T04:23:27Z",
+            "name": "VIP",
+            "name_translate": "Vip",
+            "status": "active",
+            "is_default": true,
+            "default_payment_term_id": 0,
+            "default_payment_method_id": 0,
+            "default_tax_type_id": 0,
+            "default_discount_rate": 0,
+            "default_price_list_id": 0,
+            "note": null,
+            "code": "VIP",
+            "count_customer": 0
+        },
+        {
+            "id": 226528,
+            "tenant_id": 56322,
+            "created_on": "2018-05-08T02:07:59Z",
+            "modified_on": "2018-06-22T03:31:30Z",
+            "name": "WHOLESALE",
+            "name_translate": "Bán buôn",
+            "status": "active",
+            "is_default": true,
+            "default_payment_term_id": 0,
+            "default_payment_method_id": 0,
+            "default_tax_type_id": 0,
+            "default_discount_rate": 0,
+            "default_price_list_id": 0,
+            "note": null,
+            "code": "BANBUON",
+            "count_customer": 0
+        },
+        {
+            "id": 226527,
+            "tenant_id": 56322,
+            "created_on": "2018-05-08T02:07:59Z",
+            "modified_on": "2018-05-08T02:07:59Z",
+            "name": "RETAIL",
+            "name_translate": "Bán lẻ",
+            "status": "active",
+            "is_default": true,
+            "default_payment_term_id": null,
+            "default_payment_method_id": null,
+            "default_tax_type_id": null,
+            "default_discount_rate": null,
+            "default_price_list_id": null,
+            "note": null,
+            "code": "BANLE",
+            "count_customer": 10
+        }
+    ]
+}
+```
+## 1.6 Lấy nhóm khách hàng theo bộ lọc
+**Request**
+```
+GET /admin/customer_groups? HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+param: status = (active)
+```
+**Kết quả trả về**
+```
+{
+    "metadata": {
+        "total": 3,
+        "page": 1,
+        "limit": 250
+    },
+    "customer_groups": [
+        {
+            "id": 226529,
+            "tenant_id": 56322,
+            "created_on": "2018-05-08T02:07:59Z",
+            "modified_on": "2018-06-22T04:23:27Z",
+            "name": "VIP",
+            "name_translate": "Vip",
+            "status": "active",
+            "is_default": true,
+            "default_payment_term_id": 0,
+            "default_payment_method_id": 0,
+            "default_tax_type_id": 0,
+            "default_discount_rate": 0,
+            "default_price_list_id": 0,
+            "note": null,
+            "code": "VIP",
+            "count_customer": 0
+        },
+        {
+            "id": 226528,
+            "tenant_id": 56322,
+            "created_on": "2018-05-08T02:07:59Z",
+            "modified_on": "2018-06-22T03:31:30Z",
+            "name": "WHOLESALE",
+            "name_translate": "Bán buôn",
+            "status": "active",
+            "is_default": true,
+            "default_payment_term_id": 0,
+            "default_payment_method_id": 0,
+            "default_tax_type_id": 0,
+            "default_discount_rate": 0,
+            "default_price_list_id": 0,
+            "note": null,
+            "code": "BANBUON",
+            "count_customer": 0
+        },
+        {
+            "id": 226527,
+            "tenant_id": 56322,
+            "created_on": "2018-05-08T02:07:59Z",
+            "modified_on": "2018-05-08T02:07:59Z",
+            "name": "RETAIL",
+            "name_translate": "Bán lẻ",
+            "status": "active",
+            "is_default": true,
+            "default_payment_term_id": null,
+            "default_payment_method_id": null,
+            "default_tax_type_id": null,
+            "default_discount_rate": null,
+            "default_price_list_id": null,
+            "note": null,
+            "code": "BANLE",
+            "count_customer": 10
+        }
+    ]
+}
+```
