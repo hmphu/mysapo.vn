@@ -4,7 +4,20 @@ Một tài nguyên Supplier đại diện cho một đơn vị cung cấp sản 
  
 Chủ shop có thể quản lý nhà cung cấp theo nhóm để tiện áp dụng các phương thức thanh toán, kế hoạch nhập hàng. 
 Chú ý: Mỗi nhà cung cấp chỉ có thể nằm trong một nhóm nhà cung cấp.
-## Tạo mới nhóm nhà cung cấp
+
+[1. Tạo nhóm khách hàng](#add-customer_groups)
+
+[2. Cập nhật nhóm khách hàng](#put-customer_groups)
+
+[3. Xóa nhóm khách hàng](#delete-customer_groups)
+
+[4. Lấy 1 nhóm khách hàng theo id](#get-customer_groups_id)
+
+[5. Lấy toàn bộ nhóm khách hàng](#get-customer_groups)
+
+[6. Lấy nhóm khách hàng theo bộ lọc](#get-customer_groups?)
+
+## 1. Tạo mới nhóm nhà cung cấp
 Bắt đầu với việc tạo nhóm nhà cung cấp, bạn sẽ đưa ra những tùy chọn nhóm để thêm nhà cung cấp vào danh sách.
 
 **Các tham số**
@@ -16,20 +29,14 @@ Bắt đầu với việc tạo nhóm nhà cung cấp, bạn sẽ đưa ra nhữ
 | Supplier_group.code | yes | Mã tham chiếu đến nhóm nhà cung cấp trong hệ thống |
 | Supplier_group.note| no | Ghi chú, mô tả cho nhóm nhà cung cấp (nếu có) . Trường này có thể NULL |
 
-**[POST/admin/supplier_groups.json]**
+**Request**
 
 ```
-POST/admin/supplier_groups.json HTTP/1.1
-Host: autotest.mysapo.vn
+POST/admin/supplier_groups HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
 
-"{
-    ""supplier_group"": {
-        ""name"": ""New Sun group1"",
-        ""is_default"": false,
-        ""note"": null,
-        ""code"": ""ST200617541""
-    }
-}"
+
 ```
 
 **Kết quả trả về**
