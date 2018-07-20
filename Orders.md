@@ -1,5 +1,5 @@
 # Đơn hàng
-[1. Order](#order)
+[1. Orders](#order)
 
    [ 1.1 Đăng đơn hàng mới](#order)
 
@@ -2247,7 +2247,128 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "fulfillment": {
+        "id": 34993965,
+        "tenant_id": 56322,
+        "stock_location_id": 58369,
+        "code": "FU1807181",
+        "order_id": 15617302,
+        "account_id": 72098,
+        "assignee_id": 72098,
+        "partner_id": 4128452,
+        "billing_address": {
+            "id": 18777091,
+            "label": "Giao hàng",
+            "first_name": null,
+            "last_name": null,
+            "address1": "Hà Nội",
+            "address2": null,
+            "email": null,
+            "phone_number": null,
+            "country": "Việt Nam",
+            "city": "Hà Nội",
+            "district": "Thị xã Sơn Tây",
+            "zip_code": null,
+            "full_address": null
+        },
+        "delivery_type": "courier",
+        "tax_treatment": "exclusive",
+        "discount_rate": 0,
+        "discount_value": 0,
+        "discount_amount": 0,
+        "total": 567000,
+        "total_tax": 0,
+        "total_discount": 0,
+        "notes": null,
+        "packed_on": "2018-07-18T07:11:23Z",
+        "received_on": null,
+        "shipped_on": "2018-07-18T07:17:24Z",
+        "cancel_date": "2018-07-20T07:14:19Z",
+        "cancel_account_id": 72098,
+        "created_on": "2018-07-18T07:11:21Z",
+        "modified_on": "2018-07-20T07:23:14Z",
+        "status": "cancelled",
+        "composite_fulfillment_status": null,
+        "payment_status": "unpaid",
+        "status_before_cancellation": "fulfilled",
+        "stock_out_account_id": 72098,
+        "receive_account_id": null,
+        "receive_cancellation_account_id": 72098,
+        "receive_cancellation_on": "2018-07-20T07:23:14Z",
+        "fulfillment_line_items": [
+            {
+                "id": 34993964,
+                "created_on": "2018-07-18T07:11:21Z",
+                "modified_on": "2018-07-18T07:11:21Z",
+                "order_line_item_id": 25260744,
+                "product_id": 3262678,
+                "product_name": "Khăn ống Tommy Hilfiger",
+                "variant_id": 4697232,
+                "variant_name": "Khăn ống Tommy Hilfiger",
+                "order_line_item_note": null,
+                "is_freeform": false,
+                "is_composite": false,
+                "is_packsize": false,
+                "base_price": 630000,
+                "quantity": 0.9,
+                "tax_type_id": null,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "line_amount": 567000,
+                "line_tax_amount": 0,
+                "line_discount_amount": 0,
+                "discount_value": 0,
+                "discount_rate": 0,
+                "variant": null,
+                "sku": "SP7",
+                "barcode": "SP7",
+                "unit": null,
+                "variant_options": "(combo)"
+            }
+        ],
+        "shipment": {
+            "delivery_service_provider_id": 8342,
+            "service_name": null,
+            "cod_amount": 630000,
+            "freight_amount": 0,
+            "freight_amount_detail": null,
+            "delivery_fee": 0,
+            "tracking_code": "FU1807181",
+            "tracking_url": null,
+            "created_on": "2018-07-18T07:11:21Z",
+            "modified_on": "2018-07-18T07:11:21Z",
+            "sender_address": null,
+            "shipping_address": {
+                "id": 18777092,
+                "label": null,
+                "first_name": "test 1",
+                "last_name": null,
+                "address1": "Hà Nội",
+                "address2": null,
+                "email": null,
+                "phone_number": "0987654320",
+                "country": "Việt Nam",
+                "city": "Hà Nội",
+                "district": "Thị xã Sơn Tây",
+                "zip_code": null,
+                "full_address": null
+            },
+            "shipper_deposits": [],
+            "detail": "{\"source_location_id\":58369,\"destination_country_id\":201,\"destination_province_id\":1,\"destination_district_id\":1,\"destination_address\":\"Hà Nội\",\"delivery_fee\":0.0,\"cod_amount\":630000.0,\"note\":null,\"delivery_service_provider_id\":8342,\"receiver_name\":\"test 1\",\"receiver_phone\":\"0987654320\",\"destination_country\":\"Việt Nam\",\"destination_province\":\"Hà Nội\",\"destination_district\":\"Thị xã Sơn Tây\"}",
+            "note": null,
+            "pushing_status": null,
+            "reference_status": null,
+            "reference_status_explanation": null,
+            "pushing_note": null,
+            "collation_status": "unresolved",
+            "delivery_service_provider": null
+        },
+        "payments": [],
+        "total_quantity": 0.9,
+        "reason_cancel_id": null
+    }
+}
 ```
 **Trường hợp có lỗi **
 ```
@@ -2264,17 +2385,180 @@ Content-Type: application/json
 ### 3.6 Lấy danh sách đơn hàng được đóng gói
 **Request**
 ```
-GET /admin/fulfillments HTTP/1.1
+GET /admin/fulfillments/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
 **Kết quả trả về**
 ```
- "metadata": {
-        "total": 19,
-        "page": 1,
-        "limit": 250
+ {
+    "fulfillment": {
+        "id": 35176878,
+        "tenant_id": 56322,
+        "stock_location_id": 58369,
+        "code": "FU2007181",
+        "order_id": 15751143,
+        "order": {
+            "code": "SO2007181",
+            "ship_on": null,
+            "ship_on_min": null,
+            "ship_on_max": null
+        },
+        "account_id": 72098,
+        "assignee_id": 72098,
+        "partner_id": 4228385,
+        "customer": {
+            "id": 4228385,
+            "code": "KH00001",
+            "name": "test 2",
+            "email": null,
+            "phone_number": "0987654321"
+        },
+        "billing_address": {
+            "id": 18865364,
+            "label": "Giao hàng",
+            "first_name": null,
+            "last_name": null,
+            "address1": "Hà Nội",
+            "address2": null,
+            "email": null,
+            "phone_number": null,
+            "country": "Việt Nam",
+            "city": "Hà Nội",
+            "district": "Quận Long Biên",
+            "zip_code": null,
+            "full_address": null
+        },
+        "delivery_type": "courier",
+        "tax_treatment": "exclusive",
+        "discount_rate": 0,
+        "discount_value": 0,
+        "discount_amount": 0,
+        "total": 250000,
+        "total_tax": 0,
+        "total_discount": 0,
+        "notes": null,
+        "packed_on": "2018-07-20T06:55:57Z",
+        "received_on": "2018-07-20T07:08:54Z",
+        "shipped_on": "2018-07-20T07:04:22Z",
+        "cancel_date": null,
+        "cancel_account_id": null,
+        "created_on": "2018-07-20T06:56:17Z",
+        "modified_on": "2018-07-20T07:08:54Z",
+        "status": "received",
+        "composite_fulfillment_status": "received",
+        "payment_status": "paid",
+        "stock_out_account_id": 72098,
+        "receive_account_id": 72098,
+        "receive_cancellation_account_id": null,
+        "receive_cancellation_on": null,
+        "fulfillment_line_items": [
+            {
+                "id": 35176877,
+                "created_on": "2018-07-20T06:56:17Z",
+                "modified_on": "2018-07-20T06:56:17Z",
+                "order_line_item_id": 25550203,
+                "product_id": 3217942,
+                "product_name": "Váy len nữ",
+                "variant_id": 4594856,
+                "variant_name": "Váy len nữ",
+                "order_line_item_note": null,
+                "is_freeform": false,
+                "is_composite": false,
+                "is_packsize": false,
+                "base_price": 500000,
+                "quantity": 0.5,
+                "tax_type_id": null,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "line_amount": 250000,
+                "line_tax_amount": 0,
+                "line_discount_amount": 0,
+                "discount_value": 0,
+                "discount_rate": 0,
+                "variant": {
+                    "sku": "V0001",
+                    "name": "Váy len nữ",
+                    "barcode": "V0001",
+                    "unit": null
+                },
+                "sku": "V0001",
+                "barcode": "V0001",
+                "unit": null,
+                "variant_options": "Trắng / Len co dãn / Zara"
+            }
+        ],
+        "shipment": {
+            "delivery_service_provider_id": 10355,
+            "service_name": null,
+            "cod_amount": 500000,
+            "freight_amount": 0,
+            "freight_amount_detail": null,
+            "delivery_fee": 0,
+            "tracking_code": "FU2007181",
+            "tracking_url": null,
+            "created_on": "2018-07-20T06:56:17Z",
+            "modified_on": "2018-07-20T07:04:22Z",
+            "sender_address": null,
+            "shipping_address": {
+                "id": 18865365,
+                "label": null,
+                "first_name": "test 2",
+                "last_name": null,
+                "address1": "Hà Nội",
+                "address2": null,
+                "email": null,
+                "phone_number": "0987654321",
+                "country": "Việt Nam",
+                "city": "Hà Nội",
+                "district": "Quận Long Biên",
+                "zip_code": null,
+                "full_address": null
+            },
+            "shipper_deposits": [
+                {
+                    "id": 87493,
+                    "payment_method_id": 3647,
+                    "paid_on": "2018-07-20T07:04:22Z",
+                    "amount": 100000,
+                    "account_id": 72098,
+                    "created_on": "2018-07-20T07:04:22Z",
+                    "modified_on": "2018-07-20T07:04:22Z",
+                    "status": "active"
+                }
+            ],
+            "detail": "{\"source_location_id\":58369,\"destination_country_id\":201,\"destination_province_id\":1,\"destination_district_id\":9,\"destination_address\":\"Hà Nội\",\"delivery_fee\":0.0,\"cod_amount\":500000.0,\"note\":null,\"delivery_service_provider_id\":10355,\"receiver_name\":\"test 2\",\"receiver_phone\":\"0987654321\",\"destination_country\":\"Việt Nam\",\"destination_province\":\"Hà Nội\",\"destination_district\":\"Quận Long Biên\"}",
+            "note": null,
+            "pushing_status": null,
+            "reference_status": null,
+            "reference_status_explanation": null,
+            "pushing_note": null,
+            "collation_status": "unresolved",
+            "delivery_service_provider": null
+        },
+        "payments": [
+            {
+                "id": 16844404,
+                "account_id": 72098,
+                "created_on": "2018-07-20T07:08:54Z",
+                "modified_on": "2018-07-20T07:08:54Z",
+                "order_id": 15751143,
+                "fulfillment_id": 35176878,
+                "payment_method_id": 220258,
+                "amount": 250000,
+                "reference": null,
+                "paid_on": "2018-07-20T07:08:54Z",
+                "status": "active",
+                "paid_amount": 0,
+                "returned_amount": 0,
+                "prepayment_id": 3562949
+            }
+        ],
+        "total_quantity": 0.5,
+        "reason_cancel_id": null
+    }
+}
 ```
 <a name="put-fulfillments"></a>
 ### 3.7 Cập nhật đơn hàng được đóng gói
@@ -2284,13 +2568,142 @@ PUT /admin/orders/{order_id}/fulfillments/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
+{
+  "fulfillment": {
+    "shipment": {
+      "cod_amount": 0,
+      "delivery_fee": 0,
+      "freight_amount": 10000,
+      "tracking_code": "FU29051726",
+      "pushing_status": "completed"
+    }
+  }
+}
+
 ```
 **Kết quả trả về**
 ```
- "metadata": {
-        "total": 19,
-        "page": 1,
-        "limit": 250
+ {
+    "fulfillment": {
+        "id": 35180050,
+        "tenant_id": 56322,
+        "stock_location_id": 58369,
+        "code": "FU2007182",
+        "order_id": 15695555,
+        "account_id": 72098,
+        "assignee_id": 72098,
+        "partner_id": 3281243,
+        "billing_address": {
+            "id": 18867502,
+            "label": null,
+            "first_name": "Hoàng Sơn",
+            "last_name": "Nguyễn",
+            "address1": "Tựu Liệt",
+            "address2": null,
+            "email": null,
+            "phone_number": null,
+            "country": "Việt Nam",
+            "city": "Hà Nội",
+            "district": "Huyện Thanh Trì",
+            "zip_code": null,
+            "full_address": null
+        },
+        "delivery_type": "courier",
+        "tax_treatment": "exclusive",
+        "discount_rate": 0,
+        "discount_value": 0,
+        "discount_amount": 0,
+        "total": 250000,
+        "total_tax": 0,
+        "total_discount": 0,
+        "notes": null,
+        "packed_on": "2018-07-20T07:28:50Z",
+        "received_on": null,
+        "shipped_on": null,
+        "cancel_date": null,
+        "cancel_account_id": null,
+        "created_on": "2018-07-20T07:29:07Z",
+        "modified_on": "2018-07-20T07:29:54Z",
+        "status": "packed",
+        "composite_fulfillment_status": null,
+        "payment_status": "unpaid",
+        "stock_out_account_id": null,
+        "receive_account_id": null,
+        "receive_cancellation_account_id": null,
+        "receive_cancellation_on": null,
+        "fulfillment_line_items": [
+            {
+                "id": 35180049,
+                "created_on": "2018-07-20T07:29:07Z",
+                "modified_on": "2018-07-20T07:29:07Z",
+                "order_line_item_id": 25422960,
+                "product_id": 3217942,
+                "product_name": "Váy len nữ",
+                "variant_id": 4594856,
+                "variant_name": "Váy len nữ",
+                "order_line_item_note": null,
+                "is_freeform": false,
+                "is_composite": false,
+                "is_packsize": false,
+                "base_price": 500000,
+                "quantity": 0.5,
+                "tax_type_id": null,
+                "tax_rate_override": 0,
+                "tax_rate": 0,
+                "line_amount": 250000,
+                "line_tax_amount": 0,
+                "line_discount_amount": 0,
+                "discount_value": 0,
+                "discount_rate": 0,
+                "variant": null,
+                "sku": "V0001",
+                "barcode": "V0001",
+                "unit": null,
+                "variant_options": "Trắng / Len co dãn / Zara"
+            }
+        ],
+        "shipment": {
+            "delivery_service_provider_id": 8342,
+            "service_name": null,
+            "cod_amount": 0,
+            "freight_amount": 10000,
+            "freight_amount_detail": null,
+            "delivery_fee": 0,
+            "tracking_code": "FU29051726",
+            "tracking_url": null,
+            "created_on": "2018-07-20T07:29:07Z",
+            "modified_on": "2018-07-20T07:29:54Z",
+            "sender_address": null,
+            "shipping_address": {
+                "id": 18867503,
+                "label": null,
+                "first_name": "Nguyễn Hoàng Sơn",
+                "last_name": null,
+                "address1": "Tựu Liệt",
+                "address2": null,
+                "email": null,
+                "phone_number": "0987654232",
+                "country": "Việt Nam",
+                "city": "Hà Nội",
+                "district": "Huyện Thanh Trì",
+                "zip_code": null,
+                "full_address": null
+            },
+            "shipper_deposits": [],
+            "detail": "{\"source_location_id\":58369,\"destination_country_id\":201,\"destination_province_id\":1,\"destination_district_id\":26,\"destination_address\":\"Tựu Liệt\",\"delivery_fee\":0.0,\"cod_amount\":500000.0,\"note\":null,\"delivery_service_provider_id\":8342,\"receiver_name\":\"Nguyễn Hoàng Sơn\",\"receiver_phone\":\"0987654232\",\"destination_country\":\"Việt Nam\",\"destination_province\":\"Hà Nội\",\"destination_district\":\"Huyện Thanh Trì\"}",
+            "note": null,
+            "pushing_status": null,
+            "reference_status": null,
+            "reference_status_explanation": null,
+            "pushing_note": null,
+            "collation_status": "unresolved",
+            "delivery_service_provider": null
+        },
+        "payments": [],
+        "total_quantity": 0.5,
+        "reason_cancel_id": null
+    }
+}
 ```
 <a name="print"></a>
 ## 4.In
