@@ -17,6 +17,9 @@ Chú ý: Mỗi nhà cung cấp chỉ có thể nằm trong một nhóm nhà cung
 
 [6. Lấy nhóm nhà cung cấp theo bộ lọc](#get-supplier_groups?)
 
+[7. Lấy mã code nhà cung cấp](#get-supplier_groups_codes)
+
+<a name="#add-supplier_groups"></a>
 ## 1. Tạo mới nhóm nhà cung cấp
 Bắt đầu với việc tạo nhóm nhà cung cấp, bạn sẽ đưa ra những tùy chọn nhóm để thêm nhà cung cấp vào danh sách.
 
@@ -76,7 +79,8 @@ Content-Type: application/json
     }
 }
 ```
-## Cập nhật nhóm nhà cung cấp
+<a name="#put-supplier_groups"></a>
+## 2. Cập nhật nhóm nhà cung cấp
 
 Bạn có thể sửa đổi và cập nhật các thuộc tính trong nhóm nhà cung cấp đã được tạo trước đó.
 
@@ -121,7 +125,8 @@ Content-Type: application/json
     }
 }
 ```
-## Xóa nhóm nhà cung cấp
+<a name="#delete-supplier_groups"></a>
+## 3. Xóa nhóm nhà cung cấp
 Khi nhóm nhà cung cấp đã tồn tại trong hệ thống, bạn hoàn toàn có thể thực hiện xóa nhóm nhà cung cấp.
 
 **Request**
@@ -134,7 +139,8 @@ Content-Type: application/json
 ```
 Status: 200 OK
 ```
-## Lấy 1 nhóm nhà cung cấp theo id
+<a name="#get-supplier_groups_id"></a>
+## 4. Lấy 1 nhóm nhà cung cấp theo id
 **Request**
 ```
 GET/admin/supplier_groups/id
@@ -160,8 +166,8 @@ Content-Type: application/json
     }
 }
 ```
-
-## Lấy toàn bộ nhóm nhà cung cấp
+<a name="#get-supplier_groups"></a>
+## 5. Lấy toàn bộ nhóm nhà cung cấp
 **Request**
 ```
 GET/admin/supplier_groups
@@ -222,7 +228,8 @@ Content-Type: application/json
     ]
 }
 ```
-## Lấy nhóm nhà cung cấp theo bộ lọc
+<a name="#get-supplier_groups?"></a>
+## 6. Lấy nhóm nhà cung cấp theo bộ lọc
 **Request**
 ```
 GET/admin/supplier_groups?
@@ -242,7 +249,8 @@ statuses=(active,deleted)
     "supplier_groups": []
 }
 ```
-## Lấy mã code nhà cung cấp
+<a name="#get-supplier_groups_codes"></a>
+## 7. Lấy mã code nhà cung cấp
 **Request**
 ```
 GET/admin/supplier_groups/codes
