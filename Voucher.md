@@ -1,4 +1,18 @@
 # Voucher
+[1. Tạo nhóm nhà cung cấp](#add-supplier_groups)
+
+[2. Cập nhật nhóm nhà cung cấp](#put-supplier_groups)
+
+[3. Xóa nhóm nhà cung cấp](#delete-supplier_groups)
+
+[4. Lấy 1 nhóm nhà cung cấp theo id](#get-supplier_groups_id)
+
+[5. Lấy toàn bộ nhóm nhà cung cấp](#get-supplier_groups)
+
+[6. Lấy nhóm nhà cung cấp theo bộ lọc](#get-supplier_groups?)
+
+[7. Lấy mã code nhà cung cấp](#get-supplier_groups_codes)
+
 ## 1. Phiếu chi
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
 Phiếu chi là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
@@ -77,9 +91,7 @@ Content-Type: application/json
   }
 }
 ```
-**Trường hợp có lỗi**
-```
-```
+
 ### 1.2 Lấy phiếu chi theo id
 **Request**
 
