@@ -303,14 +303,301 @@ Status: 200 OK
 GET /admin/payment_vouchers HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json 
+
+param: "limit"=1000
 ```
 **Kết quả trả về**
 ```
+{
+    "metadata": {
+        "total": 9,
+        "page": 1,
+        "limit": 1000
+    },
+    "payment_vouchers": [
+        {
+            "id": 7414112,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV20071811",
+            "object_type": "customer",
+            "object_id": 3280093,
+            "issued_on": "2016-06-30T11:06:29Z",
+            "reference": null,
+            "note": "abc",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 10000,
+            "source_type": "refund",
+            "source_id": 159706,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-20T09:08:09Z",
+            "modified_on": "2018-07-23T03:35:51Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 212603,
+            "document_root_code": "SR2007185",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7414077,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV20071810",
+            "object_type": "customer",
+            "object_id": 3281243,
+            "issued_on": "2018-07-20T09:07:12Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 1000000,
+            "source_type": "refund",
+            "source_id": 159703,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-20T09:07:09Z",
+            "modified_on": "2018-07-20T09:07:09Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 212602,
+            "document_root_code": "SR2007184",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7414044,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV2007189",
+            "object_type": "customer",
+            "object_id": 3281243,
+            "issued_on": "2018-07-20T09:06:08Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 350000,
+            "source_type": "refund",
+            "source_id": 159702,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-20T09:06:18Z",
+            "modified_on": "2018-07-20T09:06:18Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 212602,
+            "document_root_code": "SR2007184",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7413991,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV2007188",
+            "object_type": "customer",
+            "object_id": 3338352,
+            "issued_on": "2018-07-20T09:04:25Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 100000,
+            "source_type": "refund",
+            "source_id": 159700,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-20T09:04:56Z",
+            "modified_on": "2018-07-20T09:04:56Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 212599,
+            "document_root_code": "SR2007183",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7413900,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV2007187",
+            "object_type": "customer",
+            "object_id": 4128452,
+            "issued_on": "2018-07-20T09:02:07Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 790000,
+            "source_type": "refund",
+            "source_id": 159698,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-20T09:02:05Z",
+            "modified_on": "2018-07-20T09:02:05Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 212580,
+            "document_root_code": "SR2007182",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7413801,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV2007186",
+            "object_type": "customer",
+            "object_id": 4128452,
+            "issued_on": "2016-06-30T11:06:29Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 10000,
+            "source_type": "refund",
+            "source_id": 159694,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-20T08:59:15Z",
+            "modified_on": "2018-07-20T08:59:15Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 212580,
+            "document_root_code": "SR2007182",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7413730,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV2007185",
+            "object_type": "customer",
+            "object_id": 3335156,
+            "issued_on": "2018-07-20T08:56:54Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 1999980,
+            "source_type": "refund",
+            "source_id": 159689,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-20T08:56:50Z",
+            "modified_on": "2018-07-20T08:56:50Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 198300,
+            "document_root_code": "SR2906181",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7017948,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV0207182",
+            "object_type": "customer",
+            "object_id": 3689589,
+            "issued_on": "2018-07-02T04:34:54Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 800000,
+            "source_type": "refund",
+            "source_id": 150241,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-02T04:34:54Z",
+            "modified_on": "2018-07-02T04:34:54Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 200294,
+            "document_root_code": "SR0207183",
+            "payment_method_name": null,
+            "account_name": null
+        },
+        {
+            "id": 7017348,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "account_id": 72098,
+            "code": "PV0207181",
+            "object_type": "customer",
+            "object_id": 3280093,
+            "issued_on": "2018-07-02T04:08:17Z",
+            "reference": null,
+            "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+            "payment_method_id": 220256,
+            "currency_id": 0,
+            "exchange_rate": 1,
+            "amount": 1500000,
+            "source_type": "refund",
+            "source_id": 150219,
+            "group_id": 983501,
+            "group_name": "Tự động",
+            "auto": true,
+            "counted": false,
+            "status": "active",
+            "created_on": "2018-07-02T04:08:16Z",
+            "modified_on": "2018-07-02T04:08:16Z",
+            "tags": null,
+            "cancelled_on": null,
+            "document_root_id": 200275,
+            "document_root_code": "SR0207182",
+            "payment_method_name": null,
+            "account_name": null
+        }
+    ]
+}
 ```
-**Trường hợp có lỗi**
 
-```
-```
 <a name="receipt_vouchers"></a>
 ## 1. Phiếu thu
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
@@ -326,69 +613,73 @@ Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 {
-  "payment_voucher": {
-    "id": 4,
-    "tenant_id": 77,
-    "location_id": 81,
-    "account_id": 0,
-    "code": "PV1307164",
+  "receipt_voucher": {
+    "id": 7517872,
+    "tenant_id": 56322,
+    "location_id": 58369,
+    "account_id": 72098,
+    "code": "RV25071814",
     "object_type": "customer",
-    "object_id": "1381",
-    "issued_on": "2016-07-13T01:59:35Z",
-    "reference": "refrrrrrrrrrrrrrrrrrrr",
-    "note": "Piếu này đã sửa",
-    "payment_method_id": 2008,
-    "currency_id": 7030,
-    "exchange_rate": 0,
-    "amount": 9000,
+    "object_id": 3689589,
+    "issued_on": "2018-07-25T04:26:25Z",
+    "reference": null,
+    "note": null,
+    "payment_method_id": 220258,
+    "currency_id": 56321,
+    "exchange_rate": 1,
+    "amount": 7000000,
     "source_type": null,
     "source_id": null,
-    "type": "payment",
+    "group_id": 983492,
+    "group_name": "Cho thuê tài sản",
     "auto": false,
     "counted": true,
-    "status": "cancelled",
-    "created_on": "2016-07-13T02:00:02Z",
-    "modified_on": "2016-07-13T02:12:31Z",
-    "tags": [
-      "hoinx",
-      "haha091",
-      "hichic"
-    ]
+    "status": "active",
+    "created_on": "2018-07-25T04:26:51Z",
+    "modified_on": "2018-07-25T04:26:51Z",
+    "tags": [],
+    "cancelled_on": null,
+    "document_root_id": null,
+    "document_root_code": null,
+    "account_name": null,
+    "payment_method_name": null
   }
 }
 ```
 **Kết quả trả về khi đăng chứng từ thanh toán thành công**
 ```
 {
-  "payment_voucher": {
-    "id": 4,
-    "tenant_id": 77,
-    "location_id": 81,
-    "account_id": 0,
-    "code": "PV1307164",
-    "object_type": "customer",
-    "object_id": "1381",
-    "issued_on": "2016-07-13T01:59:35Z",
-    "reference": "refrrrrrrrrrrrrrrrrrrr",
-    "note": "Piếu này đã sửa",
-    "payment_method_id": 2008,
-    "currency_id": 7030,
-    "exchange_rate": 0,
-    "amount": 9000,
-    "source_type": null,
-    "source_id": null,
-    "type": "payment",
-    "auto": false,
-    "counted": true,
-    "status": "cancelled",
-    "created_on": "2016-07-13T02:00:02Z",
-    "modified_on": "2016-07-13T02:12:31Z",
-    "tags": [
-      "hoinx",
-      "haha091",
-      "hichic"
-    ]
-  }
+    "receipt_voucher": {
+        "id": 7517897,
+        "tenant_id": 56322,
+        "location_id": 58369,
+        "account_id": 72098,
+        "code": "RV25071815",
+        "object_type": "customer",
+        "object_id": 3689589,
+        "issued_on": "2018-07-25T04:26:25Z",
+        "reference": null,
+        "note": null,
+        "payment_method_id": 220258,
+        "currency_id": 56321,
+        "exchange_rate": 1,
+        "amount": 7000000,
+        "source_type": null,
+        "source_id": null,
+        "group_id": 983492,
+        "group_name": null,
+        "auto": false,
+        "counted": true,
+        "status": "active",
+        "created_on": "2018-07-25T04:27:14Z",
+        "modified_on": "2018-07-25T04:27:14Z",
+        "tags": [],
+        "cancelled_on": null,
+        "document_root_id": null,
+        "document_root_code": null,
+        "account_name": null,
+        "payment_method_name": null
+    }
 }
 ```
 <a name="get-receipt_vouchers_id"></a>
@@ -404,34 +695,34 @@ Content-Type: application/json
 
 ```
 {
-    "payment_voucher": {
-        "id": 7414112,
+    "receipt_voucher": {
+        "id": 7517897,
         "tenant_id": 56322,
         "location_id": 58369,
         "account_id": 72098,
-        "code": "PV20071811",
+        "code": "RV25071815",
         "object_type": "customer",
-        "object_id": 3280093,
-        "issued_on": "2016-06-30T11:06:29Z",
+        "object_id": 3689589,
+        "issued_on": "2018-07-25T04:26:25Z",
         "reference": null,
-        "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
-        "payment_method_id": 220256,
-        "currency_id": 0,
+        "note": null,
+        "payment_method_id": 220258,
+        "currency_id": 56321,
         "exchange_rate": 1,
-        "amount": 10000,
-        "source_type": "refund",
-        "source_id": 159706,
-        "group_id": 983501,
-        "group_name": "Tự động",
-        "auto": true,
-        "counted": false,
+        "amount": 7000000,
+        "source_type": null,
+        "source_id": null,
+        "group_id": 983492,
+        "group_name": "Cho thuê tài sản",
+        "auto": false,
+        "counted": true,
         "status": "active",
-        "created_on": "2018-07-20T09:08:09Z",
-        "modified_on": "2018-07-20T09:08:09Z",
+        "created_on": "2018-07-25T04:27:14Z",
+        "modified_on": "2018-07-25T04:27:14Z",
         "tags": [],
         "cancelled_on": null,
-        "document_root_id": 212603,
-        "document_root_code": "SR2007185",
+        "document_root_id": null,
+        "document_root_code": null,
         "account_name": null,
         "payment_method_name": null
     }
@@ -442,7 +733,7 @@ Content-Type: application/json
 ```
 {
     "error": {
-        "message": "Phiếu chi không tồn tại"
+        "message": "Phiếu thu không tồn tại"
     }
 }
 ```
@@ -459,48 +750,13 @@ Content-Type: application/json
 
 ```
 {
-    "payment_voucher": {
-        "id": 7414112,
+    "voucher_code": {
         "tenant_id": 56322,
-        "location_id": 58369,
-        "account_id": 72098,
-        "code": "PV20071811",
-        "object_type": "customer",
-        "object_id": 3280093,
-        "issued_on": "2016-06-30T11:06:29Z",
-        "reference": null,
-        "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
-        "payment_method_id": 220256,
-        "currency_id": 0,
-        "exchange_rate": 1,
-        "amount": 10000,
-        "source_type": "refund",
-        "source_id": 159706,
-        "group_id": 983501,
-        "group_name": "Tự động",
-        "auto": true,
-        "counted": false,
-        "status": "active",
-        "created_on": "2018-07-20T09:08:09Z",
-        "modified_on": "2018-07-20T09:08:09Z",
-        "tags": [],
-        "cancelled_on": null,
-        "document_root_id": 212603,
-        "document_root_code": "SR2007185",
-        "account_name": null,
-        "payment_method_name": null
+        "code": "RV25071816"
     }
 }
 ```
-**Trường hợp có lỗi**
 
-```
-{
-    "error": {
-        "message": "Phiếu chi không tồn tại"
-    }
-}
-```
 <a name="#put-payment_vouchers_id"></a>
 ### 1.4 Cập nhật phiếu thu
 **Request**
@@ -509,42 +765,42 @@ PUT /admin/receipt_vouchers/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json 
 
-{"note": "abc"}
+{"note": "Phiếu thu đã được cập nhật"}
 ```
 **Kết quả trả về**
 
 ```
 {
-    "payment_voucher": {
-        "id": 7414112,
+    "receipt_voucher": {
+        "id": 7517897,
         "tenant_id": 56322,
         "location_id": 58369,
         "account_id": 72098,
-        "code": "PV20071811",
+        "code": "RV25071815",
         "object_type": "customer",
-        "object_id": 3280093,
-        "issued_on": "2016-06-30T11:06:29Z",
+        "object_id": 3689589,
+        "issued_on": "2018-07-25T04:26:25Z",
         "reference": null,
-        "note": "abc",
-        "payment_method_id": 220256,
-        "currency_id": 0,
+        "note": "Phiếu thu đã được cập nhật",
+        "payment_method_id": 220258,
+        "currency_id": 56321,
         "exchange_rate": 1,
-        "amount": 10000,
-        "source_type": "refund",
-        "source_id": 159706,
-        "group_id": 983501,
+        "amount": 7000000,
+        "source_type": null,
+        "source_id": null,
+        "group_id": 983492,
         "group_name": null,
-        "auto": true,
-        "counted": false,
+        "auto": false,
+        "counted": true,
         "status": "active",
-        "created_on": "2018-07-20T09:08:09Z",
-        "modified_on": "2018-07-23T03:35:51Z",
+        "created_on": "2018-07-25T04:27:14Z",
+        "modified_on": "2018-07-25T04:31:50Z",
         "tags": [],
         "cancelled_on": null,
-        "document_root_id": 212603,
-        "document_root_code": "SR2007185",
-        "account_name": null,
-        "payment_method_name": null
+        "document_root_id": null,
+        "document_root_code": null,
+        "payment_method_name": null,
+        "account_name": null
     }
 }
 ```
@@ -558,12 +814,14 @@ Content-Type: application/json
 }
 ```
 <a name="#receipt_vouchers_id-cancel"></a>
+
 ### 1.5 Hủy phiếu thu
 **Request**
 ```
 POST /admin/receipt_vouchers/{id}/cancel HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json 
+
 ```
 **Kết quả trả về**
 ```
@@ -577,19 +835,49 @@ Status: 200 OK
     }
 }
 ```
+
 <a name="#get-receipt_voucherss?"></a>
 ### 1.6 Lấy phiếu thu theo bộ lọc
-
 **Request**
 ```
 GET /admin/receipt_vouchers HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
-Content-Type: application/json 
+Content-Type: application/json
+param: limit=2
 ```
 **Kết quả trả về**
 ```
-```
-**Trường hợp có lỗi**
 
+{
+    "metadata": {
+        "total": 9,
+        "page": 1,
+        "limit": 2
+    },
+    "receipt_voucher_groups": [
+        {
+            "id": 983502,
+            "tenant_id": 56322,
+            "name": "Tự động",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "TUDONG",
+            "status": "active",
+            "auto_init": true
+        },
+        {
+            "id": 983499,
+            "tenant_id": 56322,
+            "name": "Tiền thưởng",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "RVG6",
+            "status": "active",
+            "auto_init": true
+        }
+    ]
+}
 ```
-```
+
