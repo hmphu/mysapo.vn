@@ -3097,10 +3097,196 @@ Content-Type: application/json
 **Trường hợp có lỗi**
 ```
 ```
-# 2.6 Bộ lọc
+## 2.6 Bộ lọc
 **Request**
 ```
 GET /variants? HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+# 3. Product Composite
+## 3.1 Cập nhật một sản phẩm đặc thù
+**Request**
+```
+GET /variants? HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 3.2 Lấy ra một sản phẩm đặc thù
+**Request**
+```
+GET /variants? HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+# 4. VariantInventory - Thiết lập định mức tồn	
+## 4.1 Cập nhật mức định tồn
+**Request**
+```
+PUT /admin/products/1297/variants/3321/locations HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 4.2 Lấy ra định mức tồn của phiên bản
+**Request**
+```
+GET /admin/products/1297/variants/3321/locations HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+# 5. Product Image
+## 5.1 lấy danh sách image
+**Request**
+```
+GET /admin/products/{productId}/variants/{variantId}/images/ HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 5.2 lấy 1 đối tượng image
+**Request**
+```
+GET /admin/products/{productId}/variants/{variantId}/images/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 5.3 Tạo 1 đối tượng image
+**Request**
+```
+POST admin/products/1297/variants/3321/locations HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 5.4 Chuyển đổi giá trị mặc định của 1 đối tượng image
+**Request**
+```
+PUT /admin/products/{productId}/variants/{variantId}/images/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 5.5 Xóa 1 đối tượng image
+**Request**
+```
+DELETE /admin/products/{productId}/variants/{variantId}/images/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+# 6. Product Image
+## 6.1 Lấy danh sách category
+**Request**
+```
+GET /admin/categories/ HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 6.2 Lấy 1 đối tượng category
+**Request**
+```
+GET /admin/categories/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 6.3 Tạo 1 đối tượng category
+**Request**
+```
+POST /admin/categories/ HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 6.4 Sửa 1 đối tượng category
+**Request**
+```
+PUT /admin/categories/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 6.5 Xóa 1 đối tượng category
+**Request**
+```
+DELETE /admin/categories/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 ```
