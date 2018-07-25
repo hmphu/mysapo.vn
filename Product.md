@@ -1,27 +1,24 @@
 # 1. Sản phẩm
+
+Product là nơi quản lý danh sách sản phẩm, loại sản phẩm..và tất cả những gì liên quan đến các mặt hàng được bán của chủ shop. Product có thể là thực thể, phần mềm số (ví dụ như phim, nhạc, ebook) hoặc dịch vụ (như thuê dụng cụ, công việc cho thuê). Cách hiểu đơn giản nhaas là: nếu một thứ gì đó được bán trong Shop. Hệ thống Sapo POS quản lý sản phẩm tập trung, dễ dàng quản lý lượng nhập mới, lượng tồn kho.. giúp chủ shop đưa ra những quyết định chính xác trong chiến lược kinh doanh của mình.
+
 [1. Sản phẩm](#product)
 
-   [ 1.1 Đăng đơn hàng mới](#order)
+   [ 1.1 Tạo sản phẩm mới](#add-products)
 
-   [ 1.2 Duyệt đơn hàng](#finalize)
+   [ 1.2 Tạo sản phẩm có packsize](#add-products_packsize)
 
-   [ 1.3 Hủy đơn hàng](#cancel)
+   [ 1.3 Lấy sản phẩm theo id](#get-product_id)
 
-   [ 1.4 Hoàn thành đơn hàng](#finish)
+   [ 1.4 Cập nhật sản phẩm](#put-product_id)
 
-   [ 1.5 Cập nhật đơn hàng](#put-order)
-
-   [ 1.6 Lấy danh sách đơn hàng](#get-order)
-
-   [ 1.7 Lấy danh sách đơn hàng theo id](#get-by-orderid)
-   
-   [ 1.8 Lấy danh sách đơn hàng theo bộ lọc](#get-order?)
+   [ 1.5 Xóa 1 sản phẩm](#delete-product_id)
    
 [2. Thanh Toán Trước](#prepayment)
 
    [ 2.1 Tạo phiếu thanh toán trước](#add-prepayments)
     
-
+<a name="add-products"></a>
 ## 1.1 Tạo sản phẩm
 **Request**
 ```
@@ -231,6 +228,7 @@ Content-Type: application/json
     }
 }
 ```
+<a name="add-products_packsize"></a>
 ## 1.2 Tạo sản phẩm có packsize
 **Request**
 ```
@@ -566,7 +564,7 @@ Content-Type: application/json
     }
 }
 ```
-
+<a name="get-product_id"></a>
 ## 1.3 Lấy sản phẩm theo id
 **Request**
 ```
@@ -841,6 +839,7 @@ Content-Type: application/json
     }
 }
 ```
+<a name="put-product_id"></a>
 ## 1.4 Cập nhật sản phẩm
 **Request**
 ```
@@ -1142,6 +1141,7 @@ Content-Type: application/json
     }
 }
 ```
+<a name="delete-product_id"></a>
 ## 1.5 Xóa 1 sản phẩm (xóa cả variant và option)
 **Request**
 ```
