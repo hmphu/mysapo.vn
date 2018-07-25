@@ -25,7 +25,7 @@
 
   [2.5 Hủy phiếu thu](#receipt_vouchers_id-cancel)
 
-  [2.6 Lấy loại phiếu thu] (#get-payment_voucher_groups)
+  [2.6 Lấy loại phiếu thu](#get-payment_voucher_groups)
   
   [2.7 Lấy loại phiếu thu theo id](#get-receipt_voucher_groups_id)
   
@@ -741,7 +741,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="#get-receipt_vouchers_codes"></a>
+<a name="get-receipt_vouchers_codes"></a>
 ### 2.3 Lấy mã code phiếu thu
 
 **Request**
@@ -761,7 +761,7 @@ Content-Type: application/json
 }
 ```
 
-<a name="#put-payment_vouchers_id"></a>
+<a name="put-receipt_vouchers_id"></a>
 ### 2.4 Cập nhật phiếu thu
 **Request**
 ```
@@ -817,7 +817,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="#receipt_vouchers_id-cancel"></a>
+<a name="receipt_vouchers_id-cancel"></a>
 
 ### 2.5 Hủy phiếu thu
 **Request**
@@ -840,7 +840,7 @@ Status: 200 OK
 }
 ```
 
-<a name="#get-payment_voucher_groups"></a>
+<a name="get-payment_voucher_groups"></a>
 ### 2.6 Lấy loại phiếu thu
 **Request**
 ```
