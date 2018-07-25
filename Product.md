@@ -3145,6 +3145,7 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+
 ```
 **Trường hợp có lỗi**
 ```
@@ -3152,12 +3153,22 @@ Content-Type: application/json
 ## 4.2 Lấy ra định mức tồn của phiên bản
 **Request**
 ```
-GET /admin/products/1297/variants/3321/locations HTTP/1.1
+GET /admin/products/{productId}/variants/{VariantId}/locations HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "variant_inventories": [
+        {
+            "location_id": 58369,
+            "min_value": 0,
+            "max_value": 0,
+            "bin_location": null
+        }
+    ]
+}
 ```
 **Trường hợp có lỗi**
 ```
