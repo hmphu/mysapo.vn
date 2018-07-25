@@ -37,7 +37,7 @@
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
 Phiếu chi là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
 
-<a name="get-payment_vouchers_id"></a>
+<a name="add-payment_vouchers"></a>
 ### 1.1 Đăng phiếu chi
 
 **Request**
@@ -607,7 +607,7 @@ param: "limit"=1000
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
 Phiếu thu là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
 
-<a name="get-receipt_vouchers_id"></a>
+<a name="add-receipt_vouchers"></a>
 ### 2.1 Đăng phiếu thu
 
 **Request**
