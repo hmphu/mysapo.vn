@@ -13,9 +13,20 @@
    
    [ 1.6 Lấy 1 sản phẩm theo bộ lọc](#get-product?)
    
-[2. Product Variant](#prepayment)
+[2. Product Variant](#product_variant)
 
-   [ 2.1 Tạo phiếu thanh toán trước](#add-prepayments)
+   [ 2.1 Tạo mới 1 variant](#add-product_idproduct_variant_idvariant)
+   
+   [ 2.2 Xóa 1 variant](#delete-product_idproduct_variant_idvariant)
+   
+   [ 2.3 Update 1 phiên bản](#add-prepayments)
+   
+   [ 2.4 Xóa nhiều variant trong 1 sản phẩm](#add-prepayments)
+   
+   [ 2.5  Lấy về những variants của 1 sản phẩm](#add-prepayments)
+   
+   [ 2.6 Bộ lọc](#add-prepayments)
+  
    
 
 
@@ -2827,4 +2838,239 @@ params: status=active
         "message": "Không tìm thấy đối tượng"
     }
 }
+```
+# 2. Product Variant
+Một Product Variant là một phiên bản khác của Product, ví dụ như kích cỡ hay màu sắc khác.
+Nếu không có Product Variant, bạn sẽ phải coi áo sơ mi với 3 kích cỡ nhỏ, vừa, lớn như 3 sản phẩm riêng biệt. Product Variant cho phép bạn coi các áo sơ mi cỡ nhỏ, vừa, lớn như 3 biến thể của cùng một sản phẩm là áo sơ mi.
+Mỗi một sản phẩm có tối đa 100 biến thể.
+
+<a name="add-product_productId_variant_variantId"></a>
+
+## 2.1 Tạo mới 1 variant
+**Request**
+```
+POST /admin/products/{productId}/variants HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+{
+  "variant": {
+    "composite": false,
+    "description": "chung",
+    "keep_selling": true,
+    "last_cost_price": null,
+    "manage_stock": false,
+    "max_online": null,
+    "name": "chung 1",
+    "online_ordering": true,
+    "opt1": null,
+    "opt2": null,
+    "opt3": null,
+    "sellable": "true",
+    "sku": "a1",
+    "barcode": "a1",
+    "supplier_code": null,
+    "taxable": true,
+    "weight_value": null,
+    "weight_unit": null,
+    "unit": null,
+    "variant_channels": [
+      {
+        "name": "bizweb"
+      }
+    ],
+    "variant_prices": [
+      {
+        "name": "whole_price",
+        "value": 1000,
+        "price_list_id": 16
+      }
+    ],
+    "online": false
+  }
+}
+```
+**Kết quả trả về**
+```
+{
+  "variant": {
+    "id": 115,
+    "tenant_id": 77,
+    "location_id": 81,
+    "created_on": "2016-07-04T07:08:26Z",
+    "modified_on": "2016-07-04T07:08:26Z",
+    "category": null,
+    "product_id": 102,
+    "import_price": null,
+    "committed_stock": null,
+    "incoming_stock": null,
+    "composite": false,
+    "description": "chung",
+    "keep_selling": true,
+    "last_cost_price": null,
+    "manage_stock": false,
+    "max_online": null,
+    "image_path": null,
+    "image_name": null,
+    "moving_average_cost": null,
+    "name": "chung 1",
+    "online_ordering": true,
+    "opt1": "fdred",
+    "opt2": null,
+    "opt3": null,
+    "product_name": null,
+    "product_status": null,
+    "retail_price": null,
+    "sellable": "true",
+    "sku": "add1dddfdfd",
+    "barcode": "a1ds",
+    "stock_on_hand": null,
+    "available": null,
+    "supplier_code": null,
+    "taxable": true,
+    "weight_value": null,
+    "weight_unit": null,
+    "unit": null,
+    "whole_sale_price": null,
+    "image_ids": [],
+    "variant_channels": [],
+    "variant_prices": [],
+    "online": false
+  }
+}
+```
+**Trường hợp có lỗi**
+```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "phiên bản sản phẩm": "Mã a1 đã trùng "
+        }
+    }
+}
+```
+## 2.2 Xóa 1 variant
+**Request**
+```
+DELETE /admin/products/{productId}/variants HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+Status 200 OK
+```
+## 2.3 Update 1 phiên bản
+**Request**
+```
+PUT /admin/products/{productId}/variants/{variantId} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+{
+  "variant": {
+    "category": null,
+    "product_id": 635642,
+    "import_price": null,
+    "committed_stock": null,
+    "incoming_stock": null,
+    "composite": false,
+    "description": "chung",
+    "keep_selling": true,
+    "last_cost_price": null,
+    "init_price": 10000,
+    "init_stock": 200,
+    "max_online": null,
+    "image_path": null,
+    "image_name": null,
+    "moving_average_cost": null,
+    "name": "Áo cổ đức",
+    "online_ordering": true,
+    "opt1": "xanh",
+    "opt2": null,
+    "opt3": null,
+    "product_name": null,
+    "product_status": null,
+    "status": "active",
+    "sellable": "true",
+    "sku": null,
+    "barcode": null,
+    "stock_on_hand": null,
+    "available": null,
+    "supplier_code": null,
+    "taxable": true,
+    "weight_value": null,
+    "weight_unit": null,
+    "unit": null,
+    "image_ids": [],
+    "variant_channels": [],
+    "variant_prices": [
+      {
+        "value": 10000,
+        "name": "Giá nhập",
+        "price_list_id": 16
+      },
+      {
+        "value": 12000,
+        "name": "Giá bán buôn",
+        "price_list_id": 16
+      },
+      {
+        "value": 15000,
+        "name": "Giá bán lẻ",
+        "price_list_id": 16
+      }
+    ],
+    "online": false
+  }
+}
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+{
+    "error": {
+        "message": "Không tìm thấy đối tượng"
+    }
+}
+```
+## 2.4 Xóa nhiều variant trong 1 sản phẩm
+**Request**
+```
+DELETE /admin/products/{productId}/variants HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+## 2.5 Lấy về những variants của 1 sản phẩm
+**Request**
+```
+GET /products/{productId}/variants HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
+```
+# 2.6 Bộ lọc
+**Request**
+```
+GET /variants? HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+```
+**Trường hợp có lỗi**
+```
 ```
