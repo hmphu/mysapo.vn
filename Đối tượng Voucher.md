@@ -1,6 +1,14 @@
 # Đối tượng Voucher
 Đối tượng chứng từ sẽ quản lý tổng quan về sổ quỹ tiền mặt của cửa hàng của các chi nhánh (nếu có), các loại phiếu thu, phiếu chi, sổ quỹ và hạch toán kinh doanh cho cửa hàng.
-## Tạo mới đối tượng quản lý Vouchers
+
+[1. Tạo mới đối tượng quản lý Vouchers](#add-voucher_actors)
+
+[2. Lấy 1 đối tượng vouchers theo id](#get-voucher_actors_id)
+
+[3. Lấy toàn bộ danh sách đối tượng vouchers](#get-voucher_actors)
+
+<a name="add-voucher_actors"></a>
+## 1. Tạo mới đối tượng quản lý Vouchers
 **Request**
 ```
 POST /admin/vouchers_actors HTTP/1.1
@@ -35,7 +43,8 @@ Content-Type: application/json
     }
 }
 ```
-## Lấy 1 đối tượng vouchers theo id
+<a name="get-voucher_actors_id"></a>
+## 2. Lấy 1 đối tượng vouchers theo id
 **Request**
 ```
 GET /admin/vouchers_actors/{id} HTTP/1.1
@@ -63,7 +72,8 @@ Content-Type: application/json
     }
 }
 ```
-## Lấy toàn bộ danh sách đối tượng vouchers
+<a name="get-voucher_actors"></a>
+## 3. Lấy toàn bộ danh sách đối tượng vouchers
 **Request**
 ```
 GET /admin/vouchers_actors?query= HTTP/1.1
