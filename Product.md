@@ -3174,9 +3174,57 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "images": [
+        {
+            "id": 1297568,
+            "size": 38964,
+            "tenant_id": 56322,
+            "variant_id": 4653234,
+            "created_on": "2018-07-25T09:50:02Z",
+            "modified_on": "2018-07-25T09:50:02Z",
+            "path": "100/056/322/variants/4cfa7d59-b779-488c-9651-61fbfce2a7cd.jpg",
+            "full_path": "https://sapo.dktcdn.net/100/056/322/variants/4cfa7d59-b779-488c-9651-61fbfce2a7cd.jpg",
+            "file_name": "4cfa7d59-b779-488c-9651-61fbfce2a7cd.jpg",
+            "is_default": false
+        },
+        {
+            "id": 1297567,
+            "size": 12973,
+            "tenant_id": 56322,
+            "variant_id": 4653234,
+            "created_on": "2018-07-25T09:49:59Z",
+            "modified_on": "2018-07-25T09:49:59Z",
+            "path": "100/056/322/variants/566d066a-aa4c-4621-beef-2054d66f2670.jpg",
+            "full_path": "https://sapo.dktcdn.net/100/056/322/variants/566d066a-aa4c-4621-beef-2054d66f2670.jpg",
+            "file_name": "566d066a-aa4c-4621-beef-2054d66f2670.jpg",
+            "is_default": false
+        },
+        {
+            "id": 1297564,
+            "size": 98851,
+            "tenant_id": 56322,
+            "variant_id": 4653234,
+            "created_on": "2018-07-25T09:48:46Z",
+            "modified_on": "2018-07-25T09:48:46Z",
+            "path": "100/056/322/variants/c1611d89-c07e-47be-a781-6fe7331ef3ff.jpg",
+            "full_path": "https://sapo.dktcdn.net/100/056/322/variants/c1611d89-c07e-47be-a781-6fe7331ef3ff.jpg",
+            "file_name": "c1611d89-c07e-47be-a781-6fe7331ef3ff.jpg",
+            "is_default": true
+        }
+    ]
+}
 ```
 **Trường hợp có lỗi**
 ```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "variant": "not exists Variant 463234"
+        }
+    }
+}
 ```
 ## 5.2 lấy 1 đối tượng image
 **Request**
@@ -3187,14 +3235,26 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "image": {
+        "id": 1297564,
+        "size": 98851,
+        "tenant_id": 56322,
+        "variant_id": 4653234,
+        "created_on": "2018-07-25T09:48:46Z",
+        "modified_on": "2018-07-25T09:48:46Z",
+        "path": "100/056/322/variants/c1611d89-c07e-47be-a781-6fe7331ef3ff.jpg",
+        "full_path": "https://sapo.dktcdn.net/100/056/322/variants/c1611d89-c07e-47be-a781-6fe7331ef3ff.jpg",
+        "file_name": "c1611d89-c07e-47be-a781-6fe7331ef3ff.jpg",
+        "is_default": true
+    }
+}
 ```
-**Trường hợp có lỗi**
-```
-```
+
 ## 5.3 Tạo 1 đối tượng image
 **Request**
 ```
-POST admin/products/1297/variants/3321/locations HTTP/1.1
+POST /admin/products/1297/variants/3321/locations HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 ```
@@ -3226,9 +3286,18 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+Status 200 OK
 ```
 **Trường hợp có lỗi**
 ```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "image": "item id 1297564 not exists"
+        }
+    }
+}
 ```
 # 6. Product category
 ## 6.1 Lấy danh sách category
