@@ -28,12 +28,12 @@
   [1.6 Lấy phiếu thu theo bộ lọc](#get-payment_vouchers?)
   
   
-<a name="#payment_vouchers"></a>
+<a name="payment_vouchers"></a>
 ## 1. Phiếu chi
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
 Phiếu chi là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
 
-<a name="#get-payment_vouchers_id"></a>
+<a name="get-payment_vouchers_id"></a>
 ### 1.1 Đăng phiếu chi
 
 **Request**
@@ -108,7 +108,7 @@ Content-Type: application/json
   }
 }
 ```
-<a name="#get-payment_vouchers_id"></a>
+<a name="get-payment_vouchers_id"></a>
 ### 1.2 Lấy phiếu chi theo id
 
 **Request**
@@ -163,7 +163,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="#get-payment_vouchers_codes"></a>
+<a name="get-payment_vouchers_codes"></a>
 ### 1.3 Lấy mã code phiếu chi
 
 **Request**
@@ -218,7 +218,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="#put-payment_vouchers_id"></a>
+<a name="put-payment_vouchers_id"></a>
 ### 1.4 Cập nhật phiếu chi
 **Request**
 
@@ -275,7 +275,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="#payment_vouchers_id-cancel"></a>
+<a name="payment_vouchers_id-cancel"></a>
 ### 1.5 Hủy phiếu chi
 **Request**
 ```
@@ -295,7 +295,7 @@ Status: 200 OK
     }
 }
 ```
-<a name="#get-payment_vouchers?"></a>
+<a name="get-payment_vouchers?"></a>
 ### 1.6 Lấy phiếu chi theo bộ lọc
 
 **Request**
@@ -311,12 +311,12 @@ Content-Type: application/json
 
 ```
 ```
-<a name="#receipt_vouchers"></a>
+<a name="receipt_vouchers"></a>
 ## 1. Phiếu thu
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
 Phiếu chi là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
 
-<a name="#get-receipt_vouchers_id"></a>
+<a name="get-receipt_vouchers_id"></a>
 ### 1.1 Đăng phiếu thu
 
 **Request**
@@ -391,7 +391,7 @@ Content-Type: application/json
   }
 }
 ```
-<a name="#get-receipt_vouchers_id"></a>
+<a name="get-receipt_vouchers_id"></a>
 ### 1.2 Lấy phiếu thu theo id
 
 **Request**
