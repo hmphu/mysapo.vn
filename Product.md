@@ -2862,11 +2862,11 @@ Content-Type: application/json
     "max_online": null,
     "name": "chung 1",
     "online_ordering": true,
-    "opt1": null,
+    "opt1": "abc",
     "opt2": null,
     "opt3": null,
     "sellable": "true",
-    "sku": "a1",
+    "sku": "b2",
     "barcode": "a1",
     "supplier_code": null,
     "taxable": true,
@@ -2882,7 +2882,7 @@ Content-Type: application/json
       {
         "name": "whole_price",
         "value": 1000,
-        "price_list_id": 16
+        "price_list_id": 167326
       }
     ],
     "online": false
@@ -2892,60 +2892,96 @@ Content-Type: application/json
 **Kết quả trả về**
 ```
 {
-  "variant": {
-    "id": 115,
-    "tenant_id": 77,
-    "location_id": 81,
-    "created_on": "2016-07-04T07:08:26Z",
-    "modified_on": "2016-07-04T07:08:26Z",
-    "category": null,
-    "product_id": 102,
-    "import_price": null,
-    "committed_stock": null,
-    "incoming_stock": null,
-    "composite": false,
-    "description": "chung",
-    "keep_selling": true,
-    "last_cost_price": null,
-    "manage_stock": false,
-    "max_online": null,
-    "image_path": null,
-    "image_name": null,
-    "moving_average_cost": null,
-    "name": "chung 1",
-    "online_ordering": true,
-    "opt1": "fdred",
-    "opt2": null,
-    "opt3": null,
-    "product_name": null,
-    "product_status": null,
-    "retail_price": null,
-    "sellable": "true",
-    "sku": "add1dddfdfd",
-    "barcode": "a1ds",
-    "stock_on_hand": null,
-    "available": null,
-    "supplier_code": null,
-    "taxable": true,
-    "weight_value": null,
-    "weight_unit": null,
-    "unit": null,
-    "whole_sale_price": null,
-    "image_ids": [],
-    "variant_channels": [],
-    "variant_prices": [],
-    "online": false
-  }
-}
-```
-**Trường hợp có lỗi**
-```
-{
-    "data_error": {
-        "status": 422,
-        "errors": {
-            "phiên bản sản phẩm": "Mã a1 đã trùng "
-        }
+    "variant": {
+        "id": 5703407,
+        "tenant_id": 56322,
+        "location_id": 58369,
+        "created_on": "2018-07-25T08:08:26Z",
+        "modified_on": "2018-07-25T08:08:26Z",
+        "category_id": 197231,
+        "brand_id": 130703,
+        "product_id": 3939079,
+        "committed_stock": null,
+        "incoming_stock": null,
+        "composite": false,
+        "description": "chung",
+        "keep_selling": true,
+        "last_cost_price": null,
+        "retail_price": 1000,
+        "init_price": 0,
+        "init_stock": 0,
+        "max_online": null,
+        "variant_retail_price": 1000,
+        "variant_whole_price": null,
+        "variant_import_price": null,
+        "image_path": null,
+        "image_name": null,
+        "image_full_path": null,
+        "image_id": null,
+        "moving_average_cost": null,
+        "name": "chung 1",
+        "online_ordering": true,
+        "opt1": "abc",
+        "opt2": null,
+        "opt3": null,
+        "product_name": "chung 1",
+        "product_status": null,
+        "status": "active",
+        "sellable": true,
+        "sku": "b2",
+        "barcode": "a1",
+        "stock_on_hand": null,
+        "available": null,
+        "supplier_code": null,
+        "taxable": true,
+        "weight_value": null,
+        "weight_unit": null,
+        "unit": null,
+        "packsize": false,
+        "packsize_quantity": null,
+        "packsize_root_id": null,
+        "image_ids": [],
+        "variant_channels": [],
+        "variant_prices": [
+            {
+                "id": 34132945,
+                "value": 1000,
+                "name": "Giá bán lẻ",
+                "price_list_id": 167326,
+                "price_list": {
+                    "id": 167326,
+                    "tenant_id": 56322,
+                    "created_on": "2018-05-08T02:07:57Z",
+                    "modified_on": "2018-05-08T02:07:57Z",
+                    "code": "BANLE",
+                    "name": "Giá bán lẻ",
+                    "is_cost": false,
+                    "currency_id": 56321,
+                    "status": "default",
+                    "init": true
+                }
+            }
+        ],
+        "inventories": [
+            {
+                "location_id": 58369,
+                "variant_id": 0,
+                "mac": 0,
+                "amount": 0,
+                "on_hand": 0,
+                "available": 0,
+                "committed": 0,
+                "incoming": 0,
+                "onway": 0,
+                "reorder_point": 0,
+                "name": null,
+                "min_value": 0,
+                "max_value": 0,
+                "bin_location": null
+            }
+        ],
+        "images": [],
+        "online": false
     }
 }
 ```
