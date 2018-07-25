@@ -3163,6 +3163,8 @@ Content-Type: application/json
 ```
 ```
 # 5. Product Image
+Sản phẩm sẽ được bán dễ dàng hơn nếu khách hàng có thể xem ảnh của sản phẩm. Thông tin ảnh được lưu trữ trong tài nguyên Product Image. Bất kì sản phẩm nào cũng có thể có tới 250 ảnh định dạng .png, .gif hoặc .jpg
+
 ## 5.1 lấy danh sách image
 **Request**
 ```
