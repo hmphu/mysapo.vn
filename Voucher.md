@@ -1,11 +1,11 @@
 # Voucher
 [1. Tạo nhóm nhà cung cấp](#add-supplier_groups)
 
-[2. Cập nhật nhóm nhà cung cấp](#put-supplier_groups)
+  [2. Cập nhật nhóm nhà cung cấp](#put-supplier_groups)
 
-[3. Xóa nhóm nhà cung cấp](#delete-supplier_groups)
+  [3. Xóa nhóm nhà cung cấp](#delete-supplier_groups)
 
-[4. Lấy 1 nhóm nhà cung cấp theo id](#get-supplier_groups_id)
+  [4. Lấy 1 nhóm nhà cung cấp theo id](#get-supplier_groups_id)
 
 [5. Lấy toàn bộ nhóm nhà cung cấp](#get-supplier_groups)
 
@@ -93,8 +93,8 @@ Content-Type: application/json
 ```
 
 ### 1.2 Lấy phiếu chi theo id
-**Request**
 
+**Request**
 ```
 GET /admin/payment_vouchers/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
@@ -146,8 +146,62 @@ Content-Type: application/json
     }
 }
 ```
+### 1.3 Lấy mã code phiếu chi
 
-### 1.3 Cập nhật phiếu chi
+**Request**
+```
+GET /admin/payment_vouchers/codes HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json 
+```
+**Kết quả trả về**
+
+```
+{
+    "payment_voucher": {
+        "id": 7414112,
+        "tenant_id": 56322,
+        "location_id": 58369,
+        "account_id": 72098,
+        "code": "PV20071811",
+        "object_type": "customer",
+        "object_id": 3280093,
+        "issued_on": "2016-06-30T11:06:29Z",
+        "reference": null,
+        "note": "Phiếu chi tự động tạo khi hoàn tiền cho khách trả hàng",
+        "payment_method_id": 220256,
+        "currency_id": 0,
+        "exchange_rate": 1,
+        "amount": 10000,
+        "source_type": "refund",
+        "source_id": 159706,
+        "group_id": 983501,
+        "group_name": "Tự động",
+        "auto": true,
+        "counted": false,
+        "status": "active",
+        "created_on": "2018-07-20T09:08:09Z",
+        "modified_on": "2018-07-20T09:08:09Z",
+        "tags": [],
+        "cancelled_on": null,
+        "document_root_id": 212603,
+        "document_root_code": "SR2007185",
+        "account_name": null,
+        "payment_method_name": null
+    }
+}
+```
+**Trường hợp có lỗi**
+
+```
+{
+    "error": {
+        "message": "Phiếu chi không tồn tại"
+    }
+}
+```
+
+### 1.4 Cập nhật phiếu chi
 **Request**
 
 ```
@@ -203,7 +257,7 @@ Content-Type: application/json
     }
 }
 ```
-### 1.4 Hủy phiếu chi
+### 1.5 Hủy phiếu chi
 **Request**
 
 ```
@@ -219,7 +273,7 @@ Content-Type: application/json
 
 ```
 ```
-### 1.5 Lấy phiếu chi theo bộ lọc
+### 1.6 Lấy phiếu chi theo bộ lọc
 **Request**
 
 ```
