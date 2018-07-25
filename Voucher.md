@@ -13,19 +13,23 @@
 
   [1.6 Lấy phiếu chi theo bộ lọc](#get-payment_vouchers?)
   
-[1. Phiếu thu](#receipt_vouchers)
+[2. Phiếu thu](#receipt_vouchers)
 
-  [1.1 Đăng phiếu thu](#add-receipt_vouchers)
+  [2.1 Đăng phiếu thu](#add-receipt_vouchers)
    
-  [1.2 Lấy phiếu thu theo id](#get-receipt_vouchers_id)
+  [2.2 Lấy phiếu thu theo id](#get-receipt_vouchers_id)
 
-  [1.3 Lấy mã code phiếu thu](#get-receipt_vouchers_codes)
+  [2.3 Lấy mã code phiếu thu](#get-receipt_vouchers_codes)
 
-  [1.4 Cập nhật phiếu thu](#put-receipt_vouchers_id)
+  [2.4 Cập nhật phiếu thu](#put-receipt_vouchers_id)
 
-  [1.5 Hủy phiếu thu](#receipt_vouchers_id-cancel)
+  [2.5 Hủy phiếu thu](#receipt_vouchers_id-cancel)
 
-  [1.6 Lấy phiếu thu theo bộ lọc](#get-payment_vouchers?)
+  [2.6 Lấy loại phiếu thu (#get-payment_voucher_groups)
+  
+  [2.7 Lấy loại phiếu thu theo id](#get-receipt_voucher_groups_id)
+  
+  [2.8 Lấy mã code loại phiếu thu](#get-receipt_voucher_groups_codes)
   
   
 <a name="payment_vouchers"></a>
@@ -599,12 +603,12 @@ param: "limit"=1000
 ```
 
 <a name="receipt_vouchers"></a>
-## 1. Phiếu thu
+## 2. Phiếu thu
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
-Phiếu chi là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
+Phiếu thu là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
 
 <a name="get-receipt_vouchers_id"></a>
-### 1.1 Đăng phiếu thu
+### 2.1 Đăng phiếu thu
 
 **Request**
 ```
@@ -683,7 +687,7 @@ Content-Type: application/json
 }
 ```
 <a name="get-receipt_vouchers_id"></a>
-### 1.2 Lấy phiếu thu theo id
+### 2.2 Lấy phiếu thu theo id
 
 **Request**
 ```
@@ -738,7 +742,7 @@ Content-Type: application/json
 }
 ```
 <a name="#get-receipt_vouchers_codes"></a>
-### 1.3 Lấy mã code phiếu thu
+### 2.3 Lấy mã code phiếu thu
 
 **Request**
 ```
@@ -758,7 +762,7 @@ Content-Type: application/json
 ```
 
 <a name="#put-payment_vouchers_id"></a>
-### 1.4 Cập nhật phiếu thu
+### 2.4 Cập nhật phiếu thu
 **Request**
 ```
 PUT /admin/receipt_vouchers/{id} HTTP/1.1
@@ -815,7 +819,7 @@ Content-Type: application/json
 ```
 <a name="#receipt_vouchers_id-cancel"></a>
 
-### 1.5 Hủy phiếu thu
+### 2.5 Hủy phiếu thu
 **Request**
 ```
 POST /admin/receipt_vouchers/{id}/cancel HTTP/1.1
@@ -836,23 +840,21 @@ Status: 200 OK
 }
 ```
 
-<a name="#get-receipt_voucherss?"></a>
-### 1.6 Lấy phiếu thu theo bộ lọc
+<a name="#get-payment_voucher_groups"></a>
+### 2.6 Lấy loại phiếu thu
 **Request**
 ```
 GET /admin/receipt_vouchers HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
-param: limit=2
 ```
 **Kết quả trả về**
 ```
-
 {
     "metadata": {
         "total": 9,
         "page": 1,
-        "limit": 2
+        "limit": 250
     },
     "receipt_voucher_groups": [
         {
@@ -876,8 +878,134 @@ param: limit=2
             "code": "RVG6",
             "status": "active",
             "auto_init": true
+        },
+        {
+            "id": 983498,
+            "tenant_id": 56322,
+            "name": "Tiền bồi thường",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "RVG5",
+            "status": "active",
+            "auto_init": true
+        },
+        {
+            "id": 983497,
+            "tenant_id": 56322,
+            "name": "Thu nợ khách hàng",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "RVG2",
+            "status": "active",
+            "auto_init": true
+        },
+        {
+            "id": 983496,
+            "tenant_id": 56322,
+            "name": "Thu nợ đối tác vận chuyển",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "THUNO",
+            "status": "active",
+            "auto_init": true
+        },
+        {
+            "id": 983495,
+            "tenant_id": 56322,
+            "name": "Thu nhập khác",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "RVG7",
+            "status": "active",
+            "auto_init": true
+        },
+        {
+            "id": 983494,
+            "tenant_id": 56322,
+            "name": "Nhượng bán, thanh lý tài sản",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "RVG3",
+            "status": "active",
+            "auto_init": true
+        },
+        {
+            "id": 983493,
+            "tenant_id": 56322,
+            "name": "Đối tác vận chuyển đặt cọc",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "DATCOC",
+            "status": "active",
+            "auto_init": true
+        },
+        {
+            "id": 983492,
+            "tenant_id": 56322,
+            "name": "Cho thuê tài sản",
+            "created_on": "2018-05-08T02:07:57Z",
+            "modified_on": "2018-05-08T02:07:57Z",
+            "note": null,
+            "code": "RVG4",
+            "status": "active",
+            "auto_init": true
         }
     ]
 }
 ```
-
+<a name="get-receipt_voucher_groups_id"></a>
+### 2.7 Lấy loại phiếu thu theo id
+**Request**
+```
+GET /admin/receipt_vouchers/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+{
+    "receipt_voucher_group": {
+        "id": 983502,
+        "tenant_id": 56322,
+        "name": "Tự động",
+        "created_on": "2018-05-08T02:07:57Z",
+        "modified_on": "2018-05-08T02:07:57Z",
+        "note": null,
+        "code": "TUDONG",
+        "status": "active",
+        "auto_init": true
+    }
+}
+```
+**Trường hợp có lỗi**
+```
+{
+    "error": {
+        "message": "Không tìm thấy nhóm chi phí"
+    }
+}
+```
+<a name="get-receipt_voucher_groups_codes"></a>
+### 2.8 Lấy mã code loại phiếu thu
+**Request**
+```
+GET /admin/receipt_vouchers/codes HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+```
+**Kết quả trả về**
+```
+{
+    "voucher_group_code": {
+        "tenant_id": 56322,
+        "code": "RVG25071810"
+    }
+}
+```
+```
