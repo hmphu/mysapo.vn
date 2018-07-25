@@ -25,7 +25,7 @@
 
   [2.5 Hủy phiếu thu](#receipt_vouchers_id-cancel)
 
-  [2.6 Lấy loại phiếu thu (#get-payment_voucher_groups)
+  [2.6 Lấy loại phiếu thu] (#get-payment_voucher_groups)
   
   [2.7 Lấy loại phiếu thu theo id](#get-receipt_voucher_groups_id)
   
