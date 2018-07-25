@@ -1,22 +1,24 @@
 # Voucher
-[1. Tạo nhóm nhà cung cấp](#add-supplier_groups)
+[1. Phiếu chi](#payment_vouchers)
 
-  [2. Cập nhật nhóm nhà cung cấp](#put-supplier_groups)
+  [1.1 Đăng phiếu chi](#add-payment_vouchers)
+   
+  [1.2 Lấy phiếu chi theo id](#get-payment_vouchers_id)
 
-  [3. Xóa nhóm nhà cung cấp](#delete-supplier_groups)
+  [1.3 Lấy mã code phiếu chi](#get-payment_vouchers_codes)
 
-  [4. Lấy 1 nhóm nhà cung cấp theo id](#get-supplier_groups_id)
+  [1.4 Cập nhật phiếu chi](#put-payment_vouchers_id)
 
-[5. Lấy toàn bộ nhóm nhà cung cấp](#get-supplier_groups)
+  [1.5 Hủy phiếu chi](#payment_vouchers_id-cancel)
 
-[6. Lấy nhóm nhà cung cấp theo bộ lọc](#get-supplier_groups?)
-
-[7. Lấy mã code nhà cung cấp](#get-supplier_groups_codes)
-
+  [1.6 Lấy phiếu chi theo bộ lọc](#get-payment_vouchers?)
+  
+<a name="#payment_vouchers"></a>
 ## 1. Phiếu chi
 Chủ shop quản lý phiếu thu và phiếu chi của cửa hàng.
 Phiếu chi là chứng từ kế toán bắt buộc dùng để xác định số tiền mặt thực tế nhập quỹ, làm bằng chứng cho việc đã thanh toán hay chưa.
 
+<a name="#get-payment_vouchers_id"></a>
 ### 1.1 Đăng phiếu chi
 
 **Request**
@@ -91,7 +93,7 @@ Content-Type: application/json
   }
 }
 ```
-
+<a name="#get-payment_vouchers_id"></a>
 ### 1.2 Lấy phiếu chi theo id
 
 **Request**
@@ -146,6 +148,7 @@ Content-Type: application/json
     }
 }
 ```
+<a name="#get-payment_vouchers_codes"></a>
 ### 1.3 Lấy mã code phiếu chi
 
 **Request**
@@ -200,7 +203,7 @@ Content-Type: application/json
     }
 }
 ```
-
+<a name="#put-payment_vouchers_id"></a>
 ### 1.4 Cập nhật phiếu chi
 **Request**
 
@@ -257,6 +260,7 @@ Content-Type: application/json
     }
 }
 ```
+<a name="#payment_vouchers_id-cancel"></a>
 ### 1.5 Hủy phiếu chi
 **Request**
 
@@ -273,6 +277,7 @@ Content-Type: application/json
 
 ```
 ```
+<a name="#get-payment_vouchers?"></a>
 ### 1.6 Lấy phiếu chi theo bộ lọc
 **Request**
 
