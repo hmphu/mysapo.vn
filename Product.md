@@ -27,8 +27,6 @@
    
    [ 2.6 Bộ lọc](#add-prepayments)
   
-   
-
 
 # 1. Sản phẩm
 
@@ -3230,7 +3228,7 @@ Content-Type: application/json
 **Trường hợp có lỗi**
 ```
 ```
-# 6. Product Image
+# 6. Product category
 ## 6.1 Lấy danh sách category
 **Request**
 ```
@@ -3240,10 +3238,61 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "metadata": {
+        "total": 4,
+        "page": 1,
+        "limit": 20
+    },
+    "categories": [
+        {
+            "id": 197231,
+            "tenant_id": 56322,
+            "description": null,
+            "name": "B1",
+            "created_on": "2018-07-25T06:50:01Z",
+            "modified_on": "2018-07-25T06:50:01Z",
+            "code": "PDG2507184",
+            "status": "active",
+            "default": false
+        },
+        {
+            "id": 162428,
+            "tenant_id": 56322,
+            "description": null,
+            "name": "Phụ kiện",
+            "created_on": "2018-05-12T01:43:03Z",
+            "modified_on": "2018-05-12T01:43:03Z",
+            "code": "PDG1205183",
+            "status": "active",
+            "default": false
+        },
+        {
+            "id": 162427,
+            "tenant_id": 56322,
+            "description": null,
+            "name": "Áo khoác",
+            "created_on": "2018-05-12T01:42:57Z",
+            "modified_on": "2018-05-12T01:42:57Z",
+            "code": "PDG1205182",
+            "status": "active",
+            "default": false
+        },
+        {
+            "id": 162426,
+            "tenant_id": 56322,
+            "description": null,
+            "name": "Quần",
+            "created_on": "2018-05-12T01:42:49Z",
+            "modified_on": "2018-05-12T01:42:49Z",
+            "code": "PDG1205181",
+            "status": "active",
+            "default": false
+        }
+    ]
+}
 ```
-**Trường hợp có lỗi**
-```
-```
+
 ## 6.2 Lấy 1 đối tượng category
 **Request**
 ```
@@ -3253,22 +3302,63 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "category": {
+        "id": 162428,
+        "tenant_id": 56322,
+        "description": null,
+        "name": "Phụ kiện",
+        "created_on": "2018-05-12T01:43:03Z",
+        "modified_on": "2018-05-12T01:43:03Z",
+        "code": "PDG1205183",
+        "status": "active",
+        "default": false
+    }
+}
 ```
-**Trường hợp có lỗi**
-```
-```
+
 ## 6.3 Tạo 1 đối tượng category
 **Request**
 ```
 POST /admin/categories/ HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
+{
+  "category": {
+    "description": null,
+    "name": "Default1",
+    "created_on": null,
+    "modified_on": null,
+    "default": true
+  }
+}
 ```
 **Kết quả trả về**
 ```
+{
+    "category": {
+        "id": 197358,
+        "tenant_id": 56322,
+        "description": null,
+        "name": "Default1",
+        "created_on": "2018-07-25T09:06:24Z",
+        "modified_on": "2018-07-25T09:06:24Z",
+        "code": "PDG2507185",
+        "status": "active",
+        "default": false
+    }
+}
 ```
 **Trường hợp có lỗi**
 ```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "name": "may not be empty"
+        }
+    }
+}
 ```
 ## 6.4 Sửa 1 đối tượng category
 **Request**
@@ -3292,7 +3382,13 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+Status 200 OK
 ```
 **Trường hợp có lỗi**
 ```
+{
+    "error": {
+        "message": "Không tìm thấy đối tượng"
+    }
+}
 ```
