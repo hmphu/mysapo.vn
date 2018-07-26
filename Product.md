@@ -30,7 +30,9 @@
 
 # 1. Sản phẩm
 
-Product là nơi quản lý danh sách sản phẩm, loại sản phẩm..và tất cả những gì liên quan đến các mặt hàng được bán của chủ shop. Product có thể là thực thể, phần mềm số (ví dụ như phim, nhạc, ebook) hoặc dịch vụ (như thuê dụng cụ, công việc cho thuê). Cách hiểu đơn giản nhaas là: nếu một thứ gì đó được bán trong Shop. Hệ thống Sapo POS quản lý sản phẩm tập trung, dễ dàng quản lý lượng nhập mới, lượng tồn kho.. giúp chủ shop đưa ra những quyết định chính xác trong chiến lược kinh doanh của mình.
+Product là nơi quản lý danh sách sản phẩm, loại sản phẩm..và tất cả những gì liên quan đến các mặt hàng được bán của chủ shop. Product có thể là thực thể, phần mềm số (ví dụ như phim, nhạc, ebook) hoặc dịch vụ (như thuê dụng cụ, công việc cho thuê). 
+
+Cách hiểu đơn giản nhaas là: nếu một thứ gì đó được bán trong Shop. Hệ thống Sapo POS quản lý sản phẩm tập trung, dễ dàng quản lý lượng nhập mới, lượng tồn kho.. giúp chủ shop đưa ra những quyết định chính xác trong chiến lược kinh doanh của mình.
 
     
 <a name="add-products"></a>
@@ -580,7 +582,7 @@ Content-Type: application/json
 }
 ```
 <a name="get-product_id"></a>
-## 1.3 Lấy sản phẩm theo id
+## 1.3 Lấy một đối tượng sản phẩm 
 **Request**
 ```
 GET /admin/products/{id} HTTP/1.1
@@ -3078,6 +3080,7 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+
 ```
 **Trường hợp có lỗi**
 ```
@@ -3091,9 +3094,360 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-```
-**Trường hợp có lỗi**
-```
+{
+    "metadata": {
+        "total": 3,
+        "page": 1,
+        "limit": 20
+    },
+    "variants": [
+        {
+            "id": 5710247,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-07-26T01:20:47Z",
+            "modified_on": "2018-07-26T01:20:47Z",
+            "category_id": null,
+            "brand_id": 130704,
+            "product_id": 3262676,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": "chung",
+            "keep_selling": true,
+            "last_cost_price": null,
+            "retail_price": 1000,
+            "init_price": 0,
+            "init_stock": 0,
+            "max_online": null,
+            "variant_retail_price": 1000,
+            "variant_whole_price": null,
+            "variant_import_price": null,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "chung 1",
+            "online_ordering": true,
+            "opt1": "abc",
+            "opt2": "acb",
+            "opt3": null,
+            "product_name": "Thám tử lừng danh Conan",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "c1",
+            "barcode": "a1",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": true,
+            "weight_value": null,
+            "weight_unit": null,
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": [],
+            "variant_prices": [
+                {
+                    "id": 34168716,
+                    "value": 1000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 0,
+                    "mac": 0,
+                    "amount": 0,
+                    "on_hand": 0,
+                    "available": 0,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4697237,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-15T08:08:24Z",
+            "modified_on": "2018-07-26T01:17:07Z",
+            "category_id": null,
+            "brand_id": 130704,
+            "product_id": 3262676,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": false,
+            "last_cost_price": null,
+            "retail_price": 800000,
+            "init_price": 800000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": 800000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Áo khoác có mũ Bellfield",
+            "online_ordering": false,
+            "opt1": "(combo)",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Thám tử lừng danh Conan",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP10",
+            "barcode": "SP10",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": [],
+            "variant_prices": [
+                {
+                    "id": 26817715,
+                    "value": 800000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817716,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817717,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 0,
+                    "mac": 800000,
+                    "amount": 0,
+                    "on_hand": 29.8,
+                    "available": 23,
+                    "committed": 6.8,
+                    "incoming": 0.1,
+                    "onway": 0.1,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4653239,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-12T01:42:57Z",
+            "modified_on": "2018-07-26T01:17:07Z",
+            "category_id": null,
+            "brand_id": 130704,
+            "product_id": 3262676,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": false,
+            "last_cost_price": null,
+            "retail_price": 1000000,
+            "init_price": 1000000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": 1000000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Áo khoác có mũ Bellfield",
+            "online_ordering": false,
+            "opt1": "Mặc định",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Thám tử lừng danh Conan",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP3",
+            "barcode": "SP3",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": [],
+            "variant_prices": [
+                {
+                    "id": 26556579,
+                    "value": 1000000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556580,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556581,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 0,
+                    "mac": 1000000,
+                    "amount": 0,
+                    "on_hand": 30,
+                    "available": 30,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        }
+    ]
+}
 ```
 ## 2.6 Bộ lọc
 **Request**
@@ -3104,23 +3458,1480 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "metadata": {
+        "total": 12,
+        "page": 1,
+        "limit": 20
+    },
+    "variants": [
+        {
+            "id": 5710247,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-07-26T01:20:47Z",
+            "modified_on": "2018-07-26T01:20:47Z",
+            "category_id": null,
+            "brand_id": 130704,
+            "product_id": 3262676,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": "chung",
+            "keep_selling": true,
+            "last_cost_price": null,
+            "retail_price": 1000,
+            "init_price": 0,
+            "init_stock": 0,
+            "max_online": null,
+            "variant_retail_price": 1000,
+            "variant_whole_price": null,
+            "variant_import_price": null,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "chung 1",
+            "online_ordering": true,
+            "opt1": "abc",
+            "opt2": "acb",
+            "opt3": null,
+            "product_name": "Thám tử lừng danh Conan",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "c1",
+            "barcode": "a1",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": true,
+            "weight_value": null,
+            "weight_unit": null,
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 34168716,
+                    "value": 1000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 5710247,
+                    "mac": 0,
+                    "amount": 0,
+                    "on_hand": 0,
+                    "available": 0,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 5702358,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-07-25T06:50:01Z",
+            "modified_on": "2018-07-25T06:50:01Z",
+            "category_id": 197231,
+            "brand_id": 130703,
+            "product_id": 3939079,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": true,
+            "last_cost_price": 10000,
+            "retail_price": 12000,
+            "init_price": 10000,
+            "init_stock": 10,
+            "max_online": null,
+            "variant_retail_price": 12000,
+            "variant_whole_price": 11000,
+            "variant_import_price": 10000,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "chung 1",
+            "online_ordering": true,
+            "opt1": "Mặc định",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "chung 1",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "a1",
+            "barcode": "a1",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": true,
+            "weight_value": null,
+            "weight_unit": null,
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 34123476,
+                    "value": 11000,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 34123477,
+                    "value": 12000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 34123478,
+                    "value": 10000,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 5702358,
+                    "mac": 10000,
+                    "amount": 0,
+                    "on_hand": 10,
+                    "available": 10,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4697237,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-15T08:08:24Z",
+            "modified_on": "2018-07-26T01:17:07Z",
+            "category_id": null,
+            "brand_id": 130704,
+            "product_id": 3262676,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": false,
+            "last_cost_price": null,
+            "retail_price": 800000,
+            "init_price": 800000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": 800000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Áo khoác có mũ Bellfield",
+            "online_ordering": false,
+            "opt1": "(combo)",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Thám tử lừng danh Conan",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP10",
+            "barcode": "SP10",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26817715,
+                    "value": 800000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817716,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817717,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4697237,
+                    "mac": 800000,
+                    "amount": 0,
+                    "on_hand": 29.8,
+                    "available": 23,
+                    "committed": 6.8,
+                    "incoming": 0.1,
+                    "onway": 0.1,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4697236,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-15T08:08:24Z",
+            "modified_on": "2018-05-15T08:08:24Z",
+            "category_id": null,
+            "brand_id": null,
+            "product_id": 3217942,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": true,
+            "last_cost_price": null,
+            "retail_price": 400000,
+            "init_price": 400000,
+            "init_stock": 9,
+            "max_online": null,
+            "variant_retail_price": 400000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Váy len nữ",
+            "online_ordering": true,
+            "opt1": "Trắng (combo)",
+            "opt2": "Len co dãn (combo)",
+            "opt3": "Zara (combo)",
+            "product_name": "Váy len nữ",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP9",
+            "barcode": "SP9",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": true,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26817712,
+                    "value": 400000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817713,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817714,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4697236,
+                    "mac": 400000,
+                    "amount": 0,
+                    "on_hand": 9,
+                    "available": 3,
+                    "committed": 6,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4697233,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-15T08:08:10Z",
+            "modified_on": "2018-05-15T08:08:10Z",
+            "category_id": 162428,
+            "brand_id": null,
+            "product_id": 3262677,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": true,
+            "last_cost_price": null,
+            "retail_price": 1350000,
+            "init_price": 1350000,
+            "init_stock": 29,
+            "max_online": null,
+            "variant_retail_price": 1350000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Kính mát gọng vuông Ray-Ban",
+            "online_ordering": true,
+            "opt1": "(combo)",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Kính mát gọng vuông Ray-Ban",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP8",
+            "barcode": "SP8",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26817700,
+                    "value": 1350000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817701,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817702,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4697233,
+                    "mac": 1350000,
+                    "amount": 0,
+                    "on_hand": 28,
+                    "available": 28,
+                    "committed": 0,
+                    "incoming": 1,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4697232,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-15T08:08:09Z",
+            "modified_on": "2018-05-16T02:36:46Z",
+            "category_id": 162428,
+            "brand_id": null,
+            "product_id": 3262678,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": false,
+            "last_cost_price": null,
+            "retail_price": 630000,
+            "init_price": 630000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": 630000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Khăn ống Tommy Hilfiger",
+            "online_ordering": false,
+            "opt1": "(combo)",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Khăn ống Tommy Hilfiger",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP7",
+            "barcode": "SP7",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26817697,
+                    "value": 630000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817698,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26817699,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4697232,
+                    "mac": 630000,
+                    "amount": 0,
+                    "on_hand": 27.9,
+                    "available": 26,
+                    "committed": 1.9,
+                    "incoming": 0,
+                    "onway": 1,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4653242,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-12T01:43:13Z",
+            "modified_on": "2018-07-25T08:17:30Z",
+            "category_id": 162428,
+            "brand_id": null,
+            "product_id": 3262679,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": "chung",
+            "keep_selling": true,
+            "last_cost_price": null,
+            "retail_price": null,
+            "init_price": 200000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": null,
+            "variant_whole_price": null,
+            "variant_import_price": null,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Áo cổ đức",
+            "online_ordering": true,
+            "opt1": "xanh",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Mũ lưỡi trai New Era",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP6",
+            "barcode": null,
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": true,
+            "weight_value": null,
+            "weight_unit": null,
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4653242,
+                    "mac": 300000,
+                    "amount": 0,
+                    "on_hand": 45,
+                    "available": 45,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4653241,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-12T01:43:09Z",
+            "modified_on": "2018-05-15T08:08:09Z",
+            "category_id": 162428,
+            "brand_id": null,
+            "product_id": 3262678,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": false,
+            "last_cost_price": null,
+            "retail_price": 700000,
+            "init_price": 700000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": 700000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Khăn ống Tommy Hilfiger",
+            "online_ordering": false,
+            "opt1": "Mặc định",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Khăn ống Tommy Hilfiger",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP5",
+            "barcode": "SP5",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26556585,
+                    "value": 700000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556586,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556587,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4653241,
+                    "mac": 700000,
+                    "amount": 0,
+                    "on_hand": 29,
+                    "available": 28,
+                    "committed": 1,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4653240,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-12T01:43:03Z",
+            "modified_on": "2018-05-15T08:08:10Z",
+            "category_id": 162428,
+            "brand_id": null,
+            "product_id": 3262677,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": false,
+            "last_cost_price": null,
+            "retail_price": 1500000,
+            "init_price": 1500000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": 1500000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Kính mát gọng vuông Ray-Ban",
+            "online_ordering": false,
+            "opt1": "Mặc định",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Kính mát gọng vuông Ray-Ban",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP4",
+            "barcode": "SP4",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26556582,
+                    "value": 1500000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556583,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556584,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4653240,
+                    "mac": 1500000,
+                    "amount": 0,
+                    "on_hand": 30,
+                    "available": 30,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4653239,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-12T01:42:57Z",
+            "modified_on": "2018-07-26T01:17:07Z",
+            "category_id": null,
+            "brand_id": 130704,
+            "product_id": 3262676,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": false,
+            "last_cost_price": null,
+            "retail_price": 1000000,
+            "init_price": 1000000,
+            "init_stock": 30,
+            "max_online": null,
+            "variant_retail_price": 1000000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Áo khoác có mũ Bellfield",
+            "online_ordering": false,
+            "opt1": "Mặc định",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Thám tử lừng danh Conan",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP3",
+            "barcode": "SP3",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26556579,
+                    "value": 1000000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556580,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556581,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4653239,
+                    "mac": 1000000,
+                    "amount": 0,
+                    "on_hand": 30,
+                    "available": 30,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        },
+        {
+            "id": 4653234,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-12T01:42:49Z",
+            "modified_on": "2018-07-25T09:55:30Z",
+            "category_id": 162426,
+            "brand_id": null,
+            "product_id": 3262674,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": true,
+            "last_cost_price": null,
+            "retail_price": 1400000,
+            "init_price": 1400000,
+            "init_stock": 26,
+            "max_online": null,
+            "variant_retail_price": 1400000,
+            "variant_whole_price": 0,
+            "variant_import_price": 0,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Quần vải ống suông Farah",
+            "online_ordering": true,
+            "opt1": "Mặc định",
+            "opt2": null,
+            "opt3": null,
+            "product_name": "Quần vải ống suông Farah",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "SP2",
+            "barcode": "SP2",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": false,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [
+                1297567,
+                1297568
+            ],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26556564,
+                    "value": 1400000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556565,
+                    "value": 0,
+                    "name": "Giá bán buôn",
+                    "price_list_id": 167324,
+                    "price_list": {
+                        "id": 167324,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANBUON",
+                        "name": "Giá bán buôn",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "active",
+                        "init": true
+                    }
+                },
+                {
+                    "id": 26556566,
+                    "value": 0,
+                    "name": "Giá nhập",
+                    "price_list_id": 167325,
+                    "price_list": {
+                        "id": 167325,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "GIANHAP",
+                        "name": "Giá nhập",
+                        "is_cost": true,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4653234,
+                    "mac": 1400000,
+                    "amount": 0,
+                    "on_hand": 26,
+                    "available": 26,
+                    "committed": 0,
+                    "incoming": 0,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [
+                {
+                    "id": 1297567,
+                    "size": 12973,
+                    "tenant_id": 56322,
+                    "variant_id": 4653234,
+                    "created_on": "2018-07-25T09:49:59Z",
+                    "modified_on": "2018-07-25T09:49:59Z",
+                    "path": "100/056/322/variants/566d066a-aa4c-4621-beef-2054d66f2670.jpg",
+                    "full_path": "https://sapo.dktcdn.net/100/056/322/variants/566d066a-aa4c-4621-beef-2054d66f2670.jpg",
+                    "file_name": "566d066a-aa4c-4621-beef-2054d66f2670.jpg",
+                    "is_default": false
+                },
+                {
+                    "id": 1297568,
+                    "size": 38964,
+                    "tenant_id": 56322,
+                    "variant_id": 4653234,
+                    "created_on": "2018-07-25T09:50:02Z",
+                    "modified_on": "2018-07-25T09:50:02Z",
+                    "path": "100/056/322/variants/4cfa7d59-b779-488c-9651-61fbfce2a7cd.jpg",
+                    "full_path": "https://sapo.dktcdn.net/100/056/322/variants/4cfa7d59-b779-488c-9651-61fbfce2a7cd.jpg",
+                    "file_name": "4cfa7d59-b779-488c-9651-61fbfce2a7cd.jpg",
+                    "is_default": false
+                }
+            ],
+            "online": false
+        },
+        {
+            "id": 4594856,
+            "tenant_id": 56322,
+            "location_id": 58369,
+            "created_on": "2018-05-08T03:45:04Z",
+            "modified_on": "2018-05-08T03:45:04Z",
+            "category_id": null,
+            "brand_id": null,
+            "product_id": 3217942,
+            "committed_stock": null,
+            "incoming_stock": null,
+            "composite": false,
+            "description": null,
+            "keep_selling": true,
+            "last_cost_price": null,
+            "retail_price": 500000,
+            "init_price": 500000,
+            "init_stock": 10,
+            "max_online": null,
+            "variant_retail_price": 500000,
+            "variant_whole_price": null,
+            "variant_import_price": null,
+            "image_path": null,
+            "image_name": null,
+            "image_full_path": null,
+            "image_id": null,
+            "moving_average_cost": null,
+            "name": "Váy len nữ",
+            "online_ordering": true,
+            "opt1": "Trắng",
+            "opt2": "Len co dãn",
+            "opt3": "Zara",
+            "product_name": "Váy len nữ",
+            "product_status": null,
+            "status": "active",
+            "sellable": true,
+            "sku": "V0001",
+            "barcode": "V0001",
+            "stock_on_hand": null,
+            "available": null,
+            "supplier_code": null,
+            "taxable": true,
+            "weight_value": 0,
+            "weight_unit": "kg",
+            "unit": null,
+            "packsize": false,
+            "packsize_quantity": null,
+            "packsize_root_id": null,
+            "image_ids": [],
+            "variant_channels": null,
+            "variant_prices": [
+                {
+                    "id": 26007687,
+                    "value": 500000,
+                    "name": "Giá bán lẻ",
+                    "price_list_id": 167326,
+                    "price_list": {
+                        "id": 167326,
+                        "tenant_id": 56322,
+                        "created_on": "2018-05-08T02:07:57Z",
+                        "modified_on": "2018-05-08T02:07:57Z",
+                        "code": "BANLE",
+                        "name": "Giá bán lẻ",
+                        "is_cost": false,
+                        "currency_id": 56321,
+                        "status": "default",
+                        "init": true
+                    }
+                }
+            ],
+            "inventories": [
+                {
+                    "location_id": 58369,
+                    "variant_id": 4594856,
+                    "mac": 250000,
+                    "amount": 0,
+                    "on_hand": 59.5,
+                    "available": 55,
+                    "committed": 4.5,
+                    "incoming": 0.5,
+                    "onway": 0,
+                    "reorder_point": 0,
+                    "name": null,
+                    "min_value": 0,
+                    "max_value": 0,
+                    "bin_location": null
+                }
+            ],
+            "images": [],
+            "online": false
+        }
+    ]
+}
 ```
-**Trường hợp có lỗi**
-```
-```
+
 # 3. Product Composite
 ## 3.1 Cập nhật một sản phẩm đặc thù
 **Request**
 ```
-GET /variants? HTTP/1.1
+PUT admin/products/{productId}/variants/{variantId}/composites HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
+{
+  "composites": {
+    "product_composites": [
+      {
+        "sub_variant_id": 4653241,
+        "quantity": 4,
+        "price": 10000
+      },
+      {
+        "sub_variant_id": 4697236,
+        "quantity": 2,
+        "price": 2000
+      }
+    ]
+  }
+}
 ```
 **Kết quả trả về**
 ```
+
 ```
 **Trường hợp có lỗi**
 ```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "variant": "phiên bản này đã được tạo composite"
+        }
+    }
+}
 ```
 ## 3.2 Lấy ra một sản phẩm đặc thù
 **Request**
@@ -3131,9 +4942,37 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "composites": [
+        {
+            "id": 19904,
+            "tenant_id": 56322,
+            "variant_id": 5710589,
+            "sub_variant_id": 4653241,
+            "price": 700000,
+            "quantity": 1
+        },
+        {
+            "id": 19905,
+            "tenant_id": 56322,
+            "variant_id": 5710589,
+            "sub_variant_id": 4697236,
+            "price": 400000,
+            "quantity": 1
+        }
+    ]
+}
 ```
 **Trường hợp có lỗi**
 ```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "variant": "not exists Variant 571089"
+        }
+    }
+}
 ```
 # 4. VariantInventory - Thiết lập định mức tồn	
 ## 4.1 Cập nhật mức định tồn
@@ -3142,6 +4981,17 @@ Content-Type: application/json
 PUT /admin/products/1297/variants/3321/locations HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
+{
+  "variant_inventories": [{
+    "location_id":81,
+    "min_value":19,
+     "max_value":12
+  },
+  {
+   "location_id":5072,
+    min_value":19,
+     "max_value":12
+  }  ] }
 ```
 **Kết quả trả về**
 ```
