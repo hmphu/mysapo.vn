@@ -229,7 +229,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name= "get-stock_transfers_codes"></a>
+<a name="get-stock_transfers_codes"></a>
 ## 5. Lấy đơn chuyển hàng theo bộ lọc
 
 **Request**
@@ -370,7 +370,7 @@ params: statuses = draft
     ]
 }
 ```
-<a name= "stock_transfers_id_status"></a>
+<a name="stock_transfers_id_status"></a>
 ## 6. Thay đổi trạng thái 
 
 **Request**
@@ -381,4 +381,5 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+
 ```
