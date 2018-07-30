@@ -3,19 +3,17 @@
 Hiện tại ở Sapo liên kết với nhiều hệ thống vận chuyển uy tín tại Việt Nam cho chủ shop có nhiều lựa chọn.
 **Các tham số**
 
-[ 1. Lấy ra tổng nợ của một khách hàng ](#customers_id_debts)
+[ 1. Thêm mới đối tác vận chuyển ](#add-delivery_service_providers)
 
-[ 2. Lấy ra tổng nợ của một nhà cung cấp](#suppliers_id_debts)
+[ 2. Cập nhật một đối tác vận chuyển](#put-delivery_service_providers_id)
 
-[ 3. Lấy ra tất cả tổng đang nợ của một nhà cung cấp](#suppliers_id_debt_change_logs)
+[ 3. Lấy một đối tượng đối tác vận chuyển](#get-delivery_service_providers_id)
 
-[ 1. Lấy ra tổng nợ của một khách hàng ](#customers_id_debts)
+[ 4. Xoá một đối tác vận chuyển ](#delete-delivery_service_providers_id)
 
-[ 2. Lấy ra tổng nợ của một nhà cung cấp](#suppliers_id_debts)
+[ 5. Lấy danh sách toàn bộ đối tác vận chuyển](#get-delivery_service_providers)
 
-[ 3. Lấy ra tất cả tổng đang nợ của một nhà cung cấp](#suppliers_id_debt_change_logs)
-
-
+[ 6. Lấy danh sách công nợ shipper](#get-delivery_service_providers_id_debt_change_logs)
 
 <a name="customers_id_debts"></a>
 ## 1. Thêm mới đối tác vận chuyển
