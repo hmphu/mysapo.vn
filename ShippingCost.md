@@ -11,7 +11,7 @@
 
 **Các tham số**
 
-<a name= "add-stock_transfers"></a>
+<a name= "add-shipping_costs"></a>
 ## 1. Tạo đơn phí ship hàng
 **Request**
 
@@ -48,7 +48,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name= "add-stock_transfers"></a>
+<a name= "put-shipping_costs_id"></a>
 ## 2. Sửa đơn phí ship hàng
 **Request**
 
@@ -84,7 +84,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name= "add-stock_transfers"></a>
+<a name= "get-shipping_costs_id"></a>
 ## 3. Lấy đơn phí ship hàng
 **Request**
 
@@ -110,7 +110,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name= "add-stock_transfers"></a>
+<a name= "delete-shipping_costs_id"></a>
 ## 4. Xóa đưn phí ship hàng
 **Request**
 
