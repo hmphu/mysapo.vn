@@ -140,6 +140,7 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+Status 200 OK
 ```
 **Trường hợp có lỗi**
 ```
