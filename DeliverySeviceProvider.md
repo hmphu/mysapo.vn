@@ -15,7 +15,9 @@ Hiện tại ở Sapo liên kết với nhiều hệ thống vận chuyển uy t
 
 [ 6. Lấy danh sách công nợ shipper](#get-delivery_service_providers_id_debt_change_logs)
 
-<a name="customers_id_debts"></a>
+
+
+<a name="add-delivery_service_providers"></a>
 ## 1. Thêm mới đối tác vận chuyển
 **Request**
 ```
@@ -55,7 +57,7 @@ Content-Type: application/json
   }
 }
 ```
-<a name="customers_id_debts"></a>
+<a name="put-delivery_service_providers_id"></a>
 ## 2. Cập nhật một đối tác vận chuyển
 **Request**
 ```
@@ -95,7 +97,7 @@ Content-Type: application/json
   }
 }
 ```
-<a name="customers_id_debts"></a>
+<a name="get-delivery_service_providers_id"></a>
 ## 3. Lấy một đối tượng đối tác vận chuyển
 **Request**
 ```
@@ -128,7 +130,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="customers_id_debts"></a>
+<a name="delete-delivery_service_providers_id"></a>
 ## 4. Xoá một đối tác vận chuyển
 **Request**
 ```
@@ -148,6 +150,8 @@ Staus: 200 OK
     }
 }
 ```
+
+<a name="get-delivery_service_providers"></a>
 ## 5. Lấy danh sách toàn bộ đối tác vận chuyển
 **Request**
 ```
@@ -207,7 +211,7 @@ Content-Type: application/json
     ]
 }
 ```
-<a name="customers_id_debts"></a>
+<a name="get-delivery_service_providers_id_debt_change_logs"></a>
 ## 6. Lấy danh sách công nợ shipper
 **Request**
 ```
