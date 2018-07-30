@@ -1,4 +1,4 @@
-#Chuyển hàng
+# Chuyển hàng
 
 [1. Tạo đơn chuyển hàng](#add-stock_transfers)
 
@@ -29,8 +29,9 @@ Content-Type: application/json
 
 ```
 <a name= "put-stock_transfers_id"></a>
-## 2. Sửa một đơn chuyển hàng **Request**
+## 2. Sửa một đơn chuyển hàng 
 
+**Request**
 ```
 POST admin/customer_groups HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
@@ -41,6 +42,7 @@ Content-Type: application/json
 ```
 
 ```
+
 <a name= "get-stock_transfers_id"></a>
 ## 3. Lấy ra một đơn chuyển hàng**Request**
 
