@@ -1,62 +1,127 @@
 # Phí vận chuyển
 
-[1. Tạo đơn chuyển hàng](#add-stock_transfers)
+[1. Tạo đơn phí ship hàng](#add-shipping_costs)
 
-[2. Sửa một đơn chuyển hàng ](#put-stock_transfers_id)
+[2. Sửa một đơn phí ship hàng ](#put-shipping_costs_id)
 
-[3. Lấy ra một đơn chuyển hàng](#get-stock_transfers_id)
+[3. Lấy ra một đơn phí ship hàng](#get-shipping_costs_id)
 
-[4. Lấy mã code đơn chuyển hàng](#get-stock_transfers_codes)
+[4. Xóa một đơn phí ship hàng](#delete-shipping_costs_id)
 
-[5. Lấy đơn chuyển hàng theo bộ lọc](#get-stock_transfers?)
-
-[6. Thay đổi trạng thái](#stock_transfers_id_status)
 
 **Các tham số**
 
 <a name= "add-stock_transfers"></a>
-## 1. Tạo đơn chuyển hàng
+## 1. Tạo đơn phí ship hàng
 **Request**
 
 ```
+POST admin/customer_groups HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+{
+  "shipping_cost": {
+    "id": 3,
+    "name": "trăm tỉ mới chuyển 3",
+    "base_on": "weight",
+    "lower_limit": 1,
+    "upper_limit": null,
+    "cost": 100
+  }
+}
 ```
 **Kết quả trả về**
 ```
+{
+    "shipping_cost": {
+        "id": 1438,
+        "tenant_id": 21406,
+        "name": "trăm tỉ mới chuyển 3",
+        "base_on": "weight",
+        "lower_limit": 1,
+        "upper_limit": null,
+        "cost": 100,
+        "created_on": "2018-07-30T09:50:06Z",
+        "modified_on": "2018-07-30T09:50:06Z",
+        "status": "active"
+    }
+}
 ```
 <a name= "add-stock_transfers"></a>
-## 1. Tạo đơn chuyển hàng
+## 2. Sửa đơn phí ship hàng
 **Request**
 
 ```
+PUT admin/customer_groups HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+{
+  "shipping_cost": {
+    "id": 3,
+    "name": "trăm tỉ mới chuyển 3",
+    "base_on": "weight",
+    "lower_limit": 1,
+    "upper_limit": null,
+    "cost": 100
+  }
+}
 ```
 **Kết quả trả về**
 ```
+{
+    "shipping_cost": {
+        "id": 1438,
+        "tenant_id": 21406,
+        "name": "trăm tỉ mới chuyển 3",
+        "base_on": "weight",
+        "lower_limit": 1,
+        "upper_limit": null,
+        "cost": 100,
+        "created_on": "2018-07-30T09:50:06Z",
+        "modified_on": "2018-07-30T09:59:58Z",
+        "status": "active"
+    }
+}
 ```
 <a name= "add-stock_transfers"></a>
-## 1. Tạo đơn chuyển hàng
+## 3. Lấy đơn phí ship hàng
 **Request**
 
 ```
+GET admin/customer_groups HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
+{
+    "shipping_cost": {
+        "id": 1438,
+        "tenant_id": 21406,
+        "name": "trăm tỉ mới chuyển 3",
+        "base_on": "weight",
+        "lower_limit": 1,
+        "upper_limit": null,
+        "cost": 100,
+        "created_on": "2018-07-30T09:50:06Z",
+        "modified_on": "2018-07-30T09:59:58Z",
+        "status": "active"
+    }
+}
 ```
 <a name= "add-stock_transfers"></a>
-## 1. Tạo đơn chuyển hàng
+## 4. Xóa đưn phí ship hàng
 **Request**
 
 ```
-```
-**Kết quả trả về**
-```
-```
-<a name= "add-stock_transfers"></a>
-## 1. Tạo đơn chuyển hàng
-**Request**
+DELETE admin/customer_groups HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
 
 ```
-```
 **Kết quả trả về**
 ```
+Status 200 OK
 ```
 
