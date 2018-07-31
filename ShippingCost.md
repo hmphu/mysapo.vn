@@ -111,7 +111,7 @@ Content-Type: application/json
 }
 ```
 <a name= "delete-shipping_costs_id"></a>
-## 4. Xóa đưn phí ship hàng
+## 4. Xóa đơn phí ship hàng
 **Request**
 
 ```
