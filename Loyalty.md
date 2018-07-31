@@ -12,7 +12,7 @@ Tích điểm là
 
   [1.4 Xóa một thẻ tích điểm](#delete-loyalty_cards_id)
   
-2. Thiết lập(#loyalty_settings)
+[2. Thiết lập](#loyalty_settings)
 
   [2.1 Lấy tất cả thiết lập thẻ tích điểm](#get-loyalty_settings)
 
