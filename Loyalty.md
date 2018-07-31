@@ -42,11 +42,38 @@ Tích điểm là
 POST admin/loyalty_cards HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
-
+{
+  "loyalty_card": {
+    "name": "chung1",
+    "discount_type": "percent",
+    "discount_value": 10,
+    "amount": 2000000,
+    "amount_condition": 200000,
+    "date_time_type": "day",
+    "date_time_value": 10,
+    "status": "active"
+  }
+}
 ```
 **Kết quả trả về**
 ```
-
+{
+    "loyalty_card": {
+        "id": 2316,
+        "tenant_id": 56322,
+        "name": "chung1",
+        "discount_type": "percent",
+        "discount_value": 10,
+        "amount": 2000000,
+        "amount_condition": 200000,
+        "date_time_type": "day",
+        "date_time_value": 10,
+        "status": "active",
+        "created_on": "2018-07-31T09:20:14Z",
+        "modified_on": "2018-07-31T09:20:14Z",
+        "note": null
+    }
+}
 ```
 <a name= "put-shipping_costs_id"></a>
 ### 1.2 Lấy tất cả thẻ tích điểm
@@ -60,7 +87,30 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "metadata": {
+        "total": 1,
+        "page": 1,
+        "limit": 20
+    },
+    "loyalty_cards": [
+        {
+            "id": 2315,
+            "tenant_id": 56322,
+            "name": "chung",
+            "discount_type": "percent",
+            "discount_value": 10,
+            "amount": 1000000,
+            "amount_condition": 100000,
+            "date_time_type": "day",
+            "date_time_value": 10,
+            "status": "active",
+            "created_on": "2018-07-31T07:01:27Z",
+            "modified_on": "2018-07-31T07:01:27Z",
+            "note": null
+        }
+    ]
+}
 ```
 <a name= "put-loyalty_cards_id"></a>
 ### 1.3 Sửa một thẻ tích điểm
@@ -70,10 +120,46 @@ Content-Type: application/json
 PUT admin/loyalty_cards/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
+{
+  "loyalty_card": {
+    "name": "chung1",
+    "discount_type": "money",
+    "discount_value": 10,
+    "amount": 2000000,
+    "amount_condition": 200000,
+    "date_time_type": "month",
+    "date_time_value": 10,
+    "status": "active"
+  }
+}
 ```
 **Kết quả trả về**
 ```
-
+{
+    "loyalty_card": {
+        "id": 2316,
+        "tenant_id": 56322,
+        "name": "chung1",
+        "discount_type": "money",
+        "discount_value": 10,
+        "amount": 2000000,
+        "amount_condition": 200000,
+        "date_time_type": "day",
+        "date_time_value": 10,
+        "status": "active",
+        "created_on": "2018-07-31T09:20:14Z",
+        "modified_on": "2018-07-31T09:24:00Z",
+        "note": null
+    }
+}
+```
+**Trường hợp có lỗi*
+```
+{
+    "error": {
+        "message": "Không được cập nhật hạng thẻ cùng mức doanh thu điều kiện"
+    }
+}
 ```
 <a name= "delete-loyalty_cards_id"></a>
 ### 1.4 Xóa một thẻ tích điểm
