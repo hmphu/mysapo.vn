@@ -1,4 +1,4 @@
-#Loyalty
+# Loyalty
 
 Tích điểm là 
 
