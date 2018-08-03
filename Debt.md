@@ -24,14 +24,14 @@ Dễ dàng đối chiếu khách hàng, nhà cung cấp còn đang nợ chủ sh
 | log_type | no | int - |
 | root_id| no | int -  |
 
-[ 1.1 Lấy ra tổng nợ của một khách hàng ](#customers_id_debts)
+[ 1. Lấy ra tổng nợ của một khách hàng ](#customers_id_debts)
 
-[ 1.2 Lấy ra tổng nợ của một nhà cung cấp](#suppliers_id_debts)
+[ 2. Lấy ra tổng nợ của một nhà cung cấp](#suppliers_id_debts)
 
-[ 1.3 Lấy ra tất cả tổng đang nợ của một nhà cung cấp](#suppliers_id_debt_change_logs)
+[ 3. Lấy ra tất cả tổng đang nợ của một nhà cung cấp](#suppliers_id_debt_change_logs)
 
 <a name="customers_id_debts"></a>
-## Lấy ra tổng nợ của một khách hàng 
+## 1. Lấy ra tổng nợ của một khách hàng 
 **Request**
 ```
 GET /admin/customers/{id}/debts HTTP/1.1
@@ -48,7 +48,7 @@ Content-Type: application/json
 }
 ```
 <a name="suppliers_id_debts"></a>
-## Lấy ra tổng nợ của một nhà cung cấp
+## 2. Lấy ra tổng nợ của một nhà cung cấp
 **Request**
 ```
 GET admin/suppliers/{id}/debts HTTP/1.1
@@ -65,7 +65,7 @@ Content-Type: application/json
 }
 ```
 <a name="suppliers_id_debt_change_logs"></a>
-## Lấy ra nhật ký tổng nợ của một nhà cung cấp
+## 3. Lấy ra nhật ký tổng nợ của một nhà cung cấp
 **Request**
 ```
 GET admin/suppliers/{id}/debt_change_logs HTTP/1.1
