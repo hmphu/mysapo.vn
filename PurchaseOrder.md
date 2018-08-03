@@ -180,3 +180,124 @@ Status 200 OK
 ```
 
 ```
+<a name= "purchase_orders_bill"></a>
+# 2. Hóa đơn nhập hàng
+
+<a name= "add-purchase_orders_bill"></a>
+## 2.1 Thêm mới một hóa đơn nhập hàng]
+
+**Request**
+
+```
+POST /admin/purchase_orders/{purchaseOrderId}/bills HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "get-purchase_orders_bill_id"></a>
+## 2.2 Lấy ra thông tin bill
+
+**Request**
+```
+GET /admin/bills/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+
+<a name= "put-purchase_orders_bill_id"></a>
+## 2.3 Cập nhật thông tin
+
+**Request**
+```
+PUT /admin/purchase_orders/{purchaseOrderId}/bills/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "cancel-purchase_orders_bill_id"></a>
+## 2.4 Hủy 1 phiếu bill
+**Request**
+```
+POST /admin/purchase_orders/{purchaseOrderId}/bills/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name="purchase_orders_id_status"></a>
+## 2.5 Lấy bill theo fillter
+**Request**
+```
+GET /admin/bills HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+params: statuses = draft
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "purchase_orders_bill_payment"></a>
+# 3. Thanh toán cho hóa đơn nhập 
+
+<a name= "add-purchase_orders"></a>
+## 3.1 Lấy một phiếu thanh toán hóa đơn nhập
+
+**Request**
+
+```
+GET admin/purchase_orders/{purchaseOrderId}/bills/{billid}/bill_payments HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "get-purchase_orders_bill_payment"></a>
+## 3.2 Lấy một phiếu thanh toán hóa đơn nhập
+
+**Request**
+```
+GET /admin/bill_payments/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+
+<a name= "cancel-purchase_orders_bill_payments"></a>
+## 3.3 Hủy phiếu thanh toán
+
+**Request**
+```
+POST admin/purchase_orders/{purchaseOrderId}/bills/{billId}/bill_payments/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
