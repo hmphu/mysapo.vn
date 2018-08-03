@@ -19,7 +19,7 @@
 **Request**
 
 ```
-POST admin/customer_groups HTTP/1.1
+POST /admin/stock_transfers HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 {
@@ -94,7 +94,7 @@ Content-Type: application/json
 
 **Request**
 ```
-PUT admin/customer_groups HTTP/1.1
+PUT /admin/stock_transfers/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 {
@@ -171,7 +171,7 @@ Content-Type: application/json
 
 **Request**
 ```
-GET admin/customer_groups HTTP/1.1
+GET /admin/stock_transfers/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -215,7 +215,7 @@ Content-Type: application/json
 ## 4. Tạo mã code đơn chuyển hàng
 **Request**
 ```
-POST admin/customer_groups HTTP/1.1
+POST /admin/stock_transfers/codes HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -234,7 +234,7 @@ Content-Type: application/json
 
 **Request**
 ```
-POST admin/customer_groups HTTP/1.1
+POST /admin/stock_transfers HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -375,9 +375,10 @@ params: statuses = draft
 
 **Request**
 ```
-POST admin/customer_groups HTTP/1.1
+POST /admin/stock_transfers/{id}/{status} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
+status=active
 ```
 **Kết quả trả về**
 ```
