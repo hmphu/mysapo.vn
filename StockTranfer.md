@@ -378,9 +378,26 @@ params: statuses = draft
 POST /admin/stock_transfers/{id}/{status} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
-status=active
+status=draft
+{
+  "stock_transfer":{
+    "shipped_on":"2018-01-01",
+    "received_on":"2018-02-02"
+  }
+}
 ```
 **Kết quả trả về**
 ```
-
+Status 200 OK
+```
+**Trường hợp có lỗi**
+```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "status": "Chỉ xác nhận được đơn ở trạng thái nháp"
+        }
+    }
+}
 ```
