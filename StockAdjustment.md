@@ -41,7 +41,7 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+```
 
 <a name= "get-stock_adjustments_codes"></a>
 ## 3. Lấy mã code đơn kiểm hàng
@@ -85,7 +85,7 @@ params: statuses = draft
 ```
 
 ```
-<a name="put-stock_adjustments_id_status"></a>
+<a name="add-stock_adjustments_id"></a>
 ## 6. Thêm mới một đơn kiểm hàng
 
 **Request**
