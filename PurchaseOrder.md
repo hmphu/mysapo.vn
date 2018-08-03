@@ -1,21 +1,59 @@
-# Nhập hàng
+[1. Nhập hàng](#purchase_orders)
 
-[1. Lấy tất cả phiếu điều chỉnh giá vốn](#get-price_adjustments)
+   [1.1 Thêm mới đơn nhập hàng](#add-purchase_orders)
 
-[2. Lấy một phiếu điều chỉnh giá vốn](#get-price_adjustments_id)
+   [1.2 Lấy đơn nhập hàng theo bộ lọc?](#get-purchase_orders?)
 
-[3. Lấy mã code phiếu điều chỉnh giá vốn](#get-price_adjustments_codes)
+   [1.3 Lấy một đơn nhập hàng](#get-purchase_orders_id)
 
-[4. Cập nhật một phiếu điều chỉnh giá vốn](#put-price_adjustments_id)
+   [1.4 Sinh mã code đơn nhập hàng](#purchase_orders_codes)
 
-[5. Thêm một phiếu điều chỉnh giá vốn](#add-price_adjustments)
+   [1.5 Chuyển trạng thái từ draft sang active](#purchase_orders_id_status)
 
-[6. Thay đổi trạng thái của phiếu điều chỉnh giá vốn](#price_adjustments_id_status)
+   [1.6 Hủy một đơn nhập](#purchase_orders_id_status)
 
-[7. Xuất một phiếu điều chỉnh giá vốn](#import_price_adjustments_id)
+   [1.7 Cập nhật một đơn nhập hàng](#import_purchase_orders_id)
+
+   [1.8 Thêm mới một item](#import_purchase_orders_id)
+   
+[2. Hóa đơn nhập](#purchase_orders_bill)
+
+   [2.1 Thêm mới 1 hoá đơn nhập hàng](#add-purchase_orders_bill)
+
+   [2.2 Lấy ra thông tin bill](#get-purchase_orders_bill_id)
+
+   [2.3 Cập nhật thông tin](#put-purchase_orders_bill_id)
+
+   [2.4 Hủy 1 phiếu bill](#cancel-purchase_orders_bill_id)
+
+   [2.5 Lấy bill theo fillter](#get-purchase_orders_bill?)
+   
+[3. Thanh toán cho hóa đơn nhập](#purchase_orders_bill_payment)
+
+   [3.1 Thêm mới một phiếu thanh toán cho hóa đơn nhập](#get-purchase_orders_bill_payment)
+
+   [3.2 Lấy một phiếu thanh toán hóa đơn nhập](#get-purchase_orders_bill_payment_id)
+
+   [3.3 Hủy phiếu thanh toán](#cancel-purchase_orders_bill_payments)
+   
+[4. Nhập kho](#purchase_orders_procurements)
+
+   [4.1 Thêm mới phiếu nhập kho](#add-purchase_orders_id_procurements)
+
+   [4.2 Cập nhật một phiếu nhập kho](#get-purchase_orders_id_procurements)
+
+   [4.3 Hủy 1 phiếu nhập kho](#cancel-purchase_orders_id_procurements)
+
+   [4.4 Lấy phiếu nhập kho theo bộ lọc](#get-purchase_orders_id_procurements?)
+   
+ [5. Trả hàng](#purchase_order_returns) 
+
+   [5.1 Thêm mới một đơn trả hàng](#add-purchase_order_returns)  
 
 **Các tham số**
 
+<a name= "get-price_adjustments"></a>
+# 1. Nhập hàng 
 <a name= "get-price_adjustments"></a>
 ## 1.  Lấy tất cả phiếu điều chỉnh giá vốn
 **Request**
