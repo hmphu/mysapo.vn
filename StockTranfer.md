@@ -229,7 +229,7 @@ Content-Type: application/json
     }
 }
 ```
-<a name="get-stock_transfers_codes"></a>
+<a name="get-stock_transfers?"></a>
 ## 5. Lấy đơn chuyển hàng theo bộ lọc
 
 **Request**
