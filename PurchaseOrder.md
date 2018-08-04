@@ -1,3 +1,4 @@
+Chủ shop quản lý nhập hàng từ các nguồn khác nhau,
 [1. Nhập hàng](#purchase_orders)
 
    [1.1 Thêm mới đơn nhập hàng](#add-purchase_orders)
