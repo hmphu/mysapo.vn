@@ -180,15 +180,16 @@ Status 200 OK
 ```
 
 ```
-# 2. Nhập hàng 
-
 <a name= "add-purchase_orders"></a>
-## 1.1 Thêm mới đơn nhập hàng]
+# 2. Hóa đơn nhập 
+
+<a name= "purchase_orders_bill"></a>
+## 2.1 Thêm mới 1 hoá đơn nhập hàng
 
 **Request**
 
 ```
-POST /admin/purchase_orders HTTP/1.1
+POST /admin/purchase_orders/{purchaseOrderId}/bills HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -198,11 +199,11 @@ Content-Type: application/json
 
 ```
 <a name= "get-purchase_orders?"></a>
-## 1.2 Lấy đơn nhập hàng theo bộ lọc
+## 2.2 Lấy ra thông tin bill
 
 **Request**
 ```
-GET /admin/purchase_orders HTTP/1.1
+GET /admin/bills/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -212,12 +213,12 @@ Content-Type: application/json
 
 ```
 
-<a name= "get-purchase_orders_id"></a>
-## 1.3 Lấy một đơn nhập hàng
+<a name= "put-purchase_orders_bill_id"></a>
+## 2.3 Cập nhật thông tin hóa đơn nhập hàng
 
 **Request**
 ```
-GET /admin/purchase_orders/{id} HTTP/1.1
+GET /admin/purchase_orders/{purchaseOrderId}/bills/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -226,11 +227,11 @@ Content-Type: application/json
 ```
 
 ```
-<a name= "purchase_orders_codes"></a>
-## 1.4 Sinh mã code đơn nhập hàng
+<a name= "cancel-purchase_orders_bill_id"></a>
+## 2.4 Hủy 1 phiếu bill
 **Request**
 ```
-POST /admin/purchase_orders/codes HTTP/1.1
+POST /admin/purchase_orders/{purchaseOrderId}/bills/{id}/cancel HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
@@ -239,15 +240,135 @@ Content-Type: application/json
 ```
 
 ```
-<a name="purchase_orders_id_status"></a>
-## 1.5 Chuyển trạng thái từ draft sang active
+<a name="get-purchase_orders_bill?"></a>
+## 2.5 Lấy bill theo fillter
 **Request**
 ```
-POST admin/purchase_orders/{id}/{status} HTTP/1.1
+POST /admin/bills HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 params: statuses = draft
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "purchase_orders_bill_payment"></a>
+# 3. Thanh toán cho hóa đơn nhập
+
+<a name="get-purchase_orders_bill_payment"></a>
+## 3.1 Thêm mới một phiếu thanh toán cho hóa đơn nhập
+**Request**
+```
+POST admin/purchase_orders/{purchaseOrderId}/bills/{billid}/bill_payments HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name="get-purchase_orders_bill_payment_id"></a>
+## 3.2 Lấy một phiếu thanh toán hóa đơn nhập
+**Request**
+```
+GET admin/bill_payments/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name="cancel-purchase_orders_bill_payments"></a>
+## 3.3 Hủy phiếu thanh toán
+**Request**
+```
+POST admin/purchase_orders/{purchaseOrderId}/bills/{billId}/bill_payments/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "add-purchase_orders_id_procurements"></a>
+# 4. Nhập kho
+
+<a name= "purchase_orders_bill"></a>
+## 4.1 Thêm mới phiếu nhập kho
+
+**Request**
+
+```
+POST /admin/purchase_orders/{id}/procurements  HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "get-purchase_orders_id_procurements"></a>
+## 4.2 Cập nhật một phiếu nhập kho
+
+**Request**
+```
+PUT /admin/purchase_orders/{orderid}/procurements/{id} HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+
+<a name= "cancel-purchase_orders_id_procurements"></a>
+## 4.3 Hủy 1 phiếu nhập kho
+
+**Request**
+```
+GET /admin/purchase_orders/{orderid}/procurements/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "get-purchase_orders_id_procurements?"></a>
+## 4.4 Lấy phiếu nhập kho theo bộ lọc
+**Request**
+```
+POST /admin/purchase_orders/{purchaseOrderId}/bills/{id}/cancel HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
+```
+**Kết quả trả về**
+```
+
+```
+<a name= "purchase_order_returns"></a>
+# 5. Trả hàng
+
+<a name= "add-purchase_order_returns"></a>
+## 5.1 Thêm mới một đơn trả hàng
+
+**Request**
+
+```
+POST /admin/purchase_order_returns  HTTP/1.1
+Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
+Content-Type: application/json
+
 ```
 **Kết quả trả về**
 ```
