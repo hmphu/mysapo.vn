@@ -1389,7 +1389,41 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "procurement": {
+        "id": 533804,
+        "location_id": 22322,
+        "tenant_id": 21406,
+        "purchase_order_id": 463149,
+        "supplier_id": 3654802,
+        "currency_id": 21407,
+        "code": "IN0906161",
+        "purchase_order_code": "PO2306182",
+        "created_on": "2018-08-06T09:50:22Z",
+        "modified_on": "2018-08-06T09:50:22Z",
+        "received_on": "2018-08-06T09:50:22Z",
+        "account_id": 25153,
+        "note": null,
+        "reference": null,
+        "status": "received",
+        "line_items": [
+            {
+                "id": 2322707,
+                "purchase_order_line_item_id": 2582393,
+                "quantity": 1,
+                "position": 0,
+                "is_freeform": false,
+                "created_on": "2018-08-06T09:50:22Z",
+                "price": 3000,
+                "sub_amount": 3000,
+                "tax_amount": 300,
+                "line_amount": 3300,
+                "extra_cost_value": 0,
+                "purchase_order_line_item": null
+            }
+        ]
+    }
+}
 ```
 <a name= "get-purchase_orders_id_procurements"></a>
 ## 4.2 Cập nhật một phiếu nhập kho
@@ -1399,11 +1433,51 @@ Content-Type: application/json
 PUT /admin/purchase_orders/{orderid}/procurements/{id} HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
+{
+  "procurement": {
+    "note": "hello",
+    "reference": "hihi"
+  }
+}
 
 ```
 **Kết quả trả về**
 ```
-
+{
+    "procurement": {
+        "id": 533804,
+        "location_id": 22322,
+        "tenant_id": 21406,
+        "purchase_order_id": 463149,
+        "supplier_id": 3654802,
+        "currency_id": 21407,
+        "code": "IN0906161",
+        "purchase_order_code": "PO2306182",
+        "created_on": "2018-08-06T09:50:22Z",
+        "modified_on": "2018-08-06T09:51:38Z",
+        "received_on": "2018-08-06T09:50:22Z",
+        "account_id": 25153,
+        "note": "hello",
+        "reference": "hihi",
+        "status": "received",
+        "line_items": [
+            {
+                "id": 2322707,
+                "purchase_order_line_item_id": 2582393,
+                "quantity": 1,
+                "position": 0,
+                "is_freeform": false,
+                "created_on": "2018-08-06T09:50:22Z",
+                "price": 3000,
+                "sub_amount": 3000,
+                "tax_amount": 300,
+                "line_amount": 3300,
+                "extra_cost_value": 0,
+                "purchase_order_line_item": null
+            }
+        ]
+    }
+}
 ```
 
 <a name= "cancel-purchase_orders_id_procurements"></a>
@@ -1411,27 +1485,68 @@ Content-Type: application/json
 
 **Request**
 ```
-GET /admin/purchase_orders/{orderid}/procurements/{id}/cancel HTTP/1.1
+POST /admin/purchase_orders/{orderid}/procurements/{id}/cancel HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
 **Kết quả trả về**
 ```
-
+Status 200 OK
 ```
 <a name= "get-purchase_orders_id_procurements?"></a>
 ## 4.4 Lấy phiếu nhập kho theo bộ lọc
 **Request**
 ```
-POST /admin/purchase_orders/{purchaseOrderId}/bills/{id}/cancel HTTP/1.1
+GET admin/procurements HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
 
 ```
 **Kết quả trả về**
 ```
-
+{
+    "metadata": {
+        "total": 1,
+        "page": 1,
+        "limit": 250
+    },
+    "procurements": [
+        {
+            "id": 533804,
+            "location_id": 22322,
+            "tenant_id": 21406,
+            "purchase_order_id": 463149,
+            "supplier_id": 3654802,
+            "currency_id": 21407,
+            "code": "IN0906161",
+            "purchase_order_code": "PO2306182",
+            "created_on": "2018-08-06T09:50:22Z",
+            "modified_on": "2018-08-06T09:52:47Z",
+            "received_on": "2018-08-06T09:50:22Z",
+            "account_id": 25153,
+            "note": "hello",
+            "reference": "hihi",
+            "status": "cancelled",
+            "line_items": [
+                {
+                    "id": 2322707,
+                    "purchase_order_line_item_id": 2582393,
+                    "quantity": 1,
+                    "position": 0,
+                    "is_freeform": false,
+                    "created_on": "2018-08-06T09:50:22Z",
+                    "price": 3000,
+                    "sub_amount": 3000,
+                    "tax_amount": 300,
+                    "line_amount": 3300,
+                    "extra_cost_value": 0,
+                    "purchase_order_line_item": null
+                }
+            ]
+        }
+    ]
+}
 ```
 <a name= "purchase_order_returns"></a>
 # 5. Trả hàng
