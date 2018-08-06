@@ -1286,11 +1286,48 @@ Content-Type: application/json
 POST admin/purchase_orders/{purchaseOrderId}/bills/{billid}/bill_payments HTTP/1.1
 Token: X-Sapo-Access-Token 28a48cee892343b2b29780a586c5ded2
 Content-Type: application/json
-
+{
+"bill_payment": {
+"account_id": 25153,
+"payment_method_id": 115495,
+"amount": 7920,
+"reference": null,
+"paid_on": "2016-06-08T08:57:14Z"
+  }
+}
 ```
 **Kết quả trả về**
 ```
-
+{
+    "bill_payment": {
+        "id": 307959,
+        "tenant_id": 21406,
+        "location_id": 22322,
+        "purchase_order_id": 463149,
+        "bill_id": 393312,
+        "account_id": 25153,
+        "payment_method_id": 115495,
+        "currency_id": 21407,
+        "exchange_rate": 1,
+        "amount": 7920,
+        "reference": null,
+        "paid_on": "2016-06-08T08:57:14Z",
+        "status": "paid",
+        "created_on": "2018-08-06T09:13:02Z",
+        "modified_on": "2018-08-06T09:13:02Z"
+    }
+}
+```
+**Trường hợp có lỗi**
+```
+{
+    "data_error": {
+        "status": 422,
+        "errors": {
+            "payments.amount": "can't paid more than bill unpaid amount."
+        }
+    }
+}
 ```
 <a name="get-purchase_orders_bill_payment_id"></a>
 ## 3.2 Lấy một phiếu thanh toán hóa đơn nhập
@@ -1303,7 +1340,25 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+{
+    "bill_payment": {
+        "id": 307959,
+        "tenant_id": 21406,
+        "location_id": 22322,
+        "purchase_order_id": 463149,
+        "bill_id": 393312,
+        "account_id": 25153,
+        "payment_method_id": 115495,
+        "currency_id": 21407,
+        "exchange_rate": 1,
+        "amount": 7920,
+        "reference": null,
+        "paid_on": "2016-06-08T08:57:14Z",
+        "status": "paid",
+        "created_on": "2018-08-06T09:13:02Z",
+        "modified_on": "2018-08-06T09:13:02Z"
+    }
+}
 ```
 <a name="cancel-purchase_orders_bill_payments"></a>
 ## 3.3 Hủy phiếu thanh toán
@@ -1316,7 +1371,7 @@ Content-Type: application/json
 ```
 **Kết quả trả về**
 ```
-
+Status 200 OK
 ```
 <a name= "add-purchase_orders_id_procurements"></a>
 # 4. Nhập kho
