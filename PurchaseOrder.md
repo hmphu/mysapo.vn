@@ -489,7 +489,6 @@ param = 3
 
 <a name= "get-purchase_orders_id"></a>
 ## 1.3 Lấy một đơn nhập hàng
-
 **Request**
 ```
 GET /admin/purchase_orders/{id} HTTP/1.1
